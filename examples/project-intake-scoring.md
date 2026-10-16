@@ -62,7 +62,7 @@ The system resolves the entities in the proposal against the agency's canonical 
 **Specific controls:**
 - "Customer data" in the proposal is resolved to: which specific data systems, which data classifications (PII? FISMA-controlled?), what current governance status
 - "Integration with case management system" is resolved to: which system (COTS or custom), what API capability, what security classification, what existing data flows
-- Proposed use case is mapped to existing business process definitions in the agency's process catalog
+- Proposed use case is mapped to existing business process definitions in the agency's process inventory
 
 **Outcome:** The scoring team works from a common understanding of what the proposal actually touches — not the vendor's framing of it. Dependencies and risks that the proposal glosses over become visible.
 
@@ -190,5 +190,4 @@ This record is retrievable in five years when the vendor re-submits a revised pr
 ## Related Documents
 
 - [5-Layer Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md) — the scoring rubric used in this example
-- [Cross-Layer Compositions](../catalog/cross-layer-compositions.md) — Composition 4 (Sovereign AI Intake and Scoring)
 - [Owned vs. Rented AI Strategy](../docs/Owned-vs-Rented-AI-Strategy.md) — why Metrology ownership is the critical gate

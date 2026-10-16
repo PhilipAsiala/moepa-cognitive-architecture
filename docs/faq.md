@@ -8,7 +8,7 @@ No. Own the data from the start, in open formats you can export, with a written 
 
 ## Is the Data Substrate a sixth layer?
 
-No. The **Data Substrate** is the organization-owned knowledge library beneath the five scored layers. It holds truth, values, rules, and lineage in formats the organization can export. It is not scored on the 1–5 rubric. See §5.1 of [ARCHITECTURE.md](../ARCHITECTURE.md) for the storage specification.
+No. The **Data Substrate** is the organization-owned knowledge library beneath the five scored layers. It holds truth, values, rules, and lineage in formats the organization can export. It is not scored on the 1–5 rubric. See §5 of [ARCHITECTURE.md](../ARCHITECTURE.md) for the storage specification.
 
 ## Is this a finished architecture?
 
@@ -16,9 +16,9 @@ No. This repository describes a draft **Philosophical AI Architecture** for disc
 
 ## What is the difference between Philosophical AI Architecture, MOEPA 5-Layer Framework, and MOEPA Cognitive Architecture?
 
-- **Philosophical AI Architecture** — the full ecosystem: Data Substrate, MOEPA Catalog, guardrails, own-vs-rent strategy, cognitive control plane.
+- **Philosophical AI Architecture** — the full ecosystem: Data Substrate, guardrails, own-vs-rent strategy, cognitive control plane.
 - **MOEPA 5-Layer Framework** — the engineering blueprint and governance engine inside the architecture: five layers, intake scoring, GO / CONDITIONAL GO / NO-GO decisions.
-- **MOEPA Cognitive Architecture** — the technical stack design in [ARCHITECTURE.md](../ARCHITECTURE.md): storage mapping, catalog integration, recommended tools.
+- **MOEPA Cognitive Architecture** — the technical stack design in [ARCHITECTURE.md](../ARCHITECTURE.md): storage mapping and recommended tools.
 
 See the [Naming section in the README](../README.md#naming), [Pitch Strategy](pitch-strategy.md), and [Glossary](glossary.md).
 
@@ -54,7 +54,7 @@ Each layer is one question leadership must be able to answer. The technical form
 
 **Technical architects:** [MOEPA 5-Layer Framework](MOEPA-5-Layer-Framework.md) → [Data Substrate Concept](Data-Substrate-Concept.md) → [ARCHITECTURE.md](../ARCHITECTURE.md)
 
-**All readers:** [Glossary](glossary.md) → [Catalog](../catalog/README.md)
+**All readers:** [Glossary](glossary.md) → [5-Layer Framework](MOEPA-5-Layer-Framework.md)
 
 ## Does this include an implementation?
 

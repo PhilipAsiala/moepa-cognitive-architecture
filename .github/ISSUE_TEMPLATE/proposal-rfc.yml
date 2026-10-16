@@ -34,7 +34,7 @@ body:
         - Epistemology
         - Praxeology
         - Axiology
-        - Cross-cutting / Catalog
+        - Cross-cutting / Data Substrate
         - None / Documentation only
     validations:
       required: true

@@ -19,6 +19,6 @@ body:
     id: location
     attributes:
       label: Relevant document or section
-      description: Optional. e.g. ARCHITECTURE.md §4.2, or catalog/axiology/scoring.md
+      description: Optional. e.g. ARCHITECTURE.md §4.2, or docs/5-Layer-Evaluation-Checklist.md
     validations:
       required: false

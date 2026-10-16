@@ -4,7 +4,7 @@
 
 This page is a reading path for leaders and architects evaluating the **Philosophical AI Architecture**, a draft frame for deciding what an organization must own in an AI system.
 
-The frame maps three jobs onto the **MOEPA 5-Layer Framework**. **Cognition** is knowing (Metrology, Ontology, Epistemology: measurement, shared definitions, and verification). **Affect** is valuing (Axiology: value and priority constraints). **Conation** is acting (Praxeology: workflows and human checkpoints). Those layers sit on an organization-owned **Data Substrate** (the knowledge library) and are inventoried in the **MOEPA Catalog**.
+The frame maps three jobs onto the **MOEPA 5-Layer Framework**. **Cognition** is knowing (Metrology, Ontology, Epistemology: measurement, shared definitions, and verification). **Affect** is valuing (Axiology: value and priority constraints). **Conation** is acting (Praxeology: workflows and human checkpoints). Those layers sit on an organization-owned **Data Substrate** (the knowledge library).
 
 The practical effect is an intake decision: GO, CONDITIONAL GO, or NO-GO, with ownership stated before tools are chosen.
 
@@ -33,7 +33,6 @@ See the [Glossary](glossary.md) and [Pitch Strategy](pitch-strategy.md) for term
 1. [ARCHITECTURE.md](../ARCHITECTURE.md) — MOEPA Cognitive Architecture technical spec
 2. [Architectural Governance and Evolution Guidelines](MOEPA-Architectural-Governance-and-Evolution-Guidelines.md) — implementation evolution rules
 3. [Data Substrate Concept](Data-Substrate-Concept.md) — knowledge library design
-4. [Catalog](../catalog/README.md) — capabilities (governance) and tools (implementation)
 
 ## What This Repository Is Not
 

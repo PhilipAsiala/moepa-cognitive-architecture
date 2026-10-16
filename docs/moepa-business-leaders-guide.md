@@ -82,7 +82,7 @@ Recommended evaluation process:
 
 Before advancing any proposal, leaders must require two additional controls:
 
-- **Demand Management (Deduplication):** The proposing team must demonstrate, via search of the MOEPA Catalog and the organization's semantic model (Ontology), that the requested capability, data model, or infrastructure does not already exist elsewhere in the enterprise. This prevents duplicate solutions and uncontrolled infrastructure proliferation. A high-scoring Ontology layer directly enables this proof.
+- **Demand Management (Deduplication):** The proposing team must show, by search of the organization's owned semantic model (Ontology), that the requested capability, data model, or infrastructure does not already exist elsewhere in the enterprise. This prevents duplicate solutions and uncontrolled infrastructure proliferation. A high-scoring Ontology layer is what makes that search possible.
 
 - **Cost & Chargeback Model:** A formal cost attribution model (showback reporting or chargeback mechanism) must be defined, reviewed by the relevant platform and finance stakeholders, and accepted by the business owner before approval. This model must clearly attribute platform compute, data, governance, and ongoing operational costs. Proposals without an approved cost model cannot receive an unconditional GO.
 
@@ -110,7 +110,7 @@ When technology choices run ahead of business ownership, the same problems recur
 | Decisions the organization cannot explain | Epistemology: material outputs cite evidence and a confidence level | Slower to production than an uncited demo |
 | Mission drift toward vendor metrics | Axiology: rules the system enforces, not only prompt text | A policy change needs a governed update |
 | Actions with no oversight | Praxeology: a human checkpoint before a consequential action, plus an audit log | Some cases stay in a queue |
-| Duplicate builds | Catalog search before a new capability is approved | An extra step before funding |
+| Duplicate builds | Search of the owned semantic model (Ontology) before a new capability is approved | An extra step before funding |
 | A decision that cannot be defended to oversight | The same evidence trail, produced from owned records | Staff time to keep the record complete |
 
 These show up when AI is bought as a product feature and the ownership questions are left for later.

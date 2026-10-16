@@ -219,5 +219,4 @@ An AI system that cannot produce a complete, owned decision record is not just a
 
 - [Income Verification Scenario](income-verification.md) — related pattern for income-based determinations
 - [5-Layer Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md) — how this use case would be scored before deployment
-- [Cross-Layer Compositions](../catalog/cross-layer-compositions.md) — Composition 1 (End-to-End Decision Auditability)
-- [Axiology](../catalog/axiology/README.md) (or [capabilities](../catalog/axiology/capabilities.md)) — due process and equity monitoring
+- [MOEPA 5-Layer Framework](../docs/MOEPA-5-Layer-Framework.md) — due process and value constraints for this scenario

@@ -122,7 +122,7 @@ The Data Substrate is designed using **open, non-proprietary formats** so your o
 | **Lakehouse storage** | Apache Iceberg + Apache Parquet | Tabular facts, observations, metrics |
 | **Knowledge graph** | RDF/SPARQL or property graph (Neo4j export) | Entities, relationships, ontology |
 | **Document/blob storage** | Open object storage (S3-compatible, self-hosted) | Source documents, evidence artifacts |
-| **Catalog metadata** | Apache Atlas / open catalog standards | Data lineage, schema, provenance |
+| **Lineage and schema metadata** | Apache Atlas or an equivalent open metadata standard | Data lineage, schema, provenance |
 | **Version control** | Git-compatible versioning | Schema changes, ontology versions |
 
 > **Why open formats matter:** If your data is stored in a vendor's proprietary format, migrating away requires their cooperation. With open formats, you own an asset that can be moved to any infrastructure provider — or run on-premises — at any time.
@@ -217,5 +217,4 @@ A Data Substrate evolves toward the SPO/quad end state — it is not a single cu
 
 - [MOEPA 5-Layer Framework](MOEPA-5-Layer-Framework.md) — how each layer uses the substrate
 - [Architectural Governance and Evolution Guidelines](MOEPA-Architectural-Governance-and-Evolution-Guidelines.md) — MCP-first rules and Proto-SPO requirements
-- [Catalog](../catalog/README.md) — capabilities, tools, patterns, and cross-layer guidance (including for the Data Substrate)
 - [Full Architecture Specification](../ARCHITECTURE.md) — technical design details
