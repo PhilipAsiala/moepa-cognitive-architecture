@@ -63,5 +63,4 @@ CONDITIONAL GO or NO-GO under the MOEPA intake rubric.
 - [Data Substrate Concept](Data-Substrate-Concept.md) — semantic ingestion and Proto-SPO lifecycle
 - [5-Layer Evaluation Checklist](5-Layer-Evaluation-Checklist.md) — architectural evolution gate
 - [MOEPA Cognitive Architecture Spec](../ARCHITECTURE.md) — §5.2 architectural evolution principles
-- [Catalog](../catalog/README.md) — capabilities, tools, and patterns aligned to these rules
-- [CONTRIBUTING.md](../CONTRIBUTING.md) — PR gate requirements for contributors
+- [CONTRIBUTING.md](../CONTRIBUTING.md) — issue and review requirements for contributors

@@ -1,6 +1,6 @@
 # Philosophical AI Architecture — Technical Specification
 ## The MOEPA Cognitive Architecture
-Version: 2.3 — Full Ownership & Catalog Focus
+Version: 2.3 — Full Ownership Focus
 
 Author: Philip Asiala
 
@@ -37,7 +37,7 @@ Agentic AI, multimodal models, and open-weight ecosystems add both capability an
 ### 1.2 The Decoupling Imperative
 MOEPA enforces a clean separation between the computational substrate (rented, interchangeable) and the cognitive substrate (owned, versioned, auditable). This mirrors successful patterns in cloud-native architecture while extending them to the domain of reasoning itself.
 
-Core Principle (v2.3): We rent commodity compute. We own the brain. Ownership means internal control of data (Metrology), semantics (Ontology), validation (Epistemology), workflows (Praxeology), and values (Axiology), supported by a unified catalog for discoverability.
+Core Principle (v2.3): We rent commodity compute. We own the brain. Ownership means internal control of data (Metrology), semantics (Ontology), validation (Epistemology), workflows (Praxeology), and values (Axiology), held on the Data Substrate so the same record can be found again.
 
 ## 2. MOEPA Layer Definitions — Philosophical Grounding & Practical Translation
 Each layer is named after a classical philosophical discipline and grounded in a specific mathematical formalization. This ensures the framework is both intellectually coherent and technically implementable.
@@ -51,13 +51,13 @@ Enterprise Translation: Establishing the foundational data layer—ensuring all 
 
 Key Artifacts:
 
-- Self-hosted open-format data substrate containers (Iceberg, Parquet) that Metrology qualifies through ingress quality controls (see §5.1).
+- Self-hosted open-format data substrate containers (Iceberg, Parquet) that Metrology qualifies through ingress quality controls (see §5).
 - Internal data quality frameworks (Great Expectations, Monte Carlo, or custom).
 - Comprehensive quality gates plus observational lineage/provenance over what enters the substrate.
 - Observability for drift, anomaly detection, and statistical profiling.
 - Encrypted, air-gappable datasets with strict egress controls.
 
-Explicitly avoid: Architectures where third-party platforms own the data foundation, quality rules, and lineage through proprietary catalogs.
+Explicitly avoid: Architectures where third-party platforms own the data foundation, quality rules, and lineage in stores the organization cannot export.
 
 ### Layer 2 — Ontology (Study of Being / Reality)
 Philosophical Definition: The study of what exists, the categories of being, and the relationships between entities.
@@ -182,7 +182,7 @@ Scoring Guidance:
 
 - Score 1: Prompt-dependent validation only; model outputs are served directly to users or APIs with zero deterministic cross-checking.
 - Score 3: Basic automated checks exist (e.g., local code linters or flat retrieval checks). Retrieval-Augmented Generation (RAG) surfaces source citations, but lacks cryptographic pipeline validation.
-- Score 5: Advanced cryptographic verification is standard. Pipeline integration validates model configurations using SHA-256 hashes before code execution. Every fact is verified against your sovereign, owned Metrology asset, and verification metadata is continuously indexed in the MOEPA Catalog.
+- Score 5: Advanced cryptographic verification is standard. Pipeline integration validates model configurations using SHA-256 hashes before code execution. Every fact is verified against your sovereign, owned Metrology asset, and verification metadata is stored with that fact on the Data Substrate.
 
 #### Layer 4 — Praxeology Evaluation (Agentic Workflow Boundaries)
 Risk: Uncontrolled agentic loops, destructive autonomous API actions, and untraceable multi-step execution paths.
@@ -193,7 +193,7 @@ Scoring Guidance:
 
 - Score 1: Free-form, autonomous execution loops with zero state-machine tracking; tools are exposed to the LLM via open-ended prompts.
 - Score 3: Agentic logic is bounded by basic sequential code, but lacks a centralized state machine. Human-in-the-loop checkpoints exist but are bypassable.
-- Score 5: The workflow is driven by immutable, deterministic state machines (e.g., LangGraph). Execution follows strict, auditable lifecycles (intake → plan → execute) generating permanent audit trails. State parameters are discoverable and versioned inside the MOEPA Catalog.
+- Score 5: The workflow is driven by immutable, deterministic state machines (e.g., LangGraph). Execution follows strict, auditable lifecycles (intake → plan → execute) generating permanent audit trails. State parameters are versioned on the Data Substrate.
 
 #### Layer 5 — Axiology Evaluation (Governance & Value Alignment)
 Risk: Prompt injection vulnerabilities, alignment drift, and client-side manipulation of organizational guardrails by developers or end-users.
@@ -206,7 +206,7 @@ Scoring Guidance:
 
 - Score 1: Soft constraints only; guidelines are embedded within the system prompt and easily bypassed by sophisticated prompt injections.
 - Score 3: Compliance rules are centralized, but security configuration settings are modifiable by local client environments or developers at the edge.
-- Score 5: Core organizational values, preferred/forbidden verb lists, and security policies are hardcoded into a "Golden Master" configuration file locked via OS-level write constraints (Windows ACLs/icacls or immutable infrastructure policies). Policy code is cryptographically protected and cataloged. In addition, a quantified Business ROI model and approved chargeback/showback mechanism are in place and reviewed at the executive level.
+- Score 5: Core organizational values, preferred/forbidden verb lists, and security policies are hardcoded into a "Golden Master" configuration file locked via OS-level write constraints (Windows ACLs/icacls or immutable infrastructure policies). Policy code is cryptographically protected and versioned. In addition, a quantified Business ROI model and approved chargeback/showback mechanism are in place and reviewed at the executive level.
 
 ### 4.4 Executive Governance & Architecture Review Chain
 
@@ -220,26 +220,11 @@ To support enterprise-scale intake (1,000+ requests) while maintaining sovereign
 2. **Agency Data Platform — ingestion and lineage review** — Data platform engineering validates ingestion approach, lineage, and quality controls (see Metrology data availability requirements).
 3. **Agency Data Platform — capacity and cost review** — Platform owners confirm capacity, cost model integration, and platform-level governance.
 4. **Mission program office** — Owning program confirms operational readiness, ROI assumptions, and acceptance of chargeback/showback obligations.
-5. **Executive Sign-off** — Formal approval by designated executive authority (or governance board) confirming the weighted ROI case, approved cost model, demand management clearance via the MOEPA Catalog, and completion of the preceding chain.
+5. **Executive Sign-off** — Formal approval by designated executive authority (or governance board) confirming the weighted ROI case, approved cost model, a deduplication check against the owned semantic model, and completion of the preceding chain.
 
-This chain ensures that technical feasibility, data reality, platform economics, business ownership, and executive accountability are all explicitly addressed. The MOEPA Catalog serves as the authoritative record of prior decisions to support deduplication at step 1 and throughout the chain.
+This chain ensures that technical feasibility, data reality, platform economics, business ownership, and executive accountability are all explicitly addressed. Prior decisions recorded on the Data Substrate support that deduplication check at step 1 and throughout the chain.
 
-## 5. MOEPA Catalog Architecture (Cross-Cutting Section)
-The MOEPA Catalog is the practical mechanism for owning the brain. It provides discoverability, versioning, governance, and access control across all five layers.
-
-Catalog Implementation Reference: See the layer-by-layer catalog in [catalog/README.md](catalog/README.md) for concrete capabilities, tools, patterns, scoring, and example assets across Metrology, Ontology, Epistemology, Praxeology, and Axiology.
-
-Core Capabilities:
-
-- Semantic and keyword search across data, models, graphs, prompts, workflows, and policies.
-- Full versioning, lineage, and deprecation tracking.
-- Approval workflow integration tied to the Intake Scoring process.
-- Usage analytics and ownership metadata.
-- Role-based access aligned with Layer 5 (Axiology).
-
-Implementation Guidance: Utilize DataHub or a custom-engineered enterprise portal backed by an internally managed Neo4j instance. The catalog must interface directly with internal GitOps and CI/CD pipelines to ensure that whenever an asset's hash or schema changes, the catalog's state updates automatically. This provides an inspection-ready, auditable inventory of the entire agency cognitive footprint.
-
-### 5.1 The MOEPA Data Substrate (Set-Theoretic Backbone)
+## 5. The MOEPA Data Substrate (Set-Theoretic Backbone)
 Set Theory in MOEPA is the representation medium, not a sixth scored layer. The five classical disciplines remain the five scored layers (Metrology, Ontology, Epistemology, Praxeology, Axiology), and the 1–5 per-layer scoring model remains unchanged.
 
 The substrate provides a single SPO/quad backbone (Subject-Predicate-Object, quads with context) plus lakehouse storage where the base triple lives once. Each MOEPA layer attaches layer-specific metadata envelopes (epistemic, praxeological, axiological, etc.) without duplicating the base fact.
@@ -277,7 +262,7 @@ Provenance three-way split (to avoid double-claiming):
 - Metrology: observational provenance (who measured it, against what standard, with what error bounds).
 - Epistemology: justificatory provenance (confidence, warrant, and belief revision over claims).
 
-#### 5.1.1 Per-Layer Storage Mapping
+### 5.1 Per-Layer Storage Mapping
 
 Each MOEPA layer has a natural philosophical and computational representation for its knowledge artifacts. The shared substrate stores the **base triple once**; each layer attaches a **metadata envelope** (or a linked sub-graph) without duplicating the base fact.
 
@@ -325,8 +310,8 @@ policy-governed agent runtimes) discover and invoke tools only through MCP — n
 through direct RAG or data-layer API calls.
 
 - Metrology (Data Foundation): Self-hosted data lakes (MinIO + Iceberg), Great
-  Expectations or Monte Carlo for quality, DataHub for catalog — avoiding
-  external repository/catalog ownership. Semantic document parsing via Docling,
+  Expectations or Monte Carlo for quality, DataHub for metadata and lineage — avoiding
+  a vendor-owned store as the only record of lineage. Semantic document parsing via Docling,
   Unstructured, or equivalent; ingestion outputs Proto-SPOs with provenance
   envelopes, exposed through an MCP ingestion server.
 - Ontology: Neo4j or Amazon Neptune (self-managed), internal schema governance;
@@ -348,7 +333,6 @@ through direct RAG or data-layer API calls.
 - Implement RAG with citation + grounding verification pipeline against owned data (via MCP, not direct API calls).
 - Design deterministic workflow (state machine or auditable step sequence) with MCP-governed tool invocation.
 - Create Golden Master config.yaml and apply OS-level write locks.
-- Register all assets in the MOEPA Catalog.
 - Map all five layers to the MOEPA scorecard and obtain review board sign-off.
 
 ## 7. Success Metrics & Key Performance Indicators
@@ -394,10 +378,10 @@ High vendor dependency on data and semantic layers.
 ### Claude (Default, no custom guardrails)
 Metrology: 2 | Ontology: 2 | Epistemology: 3 | Praxeology: 2 | Axiology: 3
 
-### Local Llama 3.1 70B + Guardrails AI + LangGraph + Internal Catalog
+### Local Llama 3.1 70B + Guardrails AI + LangGraph + owned substrate
 Metrology: 5 | Ontology: 5 | Epistemology: 5 | Praxeology: 5 | Axiology: 5
 
-Full internal ownership across layers + Catalog discoverability.
+Full internal ownership across layers, with records kept on the Data Substrate.
 
 ### RAG over internal knowledge graph + deterministic workflow + self-hosted data lake
 Metrology: 5 | Ontology: 5 | Epistemology: 5 | Praxeology: 5 | Axiology: 4

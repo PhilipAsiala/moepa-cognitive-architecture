@@ -168,6 +168,5 @@ Use these five questions as a rapid evaluation tool in any AI briefing:
 
 - Use the [5-Layer Evaluation Checklist](5-Layer-Evaluation-Checklist.md) to formally score a proposal
 - Review the [Own vs. Rent Strategy](Owned-vs-Rented-AI-Strategy.md) to understand which layers must be owned
-- Explore the [Catalog](../catalog/README.md) for capabilities, tools, patterns, scoring, and cross-layer compositions
 - Read [Business Value](business-value.md) for the investment case
 - Architects: read the [Full Architecture Specification](../ARCHITECTURE.md) and [Governance Guidelines](MOEPA-Architectural-Governance-and-Evolution-Guidelines.md) for implementation depth

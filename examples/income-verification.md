@@ -163,7 +163,5 @@ Result: When a constituent challenges the decision, or oversight demands documen
 
 ## Related Documents
 
-- [Epistemology](../catalog/epistemology/README.md) (or [capabilities](../catalog/epistemology/capabilities.md)) — confidence scoring and verification
-- [Praxeology](../catalog/praxeology/README.md) (or [capabilities](../catalog/praxeology/capabilities.md)) — workflow routing and human oversight
-- [Cross-Layer Compositions](../catalog/cross-layer-compositions.md) — Composition 2 (High-Confidence Automated Processing)
+- [MOEPA 5-Layer Framework](../docs/MOEPA-5-Layer-Framework.md) — verification and workflow questions for this scenario
 - [5-Layer Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md) — how this scenario would score

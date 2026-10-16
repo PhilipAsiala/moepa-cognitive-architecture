@@ -14,7 +14,7 @@ This handout is for senior executives, CIOs, and mission leaders in public insti
 
 Oversight bodies (inspectors general, audit offices, legislatures) ask for accuracy, equity, and a record of how a determination was reached. Many platforms keep that record in a vendor cloud, in model logic the agency cannot inspect, or in an audit trail written for a sales review.
 
-The **Philosophical AI Architecture** is the control frame: an agency-owned knowledge library (the **Data Substrate**) plus the **MOEPA Catalog**. The **MOEPA 5-Layer Framework** — Metrology (measurement), Ontology (shared definitions), Epistemology (verification), Praxeology (action), and Axiology (value constraints) — is the go/no-go intake rubric inside that frame. Using it changes procurement and operations:
+The **Philosophical AI Architecture** is the control frame: an agency-owned knowledge library (the **Data Substrate**) and the **MOEPA 5-Layer Framework** — Metrology (measurement), Ontology (shared definitions), Epistemology (verification), Praxeology (action), and Axiology (value constraints) — as the go/no-go intake rubric. Using it changes procurement and operations:
 
 - A proposal is scored before investment, while exit is still practical.
 - Predictive outputs (match confidence, risk flags, forecasts) are stored separately from generative outputs (explanations, summaries, recommendations). Both cite agency evidence.
@@ -29,7 +29,7 @@ Adoption stays on the agency's terms: clear ownership, explainable decisions, an
 
 ### What MOEPA Is
 
-The MOEPA 5-Layer Framework is built on five classical disciplines of human reasoning, translated into five leadership responsibilities for AI governance. The acronym stands for **Metrology, Ontology, Epistemology, Praxeology, and Axiology**—in that order, from the data foundation up through value governance. Area leaders must prove how their project enriches the MOEPA Catalog across all five layers. Black-box vendor solutions that cannot map to the framework fail intake by design.
+The MOEPA 5-Layer Framework is built on five classical disciplines of human reasoning, translated into five leadership responsibilities for AI governance. The acronym stands for **Metrology, Ontology, Epistemology, Praxeology, and Axiology**—in that order, from the data foundation up through value governance. Area leaders map the project to all five layers. A proposal that cannot be mapped does not pass intake.
 
 Each layer answers a distinct question public sector leadership must be able to answer about any AI system the organization operates or procures.
 
@@ -61,13 +61,13 @@ Leaders do not need to understand every technical implementation detail. They do
 
 ### What the Substrate Is
 
-Beneath all five scored MOEPA layers sits a single, cross-cutting foundation: the **MOEPA Data Substrate**. It is the agency's owned knowledge library—the persistent catalog of facts, relationships, and decisions that all five layers write to and read from.
+Beneath all five scored MOEPA layers sits a single, cross-cutting foundation: the **MOEPA Data Substrate**. It is the agency's owned knowledge library—the persistent record of facts, relationships, and decisions that all five layers write to and read from.
 
-The substrate is **not a sixth scored layer**. It is the agency's owned knowledge library — the single place where facts, decisions, and audit records live so every layer can trace back to the same source of truth. Think of it as the agency's own library stacks: the five layers are the reading rooms that specialize in different kinds of reasoning, but every volume lives in the same owned, catalogued archive.
+The substrate is **not a sixth scored layer**. It is the agency's owned knowledge library — the single place where facts, decisions, and audit records live so every layer can trace back to the same source of truth. Think of it as the agency's own library stacks: the five layers are the reading rooms that specialize in different kinds of reasoning, but every volume lives in the same owned archive.
 
 **Business outcome:** When oversight asks *"How did you reach this determination?"* the answer is one owned record — not a vendor dashboard. Metrology stamps how the data was measured. Epistemology records what was verified and with what confidence. Praxeology logs who approved what action. Axiology records which rights and policy rules applied. One fact; one audit trail; complete accountability.
 
-*Technical storage design (SPO/quad models, open formats, federation) is documented in [Data Substrate Concept](Data-Substrate-Concept.md) and [ARCHITECTURE.md §5.1](../ARCHITECTURE.md) for architects — not required reading for executive review.*
+*Technical storage design (SPO/quad models, open formats, federation) is documented in [Data Substrate Concept](Data-Substrate-Concept.md) and [ARCHITECTURE.md §5](../ARCHITECTURE.md) for architects — not required reading for executive review.*
 
 ### Why This Matters for Public Sector Ownership
 
@@ -91,7 +91,7 @@ The substrate is how an audit trail stays in agency hands. When an IG, GAO revie
 
 ### The Evaluation Model
 
-Every AI procurement request, internal use case, or vendor proposal can be scored against the five MOEPA layers using the repo's existing **1–5 scale with GO / CONDITIONAL GO / NO-GO decision bands** (see [ARCHITECTURE.md §4.2](../ARCHITECTURE.md) and the [catalog scoring guides](../catalog/README.md) for full rubric detail).
+Every AI procurement request, internal use case, or vendor proposal can be scored against the five MOEPA layers using the repo's existing **1–5 scale with GO / CONDITIONAL GO / NO-GO decision bands** (see [ARCHITECTURE.md §4.2](../ARCHITECTURE.md) and the [evaluation checklist](5-Layer-Evaluation-Checklist.md) for the rubric).
 
 **Decision bands:**
 - **NO-GO:** Any layer scores 1 or 2 — automatic NO-GO; remediation required before re-submission
@@ -143,7 +143,7 @@ The lowest layer score sets the recommendation band. A system with four perfect 
 
 ### The End-to-End Worked Example: Income Verification
 
-The following illustrates all five layers and the substrate working together on a real federal use case. This example is consistent with [ARCHITECTURE.md §5.1](../ARCHITECTURE.md).
+The following illustrates all five layers and the substrate working together on a real federal use case. This example is consistent with [ARCHITECTURE.md §5](../ARCHITECTURE.md).
 
 **Scenario:** The agency needs to verify a constituent's reported income of $85,000 for a benefit determination.
 
@@ -305,17 +305,14 @@ If the agency is currently operating on a large-vendor platform (data lakehouse 
 | MCP Integration (cross-cutting) | Model Context Protocol servers and facades — sole orchestrator interface |
 | Semantic Document Parsing (Metrology) | Docling, Unstructured — Proto-SPO ingestion, not chainsaw chunking |
 | Graph / Triple Store (Ontology + Substrate) | Apache Jena, TerminusDB, ArcadeDB, Neo4j Community |
-| Lakehouse Storage (Substrate) | Apache Iceberg + Polaris Catalog, Apache Parquet |
+| Lakehouse Storage (Substrate) | Apache Iceberg, Apache Parquet |
 | Data Quality and Observability (Metrology) | Great Expectations, Monte Carlo (open tier), Apache Griffin |
 | Provenance Tracking (Epistemology) | W3C PROV-O libraries, OpenLineage |
 | Workflow Orchestration (Praxeology) | Apache Airflow, LangGraph (open), Prefect |
 | Policy-as-Code (Axiology) | Open Policy Agent (OPA), Gatekeeper |
-| Catalog / Discoverability (Cross-cutting) | Apache Atlas, DataHub (open tier) |
 
 ---
 
 *For the industry-neutral companion to this guide — enterprise, nonprofit, and commercial organizations — see [moepa-business-leaders-guide.md](moepa-business-leaders-guide.md).*
 
-*For the full technical specification, including the MOEPA scoring rubric (§4.2), the Data Substrate definition (§5.1), per-layer evaluation criteria (§4.3), and architectural evolution principles (§5.2), see [ARCHITECTURE.md](../ARCHITECTURE.md).*
-
-*For the layer-by-layer catalog with capabilities and scoring (leaders) and tools (architects), see [catalog/README.md](../catalog/README.md).*
+*For the full technical specification, including the MOEPA scoring rubric (§4.2), the Data Substrate definition (§5), per-layer evaluation criteria (§4.3), and architectural evolution principles (§5.2), see [ARCHITECTURE.md](../ARCHITECTURE.md).*

@@ -13,14 +13,14 @@
 | **Disciplines describe outcomes** | Metrology = trusted measurement. Ontology = shared reality. Epistemology = defensible truth. Praxeology = accountable action. Axiology = enforced values. |
 | **Leaders ask ownership questions** | Every layer reduces to: *Do we own this outcome, or does a vendor?* |
 | **Technology follows** | Stack choices, protocols, and implementation patterns belong in builder documents — not executive briefings, leader guides, or the README's primary narrative. |
-| **One vocabulary per audience** | Executives hear mission, risk, auditability, and ROI. Architects hear substrates, interfaces, and catalogs. Never mix the two in the same paragraph. |
+| **One vocabulary per audience** | Executives hear mission, risk, auditability, and ROI. Architects hear substrates and interfaces. Never mix the two in the same paragraph. |
 
 ### Document tiers
 
 | Tier | Audience | Lead with | Technical depth |
 |---|---|---|---|
 | **Leader-facing** | Executives, program managers, acquisition | Business outcomes per MOEPA layer; ownership questions; use-case walkthroughs | None in body copy — link to builder tier |
-| **Builder-facing** | Architects, engineers, reviewers | Engineering translation of each layer; substrate end state; tool patterns | Full — `ARCHITECTURE.md`, governance guidelines, catalog tools |
+| **Builder-facing** | Architects, engineers, reviewers | Engineering translation of each layer; substrate end state; tool patterns | Full — `ARCHITECTURE.md` and governance guidelines |
 | **Contributor** | Doc authors, RFC proposers | Pitch strategy + business-first test before adding technical detail | Scoped to the tier being edited |
 
 If a leader-facing document mentions MCP, RAG, Iceberg, LangGraph, or similar before stating the business outcome that layer protects, rewrite it.
@@ -71,11 +71,10 @@ Never conflate the overarching system with the operational tool.
 
 | Term | What it is | When to use it |
 |---|---|---|
-| **Philosophical AI Architecture** | The overarching enterprise ecosystem: Data Substrate, MOEPA Catalog, security guardrails, own-vs-rent strategy, and cognitive control plane | Pitching the whole system; README; strategic docs |
+| **Philosophical AI Architecture** | The overarching enterprise ecosystem: Data Substrate, security guardrails, own-vs-rent strategy, and cognitive control plane | Pitching the whole system; README; strategic docs |
 | **MOEPA 5-Layer Framework** | The operational engineering blueprint and governance engine *inside* the architecture: five layers, intake scoring, GO / CONDITIONAL GO / NO-GO rubric | Engineering translation; project intake; layer-by-layer evaluation |
-| **MOEPA Cognitive Architecture** | The technical stack specification: storage mapping, catalog integration, recommended tools, implementation playbook | `ARCHITECTURE.md`; architects and builders |
+| **MOEPA Cognitive Architecture** | The technical stack specification: storage mapping, recommended tools, implementation playbook | `ARCHITECTURE.md`; architects and builders |
 | **Data Substrate** | The organization-owned knowledge library — truth, values, rules, and lineage in open formats | Always a physical metaphor; never a "vendor database" |
-| **MOEPA Catalog** | The routing and governance catalog — discoverability, deduplication, versioning, intake evidence | Enterprise and public sector intake lever; demand management |
 
 ---
 
@@ -101,7 +100,7 @@ Introduce the **MOEPA 5-Layer Framework** as their engineering blueprint — not
 
 **The hook:** Vendors sell compelling demos. Your organization needs a framework that separates what you must own from what you can rent.
 
-**The governance lever:** Position the **MOEPA 5-Layer Framework** as the organization's go/no-go project intake rubric. Leaders must prove how each proposal enriches the **MOEPA Catalog**. Black-box vendor solutions that cannot map to all five layers are rejected by design.
+**The governance lever:** Position the **MOEPA 5-Layer Framework** as the organization's go/no-go project intake rubric. A proposal that cannot be mapped to all five layers does not pass intake.
 
 **The own-vs-rent strategy:** The organization owns the **Data Substrate** — the truth, the values, the rules. Rent commercial LLMs and compute. Institutional knowledge stays portable when the substrate is owned and contracts require export. Lock-in returns if those conditions are skipped.
 
@@ -113,7 +112,7 @@ Introduce the **MOEPA 5-Layer Framework** as their engineering blueprint — not
 
 **The hook:** You cannot govern an AI mind with standard IT infrastructure metrics. You need a **cognitive control plane**.
 
-**The governance lever:** Position the **MOEPA 5-Layer Framework** as the organization's go/no-go project intake rubric. Area leaders must prove how their project enriches the **MOEPA Catalog**. Black-box vendor solutions that cannot map to all five layers are rejected by design.
+**The governance lever:** Position the **MOEPA 5-Layer Framework** as the organization's go/no-go project intake rubric. A proposal that cannot be mapped to all five layers does not pass intake.
 
 **The own-vs-rent strategy:** The institution owns the **Data Substrate** — the truth, the values, the rules. Rent commercial LLMs and compute. A model or vendor change does not, by itself, move the rules, the data, or the audit trail, provided the substrate is owned and export terms are real.
 
@@ -127,9 +126,9 @@ Introduce the **MOEPA 5-Layer Framework** as their engineering blueprint — not
 
 - **Business first:** State the outcome each MOEPA layer protects before any implementation detail. If the reader is a leader, stop when the ownership question is answered.
 - **Voice:** Direct and specific. Executive-to-executive for leaders; engineer-to-engineer only in builder-tier documents. Confident, and neutral about results the design has not yet demonstrated.
-- **Clarity:** Ground abstract philosophy in physical metaphors — Data Substrate, Control Plane, Management Lever, Catalog — and define each specialist term on first use.
+- **Clarity:** Ground abstract philosophy in physical metaphors — Data Substrate, Control Plane, Management Lever — and define each specialist term on first use.
 - **Actionable output:** Leader guides and examples must show how philosophical disciplines change a decision, a workflow, or an audit — not only how the stack is drawn.
-- **Technical containment:** MCP, semantic ingestion, and substrate storage patterns belong in `ARCHITECTURE.md`, governance guidelines, and catalog **tools** — not in README intros, leader handouts, or executive summaries.
+- **Technical containment:** MCP, semantic ingestion, and substrate storage patterns belong in `ARCHITECTURE.md` and the governance guidelines — not in README intros, leader handouts, or executive summaries.
 - **Readability:** Apply the [readability standard](#readability-standard-every-document) in §0 to every new or revised page.
 
 ---

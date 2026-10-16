@@ -28,7 +28,7 @@ Never conflate the overarching system with the operational tool.
 
 | Term | What it is | Where to find it |
 |---|---|---|
-| **Philosophical AI Architecture** | The full ecosystem: Data Substrate, Catalog, guardrails, own-vs-rent strategy, cognitive control plane | This README, [pitch strategy](docs/pitch-strategy.md), [glossary](docs/glossary.md) |
+| **Philosophical AI Architecture** | The full ecosystem: Data Substrate, guardrails, own-vs-rent strategy, cognitive control plane | This README, [pitch strategy](docs/pitch-strategy.md), [glossary](docs/glossary.md) |
 | **MOEPA 5-Layer Framework** | The engineering blueprint and governance engine inside the architecture: five layers, intake scoring, GO / CONDITIONAL GO / NO-GO | [5-Layer Framework for Leaders](docs/MOEPA-5-Layer-Framework.md), [Evaluation Checklist](docs/5-Layer-Evaluation-Checklist.md) |
 | **MOEPA Cognitive Architecture** | The technical stack specification: storage mapping, tools, implementation playbook | [ARCHITECTURE.md](ARCHITECTURE.md) |
 
@@ -97,7 +97,7 @@ graph TB
 
 *For engineering translation (graphs, workflows, guardrails, storage), see [MOEPA 5-Layer Framework](docs/MOEPA-5-Layer-Framework.md) and [ARCHITECTURE.md](ARCHITECTURE.md).*
 
-**The Data Substrate** is the organization-owned knowledge library — truth, values, rules, and lineage in one place that all five layers read from and write to. **The MOEPA Catalog** is how leadership proves what the institution already owns and what new projects must enrich. See [Data Substrate Concept](docs/Data-Substrate-Concept.md) for the business design; technical end-state detail is in [ARCHITECTURE.md](ARCHITECTURE.md) §5.1.
+**The Data Substrate** is the organization-owned knowledge library — truth, values, rules, and lineage in one place that all five layers read from and write to. Intake uses that library, plus the five-layer score, to show what the institution already owns and what a new project must add. See [Data Substrate Concept](docs/Data-Substrate-Concept.md) for the business design; technical end-state detail is in [ARCHITECTURE.md](ARCHITECTURE.md) §5.
 
 ---
 
@@ -121,7 +121,7 @@ These scenarios are for any organization that must defend an AI decision to a cu
 
 **Enterprise and commercial:**
 - **Loan and credit underwriting** — Can you explain a risk score to a customer or compliance reviewer?
-- **AI project intake scoring** — Does every proposal prove catalog enrichment across all five layers?
+- **AI project intake scoring** — Does every proposal map to all five layers, with evidence?
 - **Customer service automation** — Can an agent audit exactly why the AI escalated or denied a request?
 - **Fraud and risk detection** — Are scores based on your data and definitions, or the vendor's?
 
@@ -149,7 +149,6 @@ Detailed walkthroughs: [examples/](examples/)
 1. [ARCHITECTURE.md](ARCHITECTURE.md) — MOEPA Cognitive Architecture technical spec
 2. [Architectural Governance and Evolution Guidelines](docs/MOEPA-Architectural-Governance-and-Evolution-Guidelines.md) — implementation evolution rules
 3. [Data Substrate Concept](docs/Data-Substrate-Concept.md) — knowledge library design
-4. [Catalog](catalog/README.md) — capabilities, tools, patterns, scoring by layer
 
 **Presenting the architecture:**
 - [Pitch Strategy](docs/pitch-strategy.md) — audience hooks, terminology, tone rules
@@ -176,7 +175,6 @@ ARCHITECTURE.md                    ← MOEPA Cognitive Architecture (technical s
 │   ├── glossary.md                        ← Term definitions
 │   └── layer-diagram.md                   ← Stack diagram
 │
-├── catalog/                               ← MOEPA Catalog (capabilities, tools, scoring)
 ├── diagrams/                              ← Architecture diagrams
 └── examples/                              ← Scenario walkthroughs (public-sector scenarios)
 ```
@@ -195,7 +193,6 @@ ARCHITECTURE.md                    ← MOEPA Cognitive Architecture (technical s
 | [Evaluation Checklist](docs/5-Layer-Evaluation-Checklist.md) | Program managers | Intake scoring GO / CONDITIONAL / NO-GO |
 | [Own vs. Rent Strategy](docs/Owned-vs-Rented-AI-Strategy.md) | CXOs, procurement | Own substrate, rent LLMs and compute |
 | [Data Substrate Concept](docs/Data-Substrate-Concept.md) | Architects | Organization-owned knowledge library |
-| [Catalog](catalog/README.md) | Leaders + technical teams | MOEPA Catalog — capabilities, deduplication, scoring |
 | [Glossary](docs/glossary.md) | All readers | Philosophical AI Architecture term hierarchy |
 | [MOEPA Cognitive Architecture Spec](ARCHITECTURE.md) | Architects / CTO | Technical stack and implementation playbook |
 

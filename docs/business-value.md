@@ -46,13 +46,13 @@ It helps answer questions such as:
 - Does it lower dependency on external platforms?
 - Does it improve governance, auditability, or traceability?
 - Does it compound value across multiple teams or projects?
-- Does it support reuse through a shared catalog and scoring model?
+- Does it support reuse through the shared five-layer scoring model?
 
 ## Practical Interpretation
 
 If an AI initiative only improves productivity through a vendor-hosted interface, it may create convenience but limited ownership.
 
-If an AI initiative creates reusable internal data structures, verification gates, governed workflows, and cataloged policy assets, it creates durable enterprise value.
+If an AI initiative creates reusable internal data structures, verification gates, governed workflows, and versioned policy assets, it creates durable enterprise value.
 
 ## What to do next
 

@@ -2,7 +2,7 @@
 
 > For program managers and governance reviewers scoring a proposal before funding, procurement, or scale-up. Completing it changes the decision from a feature review to **GO**, **CONDITIONAL GO**, or **NO-GO**, with the gaps named.
 
-Proposers show how the work enriches the MOEPA Catalog. A proposal that cannot be mapped to all five layers does not pass intake. A proposal must score at least 3 on every layer for conditional approval, and at least 4 on every layer for full approval.
+A proposal that cannot be mapped to all five layers does not pass intake. A proposal must score at least 3 on every layer for conditional approval, and at least 4 on every layer for full approval.
 
 On first use: **Metrology** is measurement and telemetry; **Ontology** is shared definitions; **Epistemology** is verification; **Praxeology** is action and human checkpoints; **Axiology** is value and priority constraints. Score predictive outputs (risk scores, forecasts, match confidence) and generative outputs (summaries, explanations, recommendations) against the same layers. A score still needs a source. A written recommendation on a consequential case still needs a human checkpoint.
 
@@ -237,5 +237,4 @@ In addition to per-layer scores, technical reviewers verify the proposal satisfi
 - [MOEPA 5-Layer Framework](MOEPA-5-Layer-Framework.md) — detailed per-layer leadership questions
 - [Architectural Governance Guidelines](MOEPA-Architectural-Governance-and-Evolution-Guidelines.md) — technical supplement for architects
 - [Owned vs. Rented Strategy](Owned-vs-Rented-AI-Strategy.md) — ownership decision framework
-- [Catalog](../catalog/README.md) — single holistic source for capabilities, tools, patterns, scoring, and governance (the full rubric lives in the per-layer scoring guides)
 - [Architecture Specification](../ARCHITECTURE.md) — technical specification of scoring criteria

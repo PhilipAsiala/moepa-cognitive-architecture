@@ -9,7 +9,7 @@ Closes #
 ## Change type
 
 - [ ] Documentation / narrative
-- [ ] Catalog or scoring
+- [ ] Scoring rubric
 - [ ] Architecture spec
 - [ ] Repository policy or automation
 

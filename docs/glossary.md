@@ -2,11 +2,11 @@
 
 ## Business First
 
-The repository's primary communication rule: MOEPA philosophical disciplines describe **business outcomes** leaders must own (trusted data, shared meaning, verifiable truth, governed action, enforced values). Technical implementation detail belongs in builder-tier documents (`ARCHITECTURE.md`, governance guidelines, catalog tools). See [pitch strategy §0](pitch-strategy.md), including the readability standard that applies to every page.
+The repository's primary communication rule: MOEPA philosophical disciplines describe **business outcomes** leaders must own (trusted data, shared meaning, verifiable truth, governed action, enforced values). Technical implementation detail belongs in builder-tier documents (`ARCHITECTURE.md` and the governance guidelines). See [pitch strategy §0](pitch-strategy.md), including the readability standard that applies to every page.
 
 ## Philosophical AI Architecture
 
-The overarching enterprise ecosystem for governing machine intelligence: the **Data Substrate**, **MOEPA Catalog**, security guardrails, own-vs-rent strategy, and cognitive control plane. It decodes Intelligence — not just Artificial infrastructure — by mapping human cognitive functions (Cognition, Affect, Conation) into strict, governable software. **Philosophical AI Architecture** is the canonical name for the whole system. This repository is its reference specification.
+The overarching enterprise ecosystem for governing machine intelligence: the **Data Substrate**, security guardrails, own-vs-rent strategy, and cognitive control plane. It decodes Intelligence — not just Artificial infrastructure — by mapping human cognitive functions (Cognition, Affect, Conation) into strict, governable software. **Philosophical AI Architecture** is the canonical name for the whole system. This repository is its reference specification.
 
 ## MOEPA 5-Layer Framework
 
@@ -14,7 +14,7 @@ The operational engineering blueprint and governance engine *inside* the Philoso
 
 ## MOEPA Cognitive Architecture
 
-The technical stack design within the Philosophical AI Architecture, as specified in [ARCHITECTURE.md](../ARCHITECTURE.md): layer implementations, Data Substrate storage mapping, catalog integration, recommended technology stack, and implementation playbook.
+The technical stack design within the Philosophical AI Architecture, as specified in [ARCHITECTURE.md](../ARCHITECTURE.md): layer implementations, Data Substrate storage mapping, recommended technology stack, and implementation playbook.
 
 ## Cognition, Affect, Conation
 
@@ -55,13 +55,9 @@ The acronym for the five layers at the heart of the MOEPA 5-Layer Framework:
 - Praxeology: purposeful action and workflow governance
 - Axiology: value, ethics, and policy alignment
 
-## MOEPA Catalog
-
-The routing and governance catalog inside the Philosophical AI Architecture — for discovering, versioning, deduplicating, and auditing assets across all five layers. Enterprise and public sector intake requires leaders to prove how a project enriches this catalog.
-
 ## Owned Brain
 
-The organization owns its Data Substrate, semantic models, validation rules, policy controls, and catalog — rather than outsourcing them to a vendor.
+The organization owns its Data Substrate, semantic models, validation rules, and policy controls — rather than outsourcing them to a vendor.
 
 ## Rented Compute
 
@@ -73,7 +69,7 @@ A locked configuration baseline used in the axiological layer to preserve policy
 
 ## Cognitive Control Plane
 
-The combined governance surface — MOEPA 5-Layer Framework intake scoring, MOEPA Catalog deduplication, and Data Substrate ownership — that lets leadership govern an AI mind without relying on standard IT infrastructure metrics alone.
+The combined governance surface — MOEPA 5-Layer Framework intake scoring and Data Substrate ownership — that lets leadership govern an AI mind without relying on standard IT infrastructure metrics alone.
 
 ## Model Context Protocol (MCP)
 
