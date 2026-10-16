@@ -13,20 +13,23 @@ Repository: [philosophical-ai-architecture](https://github.com/PhilipAsiala/phil
 > **Naming.** This document specifies the **MOEPA Cognitive Architecture** — the technical stack design within the **Philosophical AI Architecture**. For the engineering blueprint and intake scoring, see the **MOEPA 5-Layer Framework** in [docs/](docs/). For pitching and narrative alignment, see [pitch strategy](docs/pitch-strategy.md). Term definitions: [glossary](docs/glossary.md).
 
 ## Executive Summary: The Owned-Brain Strategy
-The industry obsesses over the Artificial — compute, LLMs, infrastructure — and treats Intelligence as a black box. The Philosophical AI Architecture opens that box by mapping human cognitive functions (Cognition, Affect, Conation) into strict, governable software.
 
-The MOEPA Cognitive Architecture (Metrology, Ontology, Epistemology, Praxeology, and Axiology) implements this with rigorous engineering and philosophical symmetry. Organizations achieve an Asset-Light, Owned-Brain Strategy:
+This specification is for architects and engineers implementing a decision leaders have already framed: what the organization owns, and what it rents. Leader-facing language and the readability standard are in [pitch strategy](docs/pitch-strategy.md) §0.
 
-- Rent the Muscles (Compute): Raw hardware execution (VPC, compute clusters, GPUs) is treated as a highly interchangeable, variable-cost commodity.
-- Own the Brain (Intellectual Property): The organizational intelligence—semantic knowledge graphs, cryptographic validation models, ethical guardrails, and mission alignment—is 100% proprietary, portable, and locked down as core intellectual property.
+The MOEPA Cognitive Architecture (**Metrology**, measurement; **Ontology**, shared definitions; **Epistemology**, verification; **Praxeology**, action; **Axiology**, value constraints) is the technical layer of the Philosophical AI Architecture. It maps three jobs into software: **Cognition** (knowing), **Affect** (valuing), and **Conation** (acting).
 
-Key Principle: The MOEPA Cognitive Architecture is the technical implementation layer of the Philosophical AI Architecture — built for enterprise environments that demand sovereignty, explainability, and measurable governance over AI systems.
+- **Rent the muscles (compute).** Hardware execution (VPC, clusters, GPUs) is treated as interchangeable, variable-cost capacity, with exit terms.
+- **Own the brain (intellectual property).** Knowledge graphs, validation models, ethical guardrails, and mission rules stay portable and access-controlled. They are core intellectual property when the organization can export and audit them. A vendor-hosted copy of the same assets does not meet that test.
+
+Predictive components (scores, confidence, quality gates) and generative components (retrieved answers, summaries, recommendations) both write to the owned substrate and pass the same policy checks.
+
+Key principle: this document is the implementation layer for environments that need sovereignty, explainability, and governance that can be measured. It is a draft specification, not a deployed system.
 
 ## 1. The Owned-Brain Strategy — Core Principles
 ### 1.1 Why This Matters Now
-The rapid proliferation of agentic AI, multimodal models, and open-weight ecosystems creates both unprecedented opportunity and systemic risk. Organizations that fail to establish architectural sovereignty risk:
+Agentic AI, multimodal models, and open-weight ecosystems add both capability and risk. Organizations that do not keep ownership of data, definitions, verification, workflows, and policy face:
 
-- Permanent vendor lock-in and escalating OPEX.
+- Vendor lock-in that becomes expensive to unwind, and operating cost that rises with use.
 - Uncontrolled data exfiltration and compliance violations.
 - Inability to audit or explain high-stakes decisions.
 - Erosion of institutional knowledge as models drift.

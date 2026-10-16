@@ -1,6 +1,6 @@
 # Documentation
 
-This repository is the canonical reference for the **Philosophical AI Architecture** — a draft ecosystem for governing machine intelligence, not a finished product or deployed system.
+This repository is the canonical reference for the **Philosophical AI Architecture** — a draft frame for deciding what an organization owns in an AI system. It is not a finished product or a deployed system. Every page follows the [readability standard](pitch-strategy.md#readability-standard-every-document) in the pitch strategy.
 
 ## Start Here
 

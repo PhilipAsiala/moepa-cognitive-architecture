@@ -1,6 +1,6 @@
 # The Data Substrate: Your Organization's Unified Knowledge Library
 
-> The Data Substrate is the agency-owned knowledge library that all five MOEPA layers read from and write to — truth, values, rules, and lineage in open formats. It is not a scored layer. It is the organizational memory that makes the entire Philosophical AI Architecture coherent and auditable.
+> For leaders who need one place an audit can start, and for architects who design that place. The **Data Substrate** is the organization-owned knowledge library that all five MOEPA layers read from and write to — truth, values, rules, and lineage in open formats. It is not a scored layer. Owning it means a determination can be reconstructed from the organization's own records.
 
 ---
 
@@ -8,13 +8,13 @@
 
 Imagine your organization's knowledge as a library. Five departments — measurement science, domain modeling, fact verification, workflow management, and ethics compliance — all need to use and contribute to that library. 
 
-Without a shared library, each department maintains its own filing system, uses different terminology, and has no way to cross-reference. Audits become impossible. Knowledge is siloed. When staff leave or vendors change, institutional memory disappears.
+Without a shared library, each department keeps its own filing system and its own terminology. Cross-reference fails. An audit has to visit every system. When staff leave or vendors change, the record leaves with them.
 
 The **Data Substrate** is the design for that shared library. It is a unified, open-format knowledge store that:
 - Every MOEPA layer reads from to ground its work in organizational fact
 - Every MOEPA layer writes to when it produces verified knowledge
 - Carries full provenance, lineage, and version history for everything stored in it
-- Is owned entirely by your organization — not by any vendor
+- Is owned by your organization, in formats you can export without the vendor
 
 ---
 

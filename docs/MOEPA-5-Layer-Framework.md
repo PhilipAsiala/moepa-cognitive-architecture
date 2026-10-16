@@ -1,14 +1,14 @@
 # The MOEPA 5-Layer Framework for Leaders
 
-> The engineering blueprint inside the Philosophical AI Architecture — one key question per layer that every leader and engineer must be able to answer. This document defines the **MOEPA 5-Layer Framework**. See the [Glossary](glossary.md) and [Pitch Strategy](pitch-strategy.md).
+> For leaders who must approve, pause, or reject an AI proposal, and for the engineers who implement that decision. Each layer is one question to answer with evidence before funding. This document defines the **MOEPA 5-Layer Framework**. See the [Glossary](glossary.md) and [Pitch Strategy](pitch-strategy.md).
 
 ---
 
 ## Why Five Layers?
 
-When government agencies adopt AI systems, decisions about data, meaning, facts, workflows, and values are all being made somewhere — often inside vendor platforms, by technical teams, or by default. MOEPA makes those decisions visible and puts leadership in charge of them.
+When an organization adopts an AI system, decisions about data, meaning, facts, workflows, and values are made somewhere — inside a vendor platform, by a technical team, or by default. MOEPA makes those decisions visible and assigns them to leadership. The examples below use public-sector stakes because the audit demand is high. The same questions apply to any regulated or high-impact business process.
 
-Each of the five layers represents a distinct domain of organizational control over an AI system. Weakness in any single layer undermines the entire system.
+Each layer is one domain of control. A weak layer limits what the others can defend. The operational effect of scoring all five is a single intake decision: proceed, proceed with named controls, or stop.
 
 The layers are numbered from foundation to governance:
 
@@ -126,7 +126,7 @@ The layers are numbered from foundation to governance:
 
 ## Layer 5 — Axiology: Values, Ethics, and Mission Alignment
 
-**Plain English:** Axiology is the study of value — what matters, what should be preserved, and what is unacceptable. In AI terms, it is about whether your agency's values, compliance requirements, and ethical constraints are hard-coded into the system and cannot be bypassed.
+**Plain English:** Axiology is the study of value — what matters, what should be preserved, and what is unacceptable. In AI terms, it is whether the organization's values and compliance rules are enforced by the system. A prompt edit alone should not turn them off. That enforcement still has to be tested; an untested rule is only a claim.
 
 **Why it matters to government leaders:** AI systems optimize for the objectives they are given. If those objectives are set by a vendor, or if guardrails are only soft guidelines embedded in prompts, they can drift or be bypassed. Government agencies have statutory obligations, constitutional constraints, and public trust responsibilities that must be non-negotiable — not best-effort.
 
@@ -134,7 +134,7 @@ The layers are numbered from foundation to governance:
 - Prohibited actions (e.g., sharing PII, bypassing appeal rights) are enforced at the infrastructure level, not just in prompts
 - The system's value constraints are documented, version-controlled, and auditable
 - Compliance requirements (e.g., Privacy Act, ADA, FOIA) are explicitly encoded
-- The system cannot be "jailbroken" by a sophisticated user to bypass agency policy
+- Attempts to bypass policy (including prompt attacks) are tested, and failures are logged rather than assumed away
 - Values are tested and verified regularly, not assumed
 
 **What poor looks like:**

@@ -1,6 +1,8 @@
 # MOEPA Catalog
 
-The MOEPA Catalog is the routing and governance catalog inside the Philosophical AI Architecture. It helps leaders set priorities, evaluate AI proposals, manage risk, ensure sovereignty, and make GO, CONDITIONAL, or NO-GO investment decisions using the MOEPA 5-Layer Framework scoring model. Enterprise and public sector intake requires leaders to prove catalog enrichment — black-box vendor solutions that cannot map to the catalog fail by design.
+The **MOEPA Catalog** is for leaders who fund AI work and for the architects who build it. It is the inventory inside the Philosophical AI Architecture: what the organization already owns, and what a new proposal must add. Leaders use it to reach **GO**, **CONDITIONAL GO**, or **NO-GO**. A proposal that cannot be mapped to the catalog does not pass intake.
+
+**Metrology** is measurement, **Ontology** is shared definitions, **Epistemology** is verification, **Praxeology** is action, and **Axiology** is value constraints. Predictive capabilities (scores, forecasts, quality gates) and generative capabilities (answers, summaries, recommendations) sit under those layers. Intake uses the operational effect of each one: bad data stopped before use, an answer that cites a record, or a human checkpoint before action.
 
 It also serves technical architects, program managers, and designers by providing detailed capability descriptions, recommended self-hosted and open tools, proven patterns, and cross-layer compositions — all organized by the five MOEPA layers plus the Data Substrate foundation.
 
