@@ -2,9 +2,13 @@
 
 ## What This Is
 
-The **Philosophical AI Architecture** decodes Intelligence into governable software — mapping Cognition, Affect, and Conation into the **MOEPA 5-Layer Framework** (Metrology, Ontology, Epistemology, Praxeology, Axiology), anchored by an organization-owned **Data Substrate** and **MOEPA Catalog**.
+This page is a reading path for leaders and architects evaluating the **Philosophical AI Architecture**, a draft frame for deciding what an organization must own in an AI system.
 
-See the [Glossary](glossary.md) and [Pitch Strategy](pitch-strategy.md) for term definitions.
+The frame maps three jobs onto the **MOEPA 5-Layer Framework**. **Cognition** is knowing (Metrology, Ontology, Epistemology: measurement, shared definitions, and verification). **Affect** is valuing (Axiology: value and priority constraints). **Conation** is acting (Praxeology: workflows and human checkpoints). Those layers sit on an organization-owned **Data Substrate** (the knowledge library) and are inventoried in the **MOEPA Catalog**.
+
+The practical effect is an intake decision: GO, CONDITIONAL GO, or NO-GO, with ownership stated before tools are chosen.
+
+See the [Glossary](glossary.md) and [Pitch Strategy](pitch-strategy.md) for term definitions. The pitch strategy §0 readability standard applies to every page in this repository.
 
 ## How To Read The Proposal
 

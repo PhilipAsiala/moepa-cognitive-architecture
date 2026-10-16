@@ -2,7 +2,7 @@
 
 ## Business First
 
-The repository's primary communication rule: MOEPA philosophical disciplines describe **business outcomes** leaders must own (trusted data, shared meaning, verifiable truth, governed action, enforced values). Technical implementation detail belongs in builder-tier documents (`ARCHITECTURE.md`, governance guidelines, catalog tools). See [pitch strategy §0](pitch-strategy.md).
+The repository's primary communication rule: MOEPA philosophical disciplines describe **business outcomes** leaders must own (trusted data, shared meaning, verifiable truth, governed action, enforced values). Technical implementation detail belongs in builder-tier documents (`ARCHITECTURE.md`, governance guidelines, catalog tools). See [pitch strategy §0](pitch-strategy.md), including the readability standard that applies to every page.
 
 ## Philosophical AI Architecture
 

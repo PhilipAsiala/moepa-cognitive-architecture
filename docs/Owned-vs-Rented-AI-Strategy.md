@@ -1,6 +1,6 @@
 # Owned vs. Rented AI Strategy
 
-> The most consequential AI decision your agency will make is not which model to use — it is which capabilities you own versus which you rent.
+> For procurement leads and investment owners in public institutions and other regulated organizations. The decision this note changes is which capabilities you own and which you rent. Model choice comes after that.
 
 ---
 
@@ -49,13 +49,15 @@ LAYER 1 — METROLOGY       ██████████  MUST OWN
                           Vendor ownership here creates permanent dependency.
 
 DATA SUBSTRATE            ██████████  MUST OWN
-                          The knowledge library is your most durable
-                          strategic AI asset. Own it entirely.
+                          The knowledge library is the durable
+                          strategic AI asset. Own it. Do not
+                          leave the library in a vendor store.
 
 COMPUTE & MODELS          ░░░░░░░░░░  SAFE TO RENT
                           GPUs, cloud infrastructure, and pre-trained
-                          model weights are commodity inputs. Rent freely
-                          as long as your cognitive layer stays owned.
+                          model weights are commodity inputs. Rent them
+                          when exit terms are clear and the owned
+                          layers stay in house.
 ```
 
 ---
@@ -104,7 +106,7 @@ COMPUTE & MODELS          ░░░░░░░░░░  SAFE TO RENT
 | **Privacy compliance** | PII processed in vendor environment | PII stays in agency-controlled environment |
 | **Error correction** | Vendor must identify and patch | Agency can audit, identify, and correct immediately |
 
-> **Leader takeaway:** When a constituent appeals a benefits denial, the agency — not a vendor — must be able to explain the decision. Renting eligibility determination logic makes that impossible in practice.
+> **Leader takeaway:** When a constituent appeals a benefits denial, the agency needs to explain the decision from its own records. Renting the eligibility logic makes that explanation depend on the vendor.
 
 ---
 
@@ -166,7 +168,7 @@ Compute and model APIs are rentable — but the **rules that connect data, truth
 - **Brain** = Data quality rules, entity definitions, verification standards, decision workflows, values/compliance, and the governed interfaces between them — these are your institutional knowledge. They must be owned.
 - **Muscles** = Compute, GPU capacity, pre-trained model weights, cloud storage infrastructure — these are commodity inputs. Rent freely with clean exit clauses.
 
-A government agency that follows this rule will have AI systems it can audit, explain, defend, and migrate. An agency that inverts it will have fast, impressive tools today — and an expensive, ungovernable dependency problem in three years.
+An organization that follows this rule can audit, explain, and migrate the layers it owns. Renting those layers can still be fast at the start. By the time a contract is several years old, switching usually means a re-engineering effort. The 2–3 year horizon in the table above is a planning judgment in this document, not a measured result.
 
 ---
 

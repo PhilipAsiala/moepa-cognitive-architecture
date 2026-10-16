@@ -1,14 +1,24 @@
 # Philosophical AI Architecture
 
-*Decode Intelligence into governable software — for enterprise and public sector leaders*
+*For enterprise and public sector leaders who approve AI investments*
 
-> **Own the brain. Rent the muscles.** The industry obsesses over the Artificial (compute, LLMs, infrastructure) and treats Intelligence as a black box. We open the black box.
+The **Philosophical AI Architecture** is a draft decision frame for executives, business-unit owners, and the architects who carry out their decisions. It tells an organization what it must own in an AI system, and what it can rent, before a vendor or a technical team picks the tools. It is not a production system.
 
-The **Philosophical AI Architecture** is a draft reference ecosystem for building auditable, institutional brains — not vendor black boxes. It uses five philosophical disciplines — **Metrology, Ontology, Epistemology, Praxeology, and Axiology** — so leaders can describe the business outcomes AI must deliver (trusted data, shared meaning, verifiable truth, governed action, enforced values) before any technology is chosen.
+Using it changes intake. A proposal is scored on five questions and returned as **GO**, **CONDITIONAL GO**, or **NO-GO**, with the evidence and the gaps written down. **Predictive** work (pattern detection, forecasts, and scores) is recorded separately from **generative** work (summaries, explanations, and recommendations). Both have to cite owned evidence, and consequential actions keep a human checkpoint.
 
-This repository is theory-first documentation for leaders who set direction, approve investments, and govern AI — not a production implementation. Technical stack detail lives in [ARCHITECTURE.md](ARCHITECTURE.md) for architects and builders.
+The five questions keep their names. Each name is a leadership responsibility:
 
-> **Business first.** MOEPA names what the organization must own. Tool choices come second. See [pitch strategy](docs/pitch-strategy.md) §0.
+- **Metrology** — measurement and telemetry. Do we trust the data?
+- **Ontology** — shared definitions. Do we own what our terms mean?
+- **Epistemology** — verification. Can we show why a score or a written answer is justified?
+- **Praxeology** — action. Who approves what the system does?
+- **Axiology** — value and priority constraints. Which rules can a prompt not switch off?
+
+> **Own the brain. Rent the muscles.** Own the data, the definitions, the verification rules, the workflows, and the policy constraints. Rent compute and commercial models when those owned layers stay under organizational control.
+
+Technical stack detail lives in [ARCHITECTURE.md](ARCHITECTURE.md) for architects and builders.
+
+> **Business first.** MOEPA names what the organization must own. Tool choices come second. Writing rules for every page are in [pitch strategy](docs/pitch-strategy.md) §0, including the readability standard.
 
 ---
 
@@ -28,9 +38,9 @@ See [docs/pitch-strategy.md](docs/pitch-strategy.md) for audience-specific pitch
 
 ## The Core Mindset
 
-**The blind spot:** Vendors sell compelling demos. Technical teams drive procurement. Intelligence stays locked inside platforms nobody can audit.
+**The blind spot:** Vendors sell demos. Technical teams often drive procurement. The reasoning behind a score or a recommendation then sits inside a platform the organization cannot audit.
 
-**Our move:** Decode Intelligence by mapping three cognitive functions into software:
+**The response:** Map three cognitive functions into software the organization can govern:
 
 | Function | Role | MOEPA layers |
 |---|---|---|
@@ -38,10 +48,10 @@ See [docs/pitch-strategy.md](docs/pitch-strategy.md) for audience-specific pitch
 | **Affect** (valuing) | Encode what matters and what is forbidden | Axiology |
 | **Conation** (acting) | Execute decisions under human oversight | Praxeology |
 
-- **Philosophy** is the operating system — strict rules for reality and truth (Metrology, Ontology, Epistemology).
-- **Psychology** is the mechanics of behavior — values and execution drives (Axiology, Praxeology).
+- **Philosophy**, here, means the rules for what counts as real and what counts as verified (Metrology, Ontology, Epistemology).
+- **Psychology**, here, means what the organization values and how it acts (Axiology, Praxeology).
 
-**The mission:** Build auditable, institutional brains. Rent commodity compute. Own the truth, the values, and the rules.
+**The mission:** Keep an audit record the organization owns. Rent commodity compute. Own the truth, the values, and the rules.
 
 ---
 
@@ -101,13 +111,13 @@ graph TB
 | Decision workflows and oversight gates (Praxeology) | SaaS tooling with clear exit paths |
 | Guardrails and compliance policies (Axiology) | Pre-trained model weights |
 
-> **Core takeaway:** Own the Data Substrate. Rent the LLMs. Black-box vendor solutions that cannot map to all five layers fail intake by design.
+> **Core takeaway:** Own the Data Substrate (the organization's knowledge library: truth, values, rules, and lineage in one place). Rent model access when verification stays in house. A proposal that cannot be mapped to all five layers does not pass intake.
 
 ---
 
 ## Practical Use Cases
 
-The Philosophical AI Architecture applies to any organization that must defend AI decisions to stakeholders, auditors, or regulators.
+These scenarios are for any organization that must defend an AI decision to a customer, an auditor, or a regulator. Scores and match confidence are predictive. Explanations and denial reasons are generative. In each case the organization needs both the number and the record behind it.
 
 **Enterprise and commercial:**
 - **Loan and credit underwriting** — Can you explain a risk score to a customer or compliance reviewer?

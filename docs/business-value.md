@@ -1,8 +1,8 @@
 # Business Value
 
-The Philosophical AI Architecture is valuable because it helps an organization build an owned AI layer instead of relying on fragmented vendor tools or ad hoc agent setups.
+This note is for executives weighing whether an AI investment builds an asset the organization can keep. The Philosophical AI Architecture gives that decision a scorecard. Instead of a collection of vendor tools, the organization owns the data, the definitions, the verification rules, the workflows, and the policy constraints, and rents compute and models around them.
 
-MOEPA translates five philosophical disciplines into five business outcomes leaders can defend:
+MOEPA translates five disciplines into five outcomes a leader can defend. On first use: **Metrology** is measurement and telemetry; **Ontology** is shared definitions; **Epistemology** is how a claim is verified; **Praxeology** is how action is taken; **Axiology** is value and priority constraints.
 
 | Discipline | Business outcome | Investment question |
 |---|---|---|
@@ -10,17 +10,19 @@ MOEPA translates five philosophical disciplines into five business outcomes lead
 | **Ontology** | Shared organizational meaning | Do we own how our domain is defined? |
 | **Epistemology** | Defensible truth | Can we explain every recommendation with evidence? |
 | **Praxeology** | Accountable action | Are workflows and oversight under our control? |
-| **Axiology** | Enforced values | Are mission rules architecturally enforced, not prompt-level? |
+| **Axiology** | Enforced values | Are mission rules enforced by the system, not only written in a prompt? |
 
-## Primary Value Proposition
+## What changes in the investment process
 
-The Philosophical AI Architecture gives teams a structured way to:
+Teams use the same five questions on every proposal:
 
-- Own the data, semantic, verification, workflow, and policy layers
-- Separate commodity compute from durable intellectual property
-- Evaluate new AI use cases consistently
-- Prioritize investment toward systems that create lasting internal capability
-- Reduce vendor lock-in by making the cognitive layer portable and governed
+- Own the data, definitions, verification, workflow, and policy layers, which makes accountability traceable to a named owner
+- Separate commodity compute from assets the organization can reuse, which limits dependency when a contract ends
+- Evaluate new use cases on one rubric, which makes competing bids comparable
+- Prefer investments that leave a reusable internal capability, which compounds across later projects
+- Keep the reasoning layer portable, which lowers the cost of leaving a vendor — if export terms are actually in the contract
+
+Predictive outputs (scores, forecasts, match confidence) and generative outputs (summaries, explanations, recommendations) are both in scope. A score without a source, or a narrative without a checkpoint on a consequential decision, does not meet the verification or action layers.
 
 ## How It Helps Evaluate Use Cases
 
@@ -52,6 +54,6 @@ If an AI initiative only improves productivity through a vendor-hosted interface
 
 If an AI initiative creates reusable internal data structures, verification gates, governed workflows, and cataloged policy assets, it creates durable enterprise value.
 
-## Summary
+## What to do next
 
-The business case is not just faster AI delivery. It is building an owned AI layer that can be used to screen opportunities, justify investment, and accumulate strategic control over time.
+Use the architecture to screen a live proposal. Score it with the [evaluation checklist](5-Layer-Evaluation-Checklist.md), then record what the organization will own and what it will rent. Intake takes longer than approving a demo, and the first owned layer costs more than a subscription. The return this design can actually promise, on the evidence in this repository, is a record the organization can explain after a contract changes. Measured savings and deployment results are not included here.

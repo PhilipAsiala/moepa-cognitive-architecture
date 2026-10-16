@@ -77,7 +77,8 @@ or NO-GO under the MOEPA intake rubric.
 ## Style notes (for accepted changes)
 
 - **Business first** — leader-facing docs lead with MOEPA disciplines as business outcomes; technical detail links out to `ARCHITECTURE.md`, governance guidelines, or catalog tools.
-- Punchy, authoritative, direct — executive-to-executive for leaders; engineer-to-engineer only in builder-tier documents.
+- **Readability** — follow the [readability standard](docs/pitch-strategy.md#readability-standard-every-document) in the pitch strategy: purpose and audience first, plain definitions on first use, one operational effect per major element, risks paired with a control already in the design, and no absolute claims without a stated limit.
+- Direct and specific — executive-to-executive for leaders; engineer-to-engineer only in builder-tier documents. Confident, and neutral about results the design has not yet demonstrated.
 - Ground abstract concepts in physical metaphors (Data Substrate, Control Plane, Catalog).
 - Never conflate the **Philosophical AI Architecture** (ecosystem) with the **MOEPA 5-Layer Framework** (engineering blueprint and intake rubric).
 - Treat **SPO/quad on a federated hypergraph + lakehouse** as the imperative **Substrate End State**; allow **Substrate Evolution Path** staging in implementation guidance.

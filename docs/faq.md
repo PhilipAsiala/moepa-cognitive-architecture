@@ -1,12 +1,14 @@
 # FAQ
 
-## Is SPO/quad storage required on day one?
+## Is a special storage format required on day one?
 
-No — but it is **imperative at end state**. The repository requires every agency-owned Data Substrate to **evolve toward** owned SPO/quad representation with layer metadata envelopes on a federated hypergraph + lakehouse. Agencies may start with open-format lakehouse storage (Iceberg/Parquet) using SPO-compatible schemas, then add a pilot triple store, then enterprise graph and federation. Interim storage is acceptable when the data is agency-owned, provenance-complete, open-format, and backed by a documented migration path to end state. See [End State vs. Evolution Path](Data-Substrate-Concept.md#end-state-vs-evolution-path).
+No. Own the data from the start, in open formats you can export, with a written path toward the end-state library. The operational effect is that a contract ending does not strand the record.
+
+**For architects:** The end state is owned SPO/quad representation (each fact stored once as subject–predicate–object, plus context) with layer metadata on a federated hypergraph and lakehouse. Teams may start with open-format lakehouse storage (Iceberg/Parquet) using SPO-compatible schemas, then add a pilot triple store, then an enterprise graph and federation. Interim storage is acceptable when the data is organization-owned, provenance-complete, open-format, and backed by a documented migration path. See [End State vs. Evolution Path](Data-Substrate-Concept.md#end-state-vs-evolution-path).
 
 ## Is the Data Substrate a sixth layer?
 
-No. The Data Substrate is the agency-owned knowledge library beneath all five layers — an SPO/quad triple store plus lakehouse — that every layer stores into. It holds truth, values, rules, and lineage in open formats the organization owns permanently. It is **not** a scored layer. See §5.1 of [ARCHITECTURE.md](../ARCHITECTURE.md) for the full substrate specification.
+No. The **Data Substrate** is the organization-owned knowledge library beneath the five scored layers. It holds truth, values, rules, and lineage in formats the organization can export. It is not scored on the 1–5 rubric. See §5.1 of [ARCHITECTURE.md](../ARCHITECTURE.md) for the storage specification.
 
 ## Is this a finished architecture?
 
@@ -32,17 +34,17 @@ Philosophy (Metrology, Ontology, Epistemology) is the operating system for reali
 
 ## What is the main idea?
 
-Decode Intelligence — not just Artificial infrastructure. Separate rented compute and commercial LLMs from owned cognitive assets: the Data Substrate, semantic models, verification rules, workflows, and policy guardrails.
+Separate what you rent (compute and commercial models) from what you own: the knowledge library, shared definitions, verification rules, workflows, and policy constraints. Predictive outputs (scores and forecasts) and generative outputs (summaries and recommendations) both have to be explainable from those owned assets.
 
 ## Why five layers?
 
-The MOEPA 5-Layer Framework provides a clean engineering blueprint:
+Each layer is one question leadership must be able to answer. The technical form of the answer belongs with architects.
 
-- Metrology — telemetry, measurement, data quality
-- Ontology — knowledge graphs, approved vocabularies
-- Epistemology — RAG validation, evidence mapping
-- Praxeology — workflows, SOPs, agentic playbooks
-- Axiology — guardrails, compliance, values
+- **Metrology** — measurement and telemetry. Do we trust the data?
+- **Ontology** — shared definitions. Do we own what the terms mean?
+- **Epistemology** — verification. Can we show why a score or a written answer is justified?
+- **Praxeology** — action. Who approves what the system does?
+- **Axiology** — value and priority constraints. Which rules can a prompt not switch off?
 
 ## Where should I start?
 
@@ -60,8 +62,12 @@ Not yet. The repository focuses on the proposal, the MOEPA 5-Layer Framework gov
 
 ## Why MCP-first?
 
-Vendor orchestration glue (native Bedrock tooling, LangChain chains, framework-specific callbacks) creates lock-in and hides capability boundaries from governance review. The Model Context Protocol (MCP) is the standardized interface: every data, retrieval, workflow, and policy capability is exposed as an MCP server or facade. Orchestrators discover tools through MCP — never by calling RAG or data layers directly. See [Architectural Governance Guidelines](MOEPA-Architectural-Governance-and-Evolution-Guidelines.md).
+**For leaders:** Every data, retrieval, workflow, and policy capability should be callable through one governed interface, so an inventory and an audit do not depend on a vendor's private glue. **MCP** (Model Context Protocol) is that interface in this design.
+
+**For architects:** Vendor orchestration glue (native Bedrock tooling, LangChain chains, framework-specific callbacks) hides capability boundaries from review. Each capability is exposed as an MCP server or facade. Orchestrators discover tools through MCP rather than calling retrieval or data layers directly. See [Architectural Governance Guidelines](MOEPA-Architectural-Governance-and-Evolution-Guidelines.md).
 
 ## What is a Proto-SPO and why does chunking matter?
 
-A **Proto-SPO** (Sovereign Processing Object) is a semantically parsed document segment that carries its own provenance, structure, and context. **Chainsaw chunking** — splitting documents by fixed token counts — destroys tables, sections, and citations. Semantic parsers (Docling, Unstructured, or equivalent) produce Proto-SPOs that preserve meaning from ingestion through retrieval and verification. See [Data Substrate Concept — Semantic Ingestion](Data-Substrate-Concept.md#semantic-ingestion-and-proto-spos) and the [Glossary](glossary.md).
+**For leaders:** Documents should be split on meaning (a table, a section, a citation), not on an arbitrary length. Otherwise a later answer cannot point back to the source.
+
+**For architects:** A **Proto-SPO** (Sovereign Processing Object) is a semantically parsed document segment that carries its own provenance, structure, and context. **Chainsaw chunking** — splitting documents by fixed token counts — drops tables, sections, and citations. Semantic parsers (Docling, Unstructured, or equivalent) produce Proto-SPOs that keep that structure through retrieval and verification. See [Data Substrate Concept — Semantic Ingestion](Data-Substrate-Concept.md#semantic-ingestion-and-proto-spos) and the [Glossary](glossary.md).

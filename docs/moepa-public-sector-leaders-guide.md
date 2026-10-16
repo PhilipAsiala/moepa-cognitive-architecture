@@ -8,20 +8,20 @@
 
 ---
 
-## Executive Summary
+## What this guide is for
 
-Public sector organizations face a defining inflection point. The market is flooded with AI offerings—each promising transformation through powerful, easy-to-integrate platforms. The hidden price of those platforms is control: data locked in vendor clouds, reasoning logic hidden in black-box models, and audit trails that satisfy a marketing brief but not an Inspector General.
+This handout is for senior executives, CIOs, and mission leaders in public institutions who approve AI that affects constituents. It shows how to keep the data, the rules, and the decision record with the agency, and how to score a proposal before buying a platform.
 
-Statutory fairness mandates and agency rights obligations demand accuracy and equity. Congressional oversight demands transparency and accountability. Mission integrity demands that the agency—not a vendor—owns the rules, the data, and the decision logic.
+Oversight bodies (inspectors general, audit offices, legislatures) ask for accuracy, equity, and a record of how a determination was reached. Many platforms keep that record in a vendor cloud, in model logic the agency cannot inspect, or in an audit trail written for a sales review.
 
-The **Philosophical AI Architecture** provides a cognitive control plane — a unified, agency-owned **Data Substrate** plus the **MOEPA Catalog** — to make ownership practical and defensible. The **MOEPA 5-Layer Framework** is the go/no-go intake rubric inside that architecture. Applied systematically, they give public sector leadership the tools to:
+The **Philosophical AI Architecture** is the control frame: an agency-owned knowledge library (the **Data Substrate**) plus the **MOEPA Catalog**. The **MOEPA 5-Layer Framework** — Metrology (measurement), Ontology (shared definitions), Epistemology (verification), Praxeology (action), and Axiology (value constraints) — is the go/no-go intake rubric inside that frame. Using it changes procurement and operations:
 
-- Evaluate any AI use case against clear, auditable criteria before approving investment
-- Distinguish between capability the agency must own and commodity compute it can safely rent
-- Protect data sovereignty and provide complete audit lineage to oversight bodies (IG, GAO, Congress)
-- Ensure mission values, constituent rights, and compliance mandates are built into the architecture—not bolted on as an afterthought
+- A proposal is scored before investment, while exit is still practical.
+- Predictive outputs (match confidence, risk flags, forecasts) are stored separately from generative outputs (explanations, summaries, recommendations). Both cite agency evidence.
+- The agency owns data and rules. Compute and commercial models can be rented.
+- Rights and fairness checks run in the system, with a human checkpoint on consequential actions. A prompt is not the control.
 
-**The goal is not to slow AI adoption.** It is to adopt AI on the agency's terms: with clear ownership, explainable decisions, and alignment to the people and mission the agency serves.
+Adoption stays on the agency's terms: clear ownership, explainable decisions, and alignment to the people the agency serves. The trade-off is intake time and up-front build cost against a faster deployment the agency cannot fully audit.
 
 ---
 
@@ -83,7 +83,7 @@ The MOEPA substrate inverts this dynamic:
 | Cross-system reuse | Each system builds its own siloed knowledge store | One authoritative record reused across programs — no duplicate truths |
 | Oversight readiness | "Ask the vendor" is the default answer | Agency can produce evidence directly to IG, GAO, or Congressional review |
 
-The substrate is also the mechanism that makes audit lineage real rather than aspirational. When an IG, GAO reviewer, or authorized representative asks "How did the system reach this determination?", the answer should trace back through all five layers—from the trusted data (Metrology) through the verified knowledge (Epistemology) to the decision procedure (Praxeology) to the rights check (Axiology)—as a single owned, queryable record. That is only possible when the agency owns the substrate.
+The substrate is how an audit trail stays in agency hands. When an IG, GAO reviewer, or authorized representative asks "How did the system reach this determination?", the answer can trace the trusted data (Metrology), the verified claim (Epistemology), the decision procedure (Praxeology), and the rights check (Axiology) as one owned record. That trail depends on the agency owning the substrate and keeping the records complete.
 
 ---
 
@@ -158,7 +158,7 @@ Triple: IncomeVerification:TX12345 — hasAmount → 85000
 ```
 
 **Step 3 — Epistemology (Verify the knowledge)**
-The base fact is enriched with an epistemic metadata envelope: confidence 0.98, justification from ThirdPartyStudy_2025, status HighReliability. The evidence chain is stored in the substrate using PROV-O-compatible provenance. An IG examiner or authorized representative can retrieve it on demand.
+The base fact is enriched with a verification envelope: confidence 0.98, justification from ThirdPartyStudy_2025, status HighReliability. The 0.98 figure is predictive — a score, not a narrative. Any explanation shown to a constituent or an examiner is generative and has to point at this same evidence chain. The chain is stored in the substrate using PROV-O-compatible provenance (a standard way to record who produced a fact and from what source). An IG examiner or authorized representative can retrieve it on demand.
 
 ```json
 {
@@ -175,7 +175,7 @@ The base fact is enriched with an epistemic metadata envelope: confidence 0.98, 
 The workflow maps directly to agency policy: income ≤ threshold with confidence ≥ 0.95 → auto-approve routine determination; edge cases → human review queue with documented escalation reason. The decision procedure is a deterministic state machine the agency controls, not a generic AI output.
 
 **Step 5 — Axiology (Enforce the values)**
-Statutory rights and fairness mandates are architecturally enforced. The right to explanation, the right to appeal, and non-discrimination rules are checked before any determination is finalized. These are hardcoded constraints, not prompt-level guidelines.
+Statutory rights and fairness mandates are checked before a determination is finalized: the right to explanation, the right to appeal, and non-discrimination rules. These checks are system rules. A prompt edit does not turn them off. They still need testing; a rule that is never exercised is only a claim.
 
 **Result:** A defensible, auditable determination—traceable from the measurement standard through the verification evidence to the decision procedure to the rights check—all stored in the agency's owned knowledge library.
 
@@ -197,7 +197,7 @@ Statutory rights and fairness mandates are architecturally enforced. The right t
 
 Public sector organizations do not need to rebuild their entire AI estate to begin capturing MOEPA benefits. A staged approach—start narrow, prove the model, expand—reduces risk and builds internal capability before enterprise commitment.
 
-**End state is not negotiable; the path is.** Every agency must eventually own a single, auditable knowledge library that all five layers share. Pilots and interim deployments are valid **only** when data is agency-owned, provenance-complete, and explicitly staged toward that end state.
+**The target is one owned knowledge library. The path can be staged.** Every agency in this design is expected to reach a single, auditable library that all five layers share. Pilots count when the data is agency-owned, provenance is complete, and the path toward that library is written down.
 
 **Recommended pilot: Cognitive intake assistant built on agency-owned intake process**
 
@@ -272,7 +272,7 @@ This reframes every vendor conversation from "What features do you offer?" to "C
 | Ontology | 2–3 | Schema tools available; semantic model ownership depends on implementation choices |
 | Epistemology | 3 | RAG with citations available; cryptographic validation requires additional build |
 | Praxeology | 3–4 | Workflow orchestration available; deterministic state machines require agency implementation |
-| Axiology | 2–3 | Policy-as-code possible but requires explicit agency build; not default |
+| Axiology | 2–3 | Policy-as-code (rules written so the system can enforce them) is possible but requires an explicit agency build; it is not the default |
 | **Overall** | **CONDITIONAL GO** | Achievable GO with deliberate agency ownership of Ontology and Axiology layers |
 
 **Pattern C: Fully owned MOEPA stack (agency-implemented, open tools)**

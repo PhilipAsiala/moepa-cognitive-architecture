@@ -1,6 +1,10 @@
 # 5-Layer AI Evaluation Checklist
 
-> Use this checklist to score any AI proposal against the MOEPA 5-Layer Framework before approving funding, procurement, or scale-up. Proposers must demonstrate catalog enrichment — black-box vendor solutions that cannot map to all five layers fail intake by design. A proposal must score ≥ 3 on every layer to qualify for conditional approval. A score of ≥ 4 on every layer is required for full approval.
+> For program managers and governance reviewers scoring a proposal before funding, procurement, or scale-up. Completing it changes the decision from a feature review to **GO**, **CONDITIONAL GO**, or **NO-GO**, with the gaps named.
+
+Proposers show how the work enriches the MOEPA Catalog. A proposal that cannot be mapped to all five layers does not pass intake. A proposal must score at least 3 on every layer for conditional approval, and at least 4 on every layer for full approval.
+
+On first use: **Metrology** is measurement and telemetry; **Ontology** is shared definitions; **Epistemology** is verification; **Praxeology** is action and human checkpoints; **Axiology** is value and priority constraints. Score predictive outputs (risk scores, forecasts, match confidence) and generative outputs (summaries, explanations, recommendations) against the same layers. A score still needs a source. A written recommendation on a consequential case still needs a human checkpoint.
 
 ---
 

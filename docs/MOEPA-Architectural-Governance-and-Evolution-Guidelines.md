@@ -4,10 +4,7 @@
 > Leaders evaluate proposals using business outcomes per MOEPA layer ([pitch strategy §0](pitch-strategy.md)).
 > This document defines how implementations evolve; it does not replace the business-first narrative.
 
-This repository follows the **MOEPA 5-Layer Framework** (Metrology, Ontology,
-Epistemology, Praxeology, Axiology). These guidelines define non-negotiable
-architectural evolution rules for all new features, integrations, and pull
-requests.
+This repository follows the **MOEPA 5-Layer Framework** (Metrology is measurement, Ontology is shared definitions, Epistemology is verification, Praxeology is action, Axiology is value constraints). These guidelines are the evolution rules for new features, integrations, and maintainer pull requests. An exception needs a named compensating control and a CONDITIONAL GO or NO-GO under the intake rubric, not a silent waiver.
 
 ## 1. Governance Over Abstraction
 
