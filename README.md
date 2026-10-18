@@ -100,7 +100,7 @@ Score the proposal on all five questions. A proposal that cannot be mapped to ev
 Three doors. Read the one that matches the decision in front of you.
 
 * **[Business briefs](primer/)** — two-page playbooks for data sovereignty, zero-trust governance, and what the investment can defend. Longer leader guides and worked scenarios are linked from there.
-* **[Technical catalog](catalog/)** — the builder specification, layer-by-layer patterns, and the tool mapping. Open this when the ownership decision is already made.
+* **[Enterprise capability catalog](catalog/)** — the concrete **[Data Substrate capabilities](catalog/data-substrate.md)** and **[Enterprise Agent capabilities](catalog/agents.md)** needed to run the business, plus the [capability matrix](catalog/capability-matrix.md) and [technical specification](catalog/ARCHITECTURE.md).
 * **[Glossary and longer guides](docs/)** — term hierarchy, pitch rules, and the public-sector and enterprise handouts.
 
 ---

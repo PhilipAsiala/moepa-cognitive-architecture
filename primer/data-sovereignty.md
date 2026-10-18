@@ -31,4 +31,4 @@ Those are Ontology and Metrology gaps. They are also the usual path to lock-in. 
 2. State where those definitions will live, and how they leave if the vendor changes.
 3. Score Metrology and Ontology on the [evaluation checklist](../docs/5-Layer-Evaluation-Checklist.md) before the model is chosen.
 
-The full own-versus-rent map is the [Owned vs. Rented AI Strategy](../docs/Owned-vs-Rented-AI-Strategy.md). The builder patterns for meaning are the [Ontology catalog](../catalog/ontology/README.md).
+The full own-versus-rent map is the [Owned vs. Rented AI Strategy](../docs/Owned-vs-Rented-AI-Strategy.md). The concrete storage and semantic capabilities are in [Data Substrate Capabilities](../catalog/data-substrate.md).
