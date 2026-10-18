@@ -1,13 +1,15 @@
-# Business briefs
+# Executive Briefs
 
-These are short reads for people who approve AI spend, own the operational risk, or have to explain a system to an auditor. Each brief states a failure executives already recognize, then names the MOEPA layer that is supposed to carry that failure.
+These three briefs translate the repository's three core tiers into executive decisions on vendor risk, compliance, and investment:
 
-The five names, on first use: **Metrology** is measurement and telemetry; **Ontology** is shared definitions; **Epistemology** is how a claim is verified and who may see it; **Praxeology** is how action is taken; **Axiology** is the value and policy constraint a prompt cannot switch off. Together they form the **MOEPA Cognitive Architecture** (the thesis). The **Data Substrate** is the organization-owned storage those layers read and write, and **Agents** are the engine that consumes it.
+1. **MOEPA Cognitive Architecture (The Thesis)** — The five governance layers (**M**etrology, **O**ntology, **E**pistemology, **P**raxeology, **A**xiology) and the **GO / CONDITIONAL GO / NO-GO** intake scorecard.
+2. **Data Substrate (The Storage)** — The organization-owned library (`DS1`–`DS6`) where data, entity definitions, verified claims, and audit logs live in open formats.
+3. **Agents (The Engine)** — The specialized workflows and deterministic gates (`AG1`–`AG6`) that consume the Data Substrate to run the business.
 
-| Brief | Decision it changes |
-| :--- | :--- |
-| [Data sovereignty](data-sovereignty.md) | What the organization must be able to export when a vendor contract ends |
-| [Zero-trust governance](zero-trust-governance.md) | Which claims and which actions are allowed to leave the system |
-| [What the investment can defend](roi.md) | Whether a proposal leaves an asset, or only a subscription |
+| Brief | Core Question | Primary Focus |
+| :--- | :--- | :--- |
+| **[1. Data Sovereignty](data-sovereignty.md)** | *What happens when we change models or leave a vendor?* | Owning the **Data Substrate** (`DS1`–`DS3`, `DS6`) while renting commodity compute. |
+| **[2. Zero-Trust Governance](zero-trust-governance.md)** | *How do we stop hallucinations, data leaks, and rogue actions?* | Bounding probabilistic **Agents** with deterministic verification (`AG3`), human checkpoints (`AG4`), and Policy-as-Code (`AG5`). |
+| **[3. Investment & ROI](roi.md)** | *Are we buying another disposable tool, or building a compounding asset?* | Scoring proposals (`GO` / `CONDITIONAL GO` / `NO-GO`) on reusable **Data Substrate** and **Agent** capabilities. |
 
-Builders continue in the [Enterprise Capability Catalog](../catalog/). Visual overviews live in [diagrams/](../diagrams/).
+For the concrete builder specifications behind these briefs, continue to the **[Enterprise Capability Catalog](../catalog/)** or view the **[Architecture Diagrams](../diagrams/)**.
