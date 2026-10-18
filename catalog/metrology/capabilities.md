@@ -4,7 +4,7 @@
 
 Bottom line: an organization that controls its data foundation can make more defensible decisions, withstand audit scrutiny, and avoid long-term dependency on external platforms.
 
-See [ARCHITECTURE.md](../../ARCHITECTURE.md) for the strategic rationale and [Business Value](../../docs/business-value.md) for the investment lens.
+See [ARCHITECTURE.md](../ARCHITECTURE.md) for the strategic rationale and [Business Value](../../docs/business-value.md) for the investment lens.
 
 ## Mission and Governance Outcomes
 

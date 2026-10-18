@@ -27,4 +27,4 @@ These tool categories matter because they determine whether the organization own
 - Keep canonical entity definitions inside internal repositories.
 - Require change governance for taxonomy and relationship updates.
 - Export graph snapshots for continuity and portability.
-- Cross-check major semantic decisions against [Business Value](../../docs/business-value.md) and the [Owned-Brain Strategy](../../ARCHITECTURE.md).
+- Cross-check major semantic decisions against [Business Value](../../docs/business-value.md) and the [Owned-Brain Strategy](../ARCHITECTURE.md).

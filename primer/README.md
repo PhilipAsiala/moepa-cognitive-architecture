@@ -1,0 +1,21 @@
+# Business briefs
+
+These are short reads for people who approve AI spend, own the operational risk, or have to explain a system to an auditor. Each brief states a failure executives already recognize, then names the MOEPA layer that is supposed to carry that failure.
+
+The five names, on first use: **Metrology** is measurement and telemetry; **Ontology** is shared definitions; **Epistemology** is how a claim is verified and who may see it; **Praxeology** is how action is taken; **Axiology** is the value and policy constraint a prompt cannot switch off. The **Data Substrate** is the organization-owned library those layers read and write.
+
+| Brief | Decision it changes |
+| :--- | :--- |
+| [Data sovereignty](data-sovereignty.md) | What the organization must be able to export when a vendor contract ends |
+| [Zero-trust governance](zero-trust-governance.md) | Which claims and which actions are allowed to leave the system |
+| [What the investment can defend](roi.md) | Whether a proposal leaves an asset, or only a subscription |
+
+## Longer guides
+
+- [Business leader guide](../docs/moepa-business-leaders-guide.md) — ownership and intake for any organization
+- [Public sector leader guide](../docs/moepa-public-sector-leaders-guide.md) — accountability for federal, state, and local institutions
+- [Own versus rent](../docs/Owned-vs-Rented-AI-Strategy.md) — which layers are unsafe to outsource
+- [Evaluation checklist](../docs/5-Layer-Evaluation-Checklist.md) — GO / CONDITIONAL GO / NO-GO
+- [Worked scenarios](../examples/) — income verification, benefits eligibility, and project intake
+
+Builders continue in the [technical catalog](../catalog/).

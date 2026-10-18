@@ -1,12 +1,14 @@
 # Praxeology Catalog
 
+**Praxeology (purposeful action):** the failure mode is an agent that calls the wrong tool, loops, or spends a frontier model on a routine step. This catalog is how verified context becomes a bounded workflow. Planning may use a probabilistic model. The permission to act does not.
+
 Praxeology is the action layer. It governs how AI-driven decisions become bounded, auditable, goal-oriented actions.
 
 ## Executive Summary
 
 Bottom line: this layer determines whether AI remains under institutional control when it takes action. If it is weak, leadership may approve automation that is opaque, difficult to stop, or hard to audit.
 
-See the strategic rationale in [ARCHITECTURE.md](../../ARCHITECTURE.md) and the investment framing in [Business Value](../../docs/business-value.md).
+See the strategic rationale in [ARCHITECTURE.md](../ARCHITECTURE.md) and the investment framing in [Business Value](../../docs/business-value.md).
 
 ## Layer Scope
 

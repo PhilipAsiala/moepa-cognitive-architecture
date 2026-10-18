@@ -55,4 +55,4 @@ At deployment, compute a baseline output distribution across demographic and geo
 - Incomplete evidence trails for high-impact decisions
 - Strategic misalignment between optimization metrics and mission outcomes
 
-See [Business Value](../../docs/business-value.md) and [ARCHITECTURE.md](../../ARCHITECTURE.md) for why enforceable governance is part of the Owned-Brain Strategy.
+See [Business Value](../../docs/business-value.md) and [ARCHITECTURE.md](../ARCHITECTURE.md) for why enforceable governance is part of the Owned-Brain Strategy.

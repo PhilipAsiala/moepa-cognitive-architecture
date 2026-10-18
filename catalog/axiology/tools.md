@@ -28,4 +28,4 @@ These tool categories matter because they determine whether policy, privacy, fai
 - Treat policy artifacts as first-class intellectual property.
 - Store compliance evidence in enterprise systems, not vendor portals only.
 - Align control mappings with organizational and statutory obligations.
-- Cross-check governance controls against [Business Value](../../docs/business-value.md) and the [Owned-Brain Strategy](../../ARCHITECTURE.md).
+- Cross-check governance controls against [Business Value](../../docs/business-value.md) and the [Owned-Brain Strategy](../ARCHITECTURE.md).

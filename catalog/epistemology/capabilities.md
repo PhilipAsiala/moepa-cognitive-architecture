@@ -4,7 +4,7 @@
 
 Bottom line: this layer determines whether leaders can trust AI conclusions. It separates what the model proposes from what the institution can verify, explain, and defend.
 
-See [ARCHITECTURE.md](../../ARCHITECTURE.md) for the strategic rationale and [Business Value](../../docs/business-value.md) for the investment lens.
+See [ARCHITECTURE.md](../ARCHITECTURE.md) for the strategic rationale and [Business Value](../../docs/business-value.md) for the investment lens.
 
 ## Mission and Governance Outcomes
 

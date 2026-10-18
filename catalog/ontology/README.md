@@ -1,12 +1,14 @@
 # Ontology Catalog
 
+**Ontology (shared meaning):** the failure mode is every team defining "customer," "asset," or "threat" differently, or a vendor schema holding those definitions. This catalog is the organization's vocabulary and the relationships among those terms, independent of any one product.
+
 Ontology is the structured reality layer. It transforms governed data into entities, relationships, taxonomies, and semantic meaning that can be reasoned over.
 
 ## Executive Summary
 
 Bottom line: this layer determines whether the organization has a shared understanding of customers, businesses, programs, and relationships. If it is weak, leaders will fund systems that cannot reason consistently across the enterprise.
 
-See the strategic rationale in [ARCHITECTURE.md](../../ARCHITECTURE.md) and the investment framing in [Business Value](../../docs/business-value.md).
+See the strategic rationale in [ARCHITECTURE.md](../ARCHITECTURE.md) and the investment framing in [Business Value](../../docs/business-value.md).
 
 ## Layer Scope
 

@@ -1,12 +1,14 @@
 # Epistemology Catalog
 
+**Epistemology (truth and permission):** the failure mode is a fluent answer treated as a fact, or a restricted record shown to the wrong person. This catalog is how a claim is tied to a source the organization can check, and how access is decided before reasoning begins.
+
 Epistemology is the truth and verification layer. It ensures model outputs are grounded, validated, explainable, and traceable to trusted sources.
 
 ## Executive Summary
 
 Bottom line: this layer separates what the model guessed from what the organization can defend. Organization leaders should care because stakeholder trust, auditability, and appeals depend on it.
 
-See the strategic rationale in [ARCHITECTURE.md](../../ARCHITECTURE.md) and the investment framing in [Business Value](../../docs/business-value.md).
+See the strategic rationale in [ARCHITECTURE.md](../ARCHITECTURE.md) and the investment framing in [Business Value](../../docs/business-value.md).
 
 ## Layer Scope
 

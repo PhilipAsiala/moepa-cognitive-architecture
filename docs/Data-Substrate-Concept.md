@@ -217,4 +217,4 @@ A Data Substrate evolves toward the SPO/quad end state — it is not a single cu
 
 - [MOEPA 5-Layer Framework](MOEPA-5-Layer-Framework.md) — how each layer uses the substrate
 - [Architectural Governance and Evolution Guidelines](MOEPA-Architectural-Governance-and-Evolution-Guidelines.md) — MCP-first rules and Proto-SPO requirements
-- [Full Architecture Specification](../ARCHITECTURE.md) — technical design details
+- [Full Architecture Specification](../catalog/ARCHITECTURE.md) — technical design details

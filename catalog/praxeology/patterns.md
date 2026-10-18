@@ -52,4 +52,4 @@ At each state transition, the full workflow context — current state, input dat
 - Approval bottlenecks due to poor risk segmentation
 - Excessive automation of decisions that require policy interpretation
 
-See [Business Value](../../docs/business-value.md) and [ARCHITECTURE.md](../../ARCHITECTURE.md) for why controlled execution is part of long-term institutional ownership.
+See [Business Value](../../docs/business-value.md) and [ARCHITECTURE.md](../ARCHITECTURE.md) for why controlled execution is part of long-term institutional ownership.

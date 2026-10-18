@@ -2,7 +2,7 @@
 
 The MOEPA Capability Matrix provides a single governance view of the **minimum capability baseline** across the Philosophical AI Architecture. It is intended to help leaders set priorities, identify gaps before funding, and roadmap delivery without changing the existing five-layer scoring model.
 
-This matrix explicitly binds the **minimum set of capabilities** for each scored layer to **Score 3 — Defined & Contained — Minimum Acceptable Standard** in the existing **1–5 plus GO / CONDITIONAL GO / NO-GO** rubric described in [ARCHITECTURE.md](../ARCHITECTURE.md) (§4.2) and each layer's scoring guide. Capabilities that contribute to Scores 4 and 5 are the ones that lift a layer beyond the minimum baseline.
+This matrix explicitly binds the **minimum set of capabilities** for each scored layer to **Score 3 — Defined & Contained — Minimum Acceptable Standard** in the existing **1–5 plus GO / CONDITIONAL GO / NO-GO** rubric described in [ARCHITECTURE.md](ARCHITECTURE.md) (§4.2) and each layer's scoring guide. Capabilities that contribute to Scores 4 and 5 are the ones that lift a layer beyond the minimum baseline.
 
 This file stores the **durable capability taxonomy**: what must exist, who owns it, and how it contributes to maturity. Live delivery progress belongs in JIRA under the Praxeology workflow, not in committed markdown. The JIRA references below are therefore **illustrative bindings only**, aligned to [Praxeology tools](praxeology/tools.md), not embedded status fields.
 
@@ -16,7 +16,7 @@ The matrix is part of the single [MOEPA Catalog](README.md), which also contains
 - [Epistemology capabilities](epistemology/capabilities.md) and [Epistemology scoring](epistemology/scoring.md)
 - [Praxeology capabilities](praxeology/capabilities.md) and [Praxeology scoring](praxeology/scoring.md)
 - [Axiology capabilities](axiology/capabilities.md) and [Axiology scoring](axiology/scoring.md)
-- [ARCHITECTURE.md](../ARCHITECTURE.md) for the scoring rubric (§4.2) and the Data Substrate (§5.1)
+- [ARCHITECTURE.md](ARCHITECTURE.md) for the scoring rubric (§4.2) and the Data Substrate (§5.1)
 - [Praxeology tools](praxeology/tools.md) for the JIRA and delivery-workflow binding
 
 ## How to Use This Matrix
@@ -93,7 +93,7 @@ See [layer details](axiology/capabilities.md) and [scoring guide](axiology/scori
 
 ## Data Substrate (Unscored Owned Foundation)
 
-The Data Substrate is the shared owned foundation beneath the five scored layers. It is **not** a sixth scored layer and does not change the 1–5 MOEPA rubric. Its role is to provide the shared representation, lineage, and portability backbone described in [ARCHITECTURE.md](../ARCHITECTURE.md) (§5.1). The same column shape is retained here for governance consistency; in this section, the **Minimum set? (Score 3)** column should be read as **foundational applicability**, not as a scored threshold.
+The Data Substrate is the shared owned foundation beneath the five scored layers. It is **not** a sixth scored layer and does not change the 1–5 MOEPA rubric. Its role is to provide the shared representation, lineage, and portability backbone described in [ARCHITECTURE.md](ARCHITECTURE.md) (§5.1). The same column shape is retained here for governance consistency; in this section, the **Minimum set? (Score 3)** column should be read as **foundational applicability**, not as a scored threshold.
 
 | Capability | Minimum set? (Score 3) | Maturity contribution (3 / 4 / 5) | Owner | Delivery tracking (illustrative: JIRA epic) |
 | --- | --- | --- | --- | --- |

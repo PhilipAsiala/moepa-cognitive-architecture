@@ -19,8 +19,8 @@
 
 | Tier | Audience | Lead with | Technical depth |
 |---|---|---|---|
-| **Leader-facing** | Executives, program managers, acquisition | Business outcomes per MOEPA layer; ownership questions; use-case walkthroughs | None in body copy — link to builder tier |
-| **Builder-facing** | Architects, engineers, reviewers | Engineering translation of each layer; substrate end state; tool patterns | Full — `ARCHITECTURE.md` and governance guidelines |
+| **Leader-facing** | Executives, program managers, acquisition | Business outcomes per MOEPA layer; ownership questions; use-case walkthroughs. Start at the repository README and [primer/](../primer/) | None in body copy — link to builder tier |
+| **Builder-facing** | Architects, engineers, reviewers | Engineering translation of each layer; substrate end state; tool patterns | Full — [catalog/ARCHITECTURE.md](../catalog/ARCHITECTURE.md) and governance guidelines |
 | **Contributor** | Doc authors, RFC proposers | Pitch strategy + business-first test before adding technical detail | Scoped to the tier being edited |
 
 If a leader-facing document mentions MCP, RAG, Iceberg, LangGraph, or similar before stating the business outcome that layer protects, rewrite it.
@@ -73,7 +73,7 @@ Never conflate the overarching system with the operational tool.
 |---|---|---|
 | **Philosophical AI Architecture** | The overarching enterprise ecosystem: Data Substrate, security guardrails, own-vs-rent strategy, and cognitive control plane | Pitching the whole system; README; strategic docs |
 | **MOEPA 5-Layer Framework** | The operational engineering blueprint and governance engine *inside* the architecture: five layers, intake scoring, GO / CONDITIONAL GO / NO-GO rubric | Engineering translation; project intake; layer-by-layer evaluation |
-| **MOEPA Cognitive Architecture** | The technical stack specification: storage mapping, recommended tools, implementation playbook | `ARCHITECTURE.md`; architects and builders |
+| **MOEPA Cognitive Architecture** | The technical stack specification: storage mapping, recommended tools, implementation playbook | [catalog/ARCHITECTURE.md](../catalog/ARCHITECTURE.md); architects and builders |
 | **Data Substrate** | The organization-owned knowledge library — truth, values, rules, and lineage in open formats | Always a physical metaphor; never a "vendor database" |
 
 ---
@@ -128,7 +128,7 @@ Introduce the **MOEPA 5-Layer Framework** as their engineering blueprint — not
 - **Voice:** Direct and specific. Executive-to-executive for leaders; engineer-to-engineer only in builder-tier documents. Confident, and neutral about results the design has not yet demonstrated.
 - **Clarity:** Ground abstract philosophy in physical metaphors — Data Substrate, Control Plane, Management Lever — and define each specialist term on first use.
 - **Actionable output:** Leader guides and examples must show how philosophical disciplines change a decision, a workflow, or an audit — not only how the stack is drawn.
-- **Technical containment:** MCP, semantic ingestion, and substrate storage patterns belong in `ARCHITECTURE.md` and the governance guidelines — not in README intros, leader handouts, or executive summaries.
+- **Technical containment:** MCP, semantic ingestion, and substrate storage patterns belong in `catalog/ARCHITECTURE.md` and the governance guidelines — not in README intros, leader handouts, or executive summaries.
 - **Readability:** Apply the [readability standard](#readability-standard-every-document) in §0 to every new or revised page.
 
 ---
@@ -156,4 +156,4 @@ When describing implementation paths, align with the
 - [Business Leader Guide](moepa-business-leaders-guide.md) — enterprise intake and ownership pitch
 - [Public Sector Leader Guide](moepa-public-sector-leaders-guide.md) — government intake and accountability pitch
 - [Own vs. Rented AI Strategy](Owned-vs-Rented-AI-Strategy.md) — own substrate, rent compute
-- [MOEPA Cognitive Architecture Spec](../ARCHITECTURE.md) — technical implementation
+- [MOEPA Cognitive Architecture Spec](../catalog/ARCHITECTURE.md) — technical implementation

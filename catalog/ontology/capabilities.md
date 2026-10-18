@@ -4,7 +4,7 @@
 
 Bottom line: this layer gives the institution a shared model of reality. Without it, different systems, vendors, and programs may disagree about what a customer, business, account, or relationship actually is.
 
-See [ARCHITECTURE.md](../../ARCHITECTURE.md) for the strategic rationale and [Business Value](../../docs/business-value.md) for the investment lens.
+See [ARCHITECTURE.md](../ARCHITECTURE.md) for the strategic rationale and [Business Value](../../docs/business-value.md) for the investment lens.
 
 ## Mission and Governance Outcomes
 

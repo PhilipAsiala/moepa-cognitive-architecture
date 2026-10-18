@@ -67,7 +67,7 @@ The substrate is **not a sixth scored layer**. It is the agency's owned knowledg
 
 **Business outcome:** When oversight asks *"How did you reach this determination?"* the answer is one owned record — not a vendor dashboard. Metrology stamps how the data was measured. Epistemology records what was verified and with what confidence. Praxeology logs who approved what action. Axiology records which rights and policy rules applied. One fact; one audit trail; complete accountability.
 
-*Technical storage design (SPO/quad models, open formats, federation) is documented in [Data Substrate Concept](Data-Substrate-Concept.md) and [ARCHITECTURE.md §5](../ARCHITECTURE.md) for architects — not required reading for executive review.*
+*Technical storage design (SPO/quad models, open formats, federation) is documented in [Data Substrate Concept](Data-Substrate-Concept.md) and [ARCHITECTURE.md §5](../catalog/ARCHITECTURE.md) for architects — not required reading for executive review.*
 
 ### Why This Matters for Public Sector Ownership
 
@@ -91,7 +91,7 @@ The substrate is how an audit trail stays in agency hands. When an IG, GAO revie
 
 ### The Evaluation Model
 
-Every AI procurement request, internal use case, or vendor proposal can be scored against the five MOEPA layers using the repo's existing **1–5 scale with GO / CONDITIONAL GO / NO-GO decision bands** (see [ARCHITECTURE.md §4.2](../ARCHITECTURE.md) and the [evaluation checklist](5-Layer-Evaluation-Checklist.md) for the rubric).
+Every AI procurement request, internal use case, or vendor proposal can be scored against the five MOEPA layers using the repo's existing **1–5 scale with GO / CONDITIONAL GO / NO-GO decision bands** (see [ARCHITECTURE.md §4.2](../catalog/ARCHITECTURE.md) and the [evaluation checklist](5-Layer-Evaluation-Checklist.md) for the rubric).
 
 **Decision bands:**
 - **NO-GO:** Any layer scores 1 or 2 — automatic NO-GO; remediation required before re-submission
@@ -143,7 +143,7 @@ The lowest layer score sets the recommendation band. A system with four perfect 
 
 ### The End-to-End Worked Example: Income Verification
 
-The following illustrates all five layers and the substrate working together on a real federal use case. This example is consistent with [ARCHITECTURE.md §5](../ARCHITECTURE.md).
+The following illustrates all five layers and the substrate working together on a real federal use case. This example is consistent with [ARCHITECTURE.md §5](../catalog/ARCHITECTURE.md).
 
 **Scenario:** The agency needs to verify a constituent's reported income of $85,000 for a benefit determination.
 
@@ -247,7 +247,7 @@ This reframes every vendor conversation from "What features do you offer?" to "C
 
 ## Appendix — Technical Reference (For Architects, Not Executive Review)
 
-*The assessments and tool lists below are illustrative technical reference material. Leaders should evaluate proposals using Sections 1–5 and the [5-Layer Evaluation Checklist](5-Layer-Evaluation-Checklist.md). Architects use this appendix and [ARCHITECTURE.md](../ARCHITECTURE.md) for implementation planning.*
+*The assessments and tool lists below are illustrative technical reference material. Leaders should evaluate proposals using Sections 1–5 and the [5-Layer Evaluation Checklist](5-Layer-Evaluation-Checklist.md). Architects use this appendix and [ARCHITECTURE.md](../catalog/ARCHITECTURE.md) for implementation planning.*
 
 *Assessments are illustrative only, based on publicly documented default configurations. Actual scores depend on specific implementation choices, contract terms, and agency deployment patterns. These are not endorsements or disqualifications of any vendor.*
 
@@ -315,4 +315,4 @@ If the agency is currently operating on a large-vendor platform (data lakehouse 
 
 *For the industry-neutral companion to this guide — enterprise, nonprofit, and commercial organizations — see [moepa-business-leaders-guide.md](moepa-business-leaders-guide.md).*
 
-*For the full technical specification, including the MOEPA scoring rubric (§4.2), the Data Substrate definition (§5), per-layer evaluation criteria (§4.3), and architectural evolution principles (§5.2), see [ARCHITECTURE.md](../ARCHITECTURE.md).*
+*For the full technical specification, including the MOEPA scoring rubric (§4.2), the Data Substrate definition (§5), per-layer evaluation criteria (§4.3), and architectural evolution principles (§5.2), see [ARCHITECTURE.md](../catalog/ARCHITECTURE.md).*
