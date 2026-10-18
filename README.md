@@ -79,4 +79,4 @@ This repository is organized into three parts, plus supporting diagrams:
 
 ## Feedback and License
 
-Feedback and proposals are welcome via [GitHub Issues](https://github.com/PhilipAsiala/philosophical-ai-architecture/issues/new?template=feedback.yml) — see [CONTRIBUTING.md](CONTRIBUTING.md). Licensed under the [MIT License](LICENSE) (see [TRADEMARK_POLICY.md](TRADEMARK_POLICY.md)).
+Feedback and proposals are welcome via [GitHub Issues](https://github.com/PhilipAsiala/moepa-cognitive-architecture/issues/new?template=feedback.yml) — see [CONTRIBUTING.md](CONTRIBUTING.md). Licensed under the [MIT License](LICENSE) (see [TRADEMARK_POLICY.md](TRADEMARK_POLICY.md)).

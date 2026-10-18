@@ -10,7 +10,7 @@ Last Updated: October 18, 2026
 
 Status: Draft for Review — Feedback Welcome
 
-Repository: [philosophical-ai-architecture](https://github.com/PhilipAsiala/philosophical-ai-architecture) (GitHub) — canonical home of the MOEPA Cognitive Architecture
+Repository: [moepa-cognitive-architecture](https://github.com/PhilipAsiala/moepa-cognitive-architecture) (GitHub) — canonical home of the MOEPA Cognitive Architecture
 
 > **Core terms.** The **MOEPA Cognitive Architecture** is the thesis (the five layers and the intake scorecard). The **Data Substrate** is how owned knowledge is stored. **Agents** are the engine that consumes the Data Substrate across the layers. For the executive business briefs, see [primer/](../primer/). For the enterprise capability catalog, see [catalog/README.md](README.md).
 
