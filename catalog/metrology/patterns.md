@@ -64,4 +64,4 @@ Orchestrators invoke ingestion through an MCP server — never by calling parser
 - Time-travel gaps due to retention settings not aligned to compliance needs
 - Untracked data access in privileged service accounts
 
-See [Business Value](../../docs/business-value.md) and [ARCHITECTURE.md](../../ARCHITECTURE.md) for why durable data governance is central to the Owned-Brain Strategy.
+See [Business Value](../../docs/business-value.md) and [ARCHITECTURE.md](../ARCHITECTURE.md) for why durable data governance is central to the Owned-Brain Strategy.

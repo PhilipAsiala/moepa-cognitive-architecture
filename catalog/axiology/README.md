@@ -1,12 +1,14 @@
 # Axiology Catalog
 
+**Axiology (rules that do not negotiate):** the failure mode is a system prompt asked to enforce a statute, a spending limit, or a rule of engagement. This catalog is the deterministic gate outside the model. A proposed action that violates an encoded rule is refused. A rule that was never encoded is not enforced.
+
 Axiology is the value and governance layer. It enforces ethical constraints, compliance requirements, privacy protections, and strategic alignment.
 
 ## Executive Summary
 
 Bottom line: this layer determines whether AI remains aligned to law, policy, mission, and stakeholder trust. Organization leaders should treat it as the final authority on what the institution is willing to permit, defend, and fund.
 
-See the strategic rationale in [ARCHITECTURE.md](../../ARCHITECTURE.md) and the investment framing in [Business Value](../../docs/business-value.md).
+See the strategic rationale in [ARCHITECTURE.md](../ARCHITECTURE.md) and the investment framing in [Business Value](../../docs/business-value.md).
 
 ## Layer Scope
 

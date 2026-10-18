@@ -62,5 +62,5 @@ CONDITIONAL GO or NO-GO under the MOEPA intake rubric.
 - [Glossary](glossary.md) — MCP, Proto-SPO, semantic ingestion definitions
 - [Data Substrate Concept](Data-Substrate-Concept.md) — semantic ingestion and Proto-SPO lifecycle
 - [5-Layer Evaluation Checklist](5-Layer-Evaluation-Checklist.md) — architectural evolution gate
-- [MOEPA Cognitive Architecture Spec](../ARCHITECTURE.md) — §5.2 architectural evolution principles
+- [MOEPA Cognitive Architecture Spec](../catalog/ARCHITECTURE.md) — §5.2 architectural evolution principles
 - [CONTRIBUTING.md](../CONTRIBUTING.md) — issue and review requirements for contributors

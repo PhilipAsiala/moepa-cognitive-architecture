@@ -28,4 +28,4 @@ These tool categories matter because they determine whether workflow logic, appr
 - Keep workflow state and action logs in enterprise-controlled systems.
 - Enforce tool allowlists and scoped credentials for agent calls.
 - Require deterministic rollback strategies for critical flows.
-- Cross-check orchestration choices against [Business Value](../../docs/business-value.md) and the [Owned-Brain Strategy](../../ARCHITECTURE.md).
+- Cross-check orchestration choices against [Business Value](../../docs/business-value.md) and the [Owned-Brain Strategy](../ARCHITECTURE.md).

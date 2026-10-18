@@ -1,5 +1,7 @@
 # Philosophical AI Architecture — Technical Specification
 ## The MOEPA Cognitive Architecture
+
+Leaders start at the [repository primer](../README.md). This file is the builder specification.
 Version: 2.3 — Full Ownership Focus
 
 Author: Philip Asiala
@@ -10,11 +12,11 @@ Status: Draft for Review — Feedback Welcome
 
 Repository: [philosophical-ai-architecture](https://github.com/PhilipAsiala/philosophical-ai-architecture) (GitHub) — canonical home of the Philosophical AI Architecture
 
-> **Naming.** This document specifies the **MOEPA Cognitive Architecture** — the technical stack design within the **Philosophical AI Architecture**. For the engineering blueprint and intake scoring, see the **MOEPA 5-Layer Framework** in [docs/](docs/). For pitching and narrative alignment, see [pitch strategy](docs/pitch-strategy.md). Term definitions: [glossary](docs/glossary.md).
+> **Naming.** This document specifies the **MOEPA Cognitive Architecture** — the technical stack design within the **Philosophical AI Architecture**. For the engineering blueprint and intake scoring, see the **MOEPA 5-Layer Framework** in [docs/](../docs/). For pitching and narrative alignment, see [pitch strategy](../docs/pitch-strategy.md). Term definitions: [glossary](../docs/glossary.md).
 
 ## Executive Summary: The Owned-Brain Strategy
 
-This specification is for architects and engineers implementing a decision leaders have already framed: what the organization owns, and what it rents. Leader-facing language and the readability standard are in [pitch strategy](docs/pitch-strategy.md) §0.
+This specification is for architects and engineers implementing a decision leaders have already framed: what the organization owns, and what it rents. Leader-facing language and the readability standard are in [pitch strategy](../docs/pitch-strategy.md) §0.
 
 The MOEPA Cognitive Architecture (**Metrology**, measurement; **Ontology**, shared definitions; **Epistemology**, verification; **Praxeology**, action; **Axiology**, value constraints) is the technical layer of the Philosophical AI Architecture. It maps three jobs into software: **Cognition** (knowing), **Affect** (valuing), and **Conation** (acting).
 
@@ -238,7 +240,7 @@ The substrate provides a single SPO/quad backbone (Subject-Predicate-Object, qua
 
 A federation layer (for example, LangGraph routing or Trino) supports cross-layer queries such as: "find all high-confidence income facts that satisfy axiological fairness and support praxeological auto-approval."
 
-**End state vs. evolution.** The SPO/quad hypergraph + lakehouse described here is the **imperative end state** — every agency substrate must converge on owned triples with layer metadata envelopes and federated cross-layer query. Agencies **evolve** toward that target incrementally (e.g. Iceberg/Parquet with SPO-compatible schemas first, pilot triple store, then enterprise graph + federation). Interim storage is valid when ownership, open formats, provenance, and a documented migration path to SPO/quad end state are in place. See [Data Substrate Concept — End State vs. Evolution Path](docs/Data-Substrate-Concept.md#end-state-vs-evolution-path).
+**End state vs. evolution.** The SPO/quad hypergraph + lakehouse described here is the **imperative end state** — every agency substrate must converge on owned triples with layer metadata envelopes and federated cross-layer query. Agencies **evolve** toward that target incrementally (e.g. Iceberg/Parquet with SPO-compatible schemas first, pilot triple store, then enterprise graph + federation). Interim storage is valid when ownership, open formats, provenance, and a documented migration path to SPO/quad end state are in place. See [Data Substrate Concept — End State vs. Evolution Path](../docs/Data-Substrate-Concept.md#end-state-vs-evolution-path).
 
 This substrate scales from lightweight edge deployments (JSON triples + SQLite) to enterprise deployments (full graph + Iceberg). It is sovereignty-aligned with the Owned-Brain strategy: self-hosted graph control, open formats, PROV-O lineage compatibility, and one owned base triple that remains queryable as a single auditable whole.
 
@@ -281,7 +283,7 @@ Each MOEPA layer has a natural philosophical and computational representation fo
 ### 5.2 Architectural Evolution Principles
 
 All implementations adopting the MOEPA Cognitive Architecture must follow the
-[Architectural Governance and Evolution Guidelines](docs/MOEPA-Architectural-Governance-and-Evolution-Guidelines.md).
+[Architectural Governance and Evolution Guidelines](../docs/MOEPA-Architectural-Governance-and-Evolution-Guidelines.md).
 
 **Governance over abstraction.** Avoid vendor-locked orchestration — native
 Bedrock-only tooling, LangChain glue-code, or equivalent framework coupling
@@ -360,7 +362,7 @@ MOEPA is designed to be complementary to major AI governance frameworks:
 - Executive Order 14110 (Safe AI)
 
 ## 9. Governance of the Philosophical AI Architecture
-The practices below describe how an organization adopting the Philosophical AI Architecture and MOEPA 5-Layer Framework should govern its own instance. Architectural evolution rules (MCP-first integration, semantic ingestion, Proto-SPOs, five-layer PR gate) are defined in [Architectural Governance and Evolution Guidelines](docs/MOEPA-Architectural-Governance-and-Evolution-Guidelines.md). To propose changes to this repository itself, see [CONTRIBUTING.md](CONTRIBUTING.md).
+The practices below describe how an organization adopting the Philosophical AI Architecture and MOEPA 5-Layer Framework should govern its own instance. Architectural evolution rules (MCP-first integration, semantic ingestion, Proto-SPOs, five-layer PR gate) are defined in [Architectural Governance and Evolution Guidelines](../docs/MOEPA-Architectural-Governance-and-Evolution-Guidelines.md). To propose changes to this repository itself, see [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 - Semantic versioning (MAJOR.MINOR.PATCH).
 - Quarterly review by Architecture Review Board.

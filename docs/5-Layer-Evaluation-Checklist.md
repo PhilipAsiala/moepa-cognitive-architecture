@@ -237,4 +237,4 @@ In addition to per-layer scores, technical reviewers verify the proposal satisfi
 - [MOEPA 5-Layer Framework](MOEPA-5-Layer-Framework.md) — detailed per-layer leadership questions
 - [Architectural Governance Guidelines](MOEPA-Architectural-Governance-and-Evolution-Guidelines.md) — technical supplement for architects
 - [Owned vs. Rented Strategy](Owned-vs-Rented-AI-Strategy.md) — ownership decision framework
-- [Architecture Specification](../ARCHITECTURE.md) — technical specification of scoring criteria
+- [Architecture Specification](../catalog/ARCHITECTURE.md) — technical specification of scoring criteria

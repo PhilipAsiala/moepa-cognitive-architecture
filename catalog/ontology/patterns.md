@@ -45,4 +45,4 @@ Before a new data record enters the Data Substrate, validate that all entity ref
 - Query instability from unconstrained relationship growth
 - Semantic drift between business rules and graph schema
 
-See [Business Value](../../docs/business-value.md) and [ARCHITECTURE.md](../../ARCHITECTURE.md) for why owning the semantic model is a strategic institutional decision.
+See [Business Value](../../docs/business-value.md) and [ARCHITECTURE.md](../ARCHITECTURE.md) for why owning the semantic model is a strategic institutional decision.

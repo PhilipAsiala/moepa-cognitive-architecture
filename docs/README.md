@@ -4,6 +4,8 @@ This repository is the canonical reference for the **Philosophical AI Architectu
 
 ## Start Here
 
+Leaders: read the [repository primer](../README.md), then the two-page briefs in [primer/](../primer/). Builders: enter the [technical catalog](../catalog/).
+
 - [Pitch Strategy](pitch-strategy.md) — canonical narrative; **§0 Business First** defines audience and tone rules
 - [Business Leader Guide](moepa-business-leaders-guide.md) — executive decision support for any organization *(start here for enterprise)*
 - [Public Sector Leader Guide](moepa-public-sector-leaders-guide.md) — cognitive control plane for federal, state, local, and public institutions
@@ -14,7 +16,7 @@ This repository is the canonical reference for the **Philosophical AI Architectu
 - [Layer Diagram](layer-diagram.md) for a visual overview
 - [FAQ](faq.md) for common questions
 - [Business Value](business-value.md) for investment framing
-- [MOEPA Cognitive Architecture Spec](../ARCHITECTURE.md) for the technical stack
+- [MOEPA Cognitive Architecture Spec](../catalog/ARCHITECTURE.md) for the technical stack
 - [How to Contribute](../CONTRIBUTING.md) for feedback and proposals
 
 ## What This Docs Set Covers

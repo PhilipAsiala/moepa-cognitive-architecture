@@ -4,7 +4,7 @@
 
 Bottom line: this layer keeps AI aligned to law, policy, ethics, privacy, and organizational mission. It determines whether an initiative deserves stakeholder trust and executive approval.
 
-See [ARCHITECTURE.md](../../ARCHITECTURE.md) for the strategic rationale and [Business Value](../../docs/business-value.md) for the investment lens.
+See [ARCHITECTURE.md](../ARCHITECTURE.md) for the strategic rationale and [Business Value](../../docs/business-value.md) for the investment lens.
 
 ## Mission and Governance Outcomes
 

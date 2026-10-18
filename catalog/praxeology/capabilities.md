@@ -4,7 +4,7 @@
 
 Bottom line: this layer governs how AI turns into action. It helps leaders decide where automation is appropriate, where human approval is mandatory, and where operational risk is too high.
 
-See [ARCHITECTURE.md](../../ARCHITECTURE.md) for the strategic rationale and [Business Value](../../docs/business-value.md) for the investment lens.
+See [ARCHITECTURE.md](../ARCHITECTURE.md) for the strategic rationale and [Business Value](../../docs/business-value.md) for the investment lens.
 
 ## Mission and Governance Outcomes
 

@@ -2,7 +2,7 @@
 
 ## Business First
 
-The repository's primary communication rule: MOEPA philosophical disciplines describe **business outcomes** leaders must own (trusted data, shared meaning, verifiable truth, governed action, enforced values). Technical implementation detail belongs in builder-tier documents (`ARCHITECTURE.md` and the governance guidelines). See [pitch strategy §0](pitch-strategy.md), including the readability standard that applies to every page.
+The repository's primary communication rule: MOEPA philosophical disciplines describe **business outcomes** leaders must own (trusted data, shared meaning, verifiable truth, governed action, enforced values). Technical implementation detail belongs in builder-tier documents (`catalog/ARCHITECTURE.md` and the governance guidelines). See [pitch strategy §0](pitch-strategy.md), including the readability standard that applies to every page.
 
 ## Philosophical AI Architecture
 
@@ -14,7 +14,7 @@ The operational engineering blueprint and governance engine *inside* the Philoso
 
 ## MOEPA Cognitive Architecture
 
-The technical stack design within the Philosophical AI Architecture, as specified in [ARCHITECTURE.md](../ARCHITECTURE.md): layer implementations, Data Substrate storage mapping, recommended technology stack, and implementation playbook.
+The technical stack design within the Philosophical AI Architecture, as specified in [ARCHITECTURE.md](../catalog/ARCHITECTURE.md): layer implementations, Data Substrate storage mapping, recommended technology stack, and implementation playbook.
 
 ## Cognition, Affect, Conation
 

@@ -29,4 +29,4 @@ These tool categories matter because they determine whether validation, explanat
 - Separate model output generation from verification decisions.
 - Keep source-of-truth indexes and citation metadata exportable.
 - Require signed evidence bundles for high-risk decisions.
-- Cross-check validation choices against [Business Value](../../docs/business-value.md) and the [Owned-Brain Strategy](../../ARCHITECTURE.md).
+- Cross-check validation choices against [Business Value](../../docs/business-value.md) and the [Owned-Brain Strategy](../ARCHITECTURE.md).

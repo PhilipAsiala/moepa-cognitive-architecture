@@ -27,4 +27,4 @@ These tool categories matter because they determine whether the organization own
 - Avoid vendor-only metadata lock-in for core datasets.
 - Store schema and quality rules as code with review workflows.
 - Require exportable lineage and provenance records.
-- Cross-check high-impact choices against [Business Value](../../docs/business-value.md) and the [Owned-Brain Strategy](../../ARCHITECTURE.md).
+- Cross-check high-impact choices against [Business Value](../../docs/business-value.md) and the [Owned-Brain Strategy](../ARCHITECTURE.md).

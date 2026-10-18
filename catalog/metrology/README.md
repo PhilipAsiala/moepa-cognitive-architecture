@@ -1,12 +1,14 @@
 # Metrology Catalog
 
+**Metrology (what was actually measured):** uncalibrated sensors, unverified documents, and noisy feeds poison every decision that follows. This catalog is the measurement layer — source, time, and uncertainty — before anyone interprets the signal.
+
 Metrology is the measurement and data foundation layer. It ensures data is ingestion-ready, quality-assured, versioned, governed, and discoverable before higher layers consume it.
 
 ## Executive Summary
 
 Bottom line: if this layer is weak, no higher-layer AI investment is trustworthy. Organization leaders should view Metrology as the foundation for auditability, compliance, sovereignty, and defensible decision-making.
 
-See the strategic rationale in [ARCHITECTURE.md](../../ARCHITECTURE.md) and the investment framing in [Business Value](../../docs/business-value.md).
+See the strategic rationale in [ARCHITECTURE.md](../ARCHITECTURE.md) and the investment framing in [Business Value](../../docs/business-value.md).
 
 ## Layer Scope
 

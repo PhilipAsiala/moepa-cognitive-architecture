@@ -50,4 +50,4 @@ Band thresholds are policy-configurable and version-controlled.
 - Silent retrieval failures treated as high-confidence answers
 - Drift in model behavior without updated quality thresholds
 
-See [Business Value](../../docs/business-value.md) and [ARCHITECTURE.md](../../ARCHITECTURE.md) for why verified knowledge is essential to trustworthy AI decisions.
+See [Business Value](../../docs/business-value.md) and [ARCHITECTURE.md](../ARCHITECTURE.md) for why verified knowledge is essential to trustworthy AI decisions.
