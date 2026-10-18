@@ -26,18 +26,18 @@ flowchart TD
     subgraph O["LAYER 2 — ONTOLOGY"]
         O1["Entity Resolution\n(link record to canonical entity)"]
         O2["Graph Enrichment\n(add relationships, context,\nrelated entities)"]
-        O3["Vector Indexing\n(embed for semantic retrieval)"]
     end
 
     subgraph E["LAYER 3 — EPISTEMOLOGY"]
-        E1["RAG Retrieval\n(retrieve owned evidence\nfor this query)"]
+        E0["Vector Indexing\n(embed owned records, bound to\nentity ID + provenance + clearance)"]
+        E1["Grounded Retrieval\n(retrieve owned evidence\nfor this query)"]
         E2["Fact Verification\n(compare inference against\nowned ground truth)"]
         E3["Confidence Scoring\n(evidence strength,\nsource quality, gaps)"]
     end
 
     subgraph P["LAYER 4 — PRAXEOLOGY"]
-        P1["Workflow Gate\n(is this case in scope\nfor automated processing?)"]
-        P2["Human Review Gate\n(required for confidence\n< 90% or escalation cases)"]
+        P1["Workflow Gate\n(is this a pre-approved,\nnon-consequential action class?)"]
+        P2["Human Review Gate\n(required for every consequential\naction and for confidence < 90%)"]
         P3["Action Execution\n(authorized action with\nfull audit logging)"]
     end
 
@@ -66,9 +66,10 @@ flowchart TD
 
     DS --> O1
     O1 --> O2
-    O2 --> O3
-    O3 --> DS
+    O2 --> DS
 
+    DS --> E0
+    E0 --> DS
     DS --> E1
     E1 --> E2
     E2 --> E3
@@ -78,7 +79,8 @@ flowchart TD
     E3 -->|"MEDIUM confidence (70-89%)"| P2
     E3 -->|"LOW confidence (<70%)"| ESCALATE["Escalation\nWorkflow"]
 
-    P1 --> A1
+    P1 -->|"non-consequential class"| A1
+    P1 -->|"consequential"| P2
     P2 --> A1
     A1 -->|"PASS"| A2
     A1 -->|"FAIL"| BLOCKED["Action Blocked\n+ Violation Log"]
@@ -103,15 +105,15 @@ flowchart TD
 Every record that passes Metrology's quality gate enters the Data Substrate with a provenance stamp. Ontology then resolves the record's entity references against the canonical entity model and enriches the record with graph context.
 
 **What passes:** Quality-validated, provenanced data records  
-**What gets added:** Entity linkage, relationship context, semantic embeddings
+**What gets added:** Entity linkage, relationship context
 
 ---
 
 ### Ontology → Data Substrate → Epistemology
-Ontology's enriched records and vector embeddings are stored in the Data Substrate. Epistemology retrieves them during RAG and graph-augmented verification.
+Ontology's enriched records are stored in the Data Substrate. Epistemology embeds them into the owned retrieval index (`DS4`), each vector bound to its canonical entity ID, provenance, and clearance tags, then retrieves them during grounded verification.
 
 **What passes:** Enriched records with entity graph context  
-**What gets added:** Verification results, confidence scores, source citations
+**What gets added:** Vector index entries, verification results, confidence scores, source citations
 
 ---
 
@@ -119,9 +121,11 @@ Ontology's enriched records and vector embeddings are stored in the Data Substra
 Epistemology's confidence score determines how Praxeology routes the case. This is the primary gate between "knowing" and "acting."
 
 **Routing logic:**
-- ≥ 90% confidence → automated workflow eligible
+- ≥ 90% confidence → eligible for the automated path, **only** if the action belongs to a pre-approved, non-consequential action class; consequential actions still require human approval
 - 70–89% → human review required before action
 - < 70% → escalation required; no automated action
+
+Confidence decides how much review a case gets. The action class decides whether a human must approve. High confidence never waives the human checkpoint on a consequential action.
 
 ---
 
@@ -138,8 +142,8 @@ Every proposed action passes through Axiology's policy check and constitutional 
 | Layer | Records Written to Substrate |
 |---|---|
 | Metrology | Quality-validated records with provenance stamps and quality metrics |
-| Ontology | Entity linkages, relationship graph updates, vector index entries |
-| Epistemology | Verification results, confidence scores, source citations, hallucination flags |
+| Ontology | Entity linkages, relationship graph updates, asset registry entries |
+| Epistemology | Vector index entries, verification results, confidence scores, source citations, hallucination flags |
 | Praxeology | Workflow state snapshots, human approval records, audit log entries |
 | Axiology | Policy check results, constitutional filter outcomes, compliance log entries |
 

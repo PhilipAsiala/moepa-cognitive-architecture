@@ -23,6 +23,6 @@ Closes #
 
 ## Verification
 
-- [ ] Aligns with [README.md](README.md) and [primer/](primer/)
+- [ ] Aligns with [README.md](../README.md) and [primer/](../primer/)
 - [ ] Leader-facing docs remain business-first
-- [ ] Cross-links and terminology consistent with [catalog/](catalog/)
+- [ ] Cross-links and terminology consistent with [catalog/](../catalog/)
