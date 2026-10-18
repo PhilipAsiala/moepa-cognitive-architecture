@@ -20,8 +20,8 @@ This repository uses an **issue-first** contribution model:
 
 | You can | You cannot |
 | --- | --- |
-| Open a [Feedback / Question](https://github.com/PhilipAsiala/philosophical-ai-architecture/issues/new?template=feedback.yml) issue | Open a pull request with direct edits |
-| Open a [Proposal / RFC](https://github.com/PhilipAsiala/philosophical-ai-architecture/issues/new?template=proposal-rfc.yml) for substantive design changes | Push branches or submit PRs from a fork expecting merge |
+| Open a [Feedback / Question](https://github.com/PhilipAsiala/moepa-cognitive-architecture/issues/new?template=feedback.yml) issue | Open a pull request with direct edits |
+| Open a [Proposal / RFC](https://github.com/PhilipAsiala/moepa-cognitive-architecture/issues/new?template=proposal-rfc.yml) for substantive design changes | Push branches or submit PRs from a fork expecting merge |
 | Comment on existing issues and RFCs | Bypass discussion by submitting a patch |
 
 The **repository maintainer** reviews issues, decides what changes fit the
@@ -39,8 +39,8 @@ Issues keep discussion open while preserving editorial control on `main`.
 
 ## Ways to participate
 
-- **Questions, typos, or clarifications:** [Feedback / Question issue](https://github.com/PhilipAsiala/philosophical-ai-architecture/issues/new?template=feedback.yml)
-- **Substantive design changes:** [Proposal / RFC issue](https://github.com/PhilipAsiala/philosophical-ai-architecture/issues/new?template=proposal-rfc.yml)
+- **Questions, typos, or clarifications:** [Feedback / Question issue](https://github.com/PhilipAsiala/moepa-cognitive-architecture/issues/new?template=feedback.yml)
+- **Substantive design changes:** [Proposal / RFC issue](https://github.com/PhilipAsiala/moepa-cognitive-architecture/issues/new?template=proposal-rfc.yml)
 - **Accepted changes:** implemented by the maintainer via pull request after issue discussion
 
 ## Helpful feedback

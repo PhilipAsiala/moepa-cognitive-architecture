@@ -34,7 +34,9 @@ body:
         - Epistemology
         - Praxeology
         - Axiology
-        - Cross-cutting / Data Substrate
+        - Data Substrate (DS1–DS7)
+        - Agents (AG1–AG6)
+        - Cross-cutting / Intake scorecard
         - None / Documentation only
     validations:
       required: true

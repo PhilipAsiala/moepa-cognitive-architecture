@@ -1,8 +1,8 @@
 blank_issues_enabled: true
 contact_links:
   - name: Contribution Policy
-    url: https://github.com/PhilipAsiala/philosophical-ai-architecture/blob/main/CONTRIBUTING.md
+    url: https://github.com/PhilipAsiala/moepa-cognitive-architecture/blob/main/CONTRIBUTING.md
     about: Issues only — pull requests are maintainer-only. Read before contributing.
   - name: Executive Primer & Catalog
-    url: https://github.com/PhilipAsiala/philosophical-ai-architecture/blob/main/README.md
+    url: https://github.com/PhilipAsiala/moepa-cognitive-architecture/blob/main/README.md
     about: Start here for an overview of the MOEPA Cognitive Architecture before opening an issue.
