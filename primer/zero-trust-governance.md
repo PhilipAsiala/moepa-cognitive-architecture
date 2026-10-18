@@ -33,4 +33,4 @@ Public-sector accountability language for this same split is in the [public sect
 2. List the actions it may take, and the encoded rule that can refuse each one.
 3. Score Epistemology, Praxeology, and Axiology on the [evaluation checklist](../docs/5-Layer-Evaluation-Checklist.md).
 
-Builder detail: [Epistemology catalog](../catalog/epistemology/README.md) and [Axiology catalog](../catalog/axiology/README.md).
+Builder detail: [Enterprise Agent Capabilities](../catalog/agents.md) (`AG3` Verification Agents and `AG5` Policy Gate Agents).

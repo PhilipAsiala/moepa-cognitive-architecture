@@ -1,227 +1,123 @@
-# Cross-Layer Capability Compositions
+# End-to-End Business Compositions
 
-> Multi-layer capability patterns — showing how MOEPA layers work together for complex, real-world government AI use cases.
+Individual capabilities do not deliver business outcomes in isolation. An enterprise AI workflow is a composition of **[Data Substrate capabilities](data-substrate.md) (`DS1`–`DS6`)** and **[Enterprise Agent capabilities](agents.md) (`AG1`–`AG6`)** operating across the five layers of the **MOEPA Cognitive Architecture**.
 
----
-
-## Overview
-
-No single MOEPA layer operates in isolation. The most important AI governance capabilities emerge from the **interaction between layers**. This document describes the critical cross-layer compositions that every well-governed AI system should implement.
+This page provides six repeatable blueprints for common high-stakes enterprise and public-sector workflows.
 
 ---
 
-## Composition 1: End-to-End Decision Auditability
+## 1. End-to-End Decision Auditability
 
-**Layers involved:** Metrology + Epistemology + Praxeology + Axiology
-
-**What it achieves:** The ability to reconstruct any decision the system made — who asked for it, what data was used, how confidence was determined, who approved it, and what rules governed it — at any point in the future.
-
-**How the layers interact:**
+- **Business problem:** A customer, regulator, or inspector general challenges an AI-assisted decision six months later, and the organization must reconstruct the exact data, definitions, sources, human approvals, and policy rules that produced it.
+- **Capabilities composed:** `DS2` (Provenance) + `DS3` (Entity Version) + `AG3` (Verification & Citations) + `AG4` (Workflow & Human Checkpoint) + `AG5` (Policy Gate) → written to `DS5` (Cross-Layer Audit Ledger).
 
 ```
-AXIOLOGY    Records which policy version governed this decision
-    ↑
-PRAXEOLOGY  Records workflow state, human approvals, timestamps
-    ↑
-EPISTEMOLOGY Records verification results, confidence scores, source citations
-    ↑
-METROLOGY   Records data provenance, quality status, collection context
-    ↑
-DATA SUBSTRATE — All records written as immutable entries with cross-references
+AG5 — Policy Gate Agent (Axiology)        Records policy bundle version & pass/refusal
+  ↑
+AG4 — Workflow Agent (Praxeology)         Records state transitions & human approver ID
+  ↑
+AG3 — Verification Agent (Epistemology)   Records retrieved source IDs & confidence breakdown
+  ↑
+AG2 — Entity Agent (Ontology)             Records canonical entity & schema effective date
+  ↑
+AG1 — Telemetry Agent (Metrology)         Records raw input hash, timestamp & quality status
+  ↑
+DS5 — Cross-Layer Audit Ledger            Single immutable trace linking all five layers
 ```
-
-**Government relevance:** When a constituent or benefits recipient appeals a decision, or when a Congressional oversight body requests documentation, this composition produces a complete, auditable chain from raw source data through final decision.
-
-**Key capabilities required:**
-- M2 (Provenance Recording)
-- E1 (Source-Grounded Retrieval)
-- E4 (Immutable Decision Audit Log)
-- P2 (Human-in-the-Loop Checkpoints)
-- P4 (Immutable Workflow Audit Log)
-- A1 (Policy-as-Code Enforcement)
 
 ---
 
-## Composition 2: High-Confidence Automated Processing with Escalation
+## 2. High-Volume Triage with Deterministic Escalation
 
-**Layers involved:** Metrology + Epistemology + Praxeology
-
-**What it achieves:** Automated processing of high-volume, routine cases with guaranteed escalation for edge cases — achieving operational efficiency without sacrificing accountability.
-
-**How the layers interact:**
+- **Business problem:** Processing thousands of routine filings, claims, or verifications per day without letting edge cases, low-quality inputs, or low-confidence guesses slip through unreviewed.
+- **Capabilities composed:** `AG1` (Telemetry Gate) + `AG2` (Entity Resolution) + `AG3` (Verification Gate) + `AG4` (State Machine & Escalation) + `AG5` (Policy Gate).
 
 ```
-METROLOGY     → Quality gate: is input data sufficient quality to process?
-                  YES → proceed    NO → escalate immediately
-
-EPISTEMOLOGY  → Verification gate: does evidence support a high-confidence answer?
-                  HIGH confidence (≥90%) → automated workflow
-                  MEDIUM confidence (70–89%) → human review required
-                  LOW confidence (<70%) → escalation required
-
-PRAXEOLOGY    → Workflow gate: is the case type within automated processing scope?
-                  IN SCOPE → automated workflow with audit logging
-                  OUT OF SCOPE → human workflow with audit logging
+1. AG1 (Metrology)     → Input quality sufficient?
+                           NO  → Quarantine & escalate immediately
+                           YES → Proceed to entity resolution (AG2)
+2. AG3 (Epistemology)  → Evidence supports high-confidence verified answer?
+                           HIGH (≥90%, corroborated) → Automated workflow path
+                           MEDIUM (70–89%)           → Mandatory human review queue
+                           LOW (<70% or conflict)    → Specialist escalation queue
+3. AG4 (Praxeology)    → Execute state machine path; pause at human checkpoint if consequential
+4. AG5 (Axiology)      → Enforce Policy-as-Code before any external notice or record update
 ```
-
-**Government relevance:** Income verification, routine eligibility determinations, and standard compliance checks can be handled at scale. Unusual cases, conflicting evidence, or data quality issues route automatically to human reviewers — no case falls through a gap.
-
-**Key capabilities required:**
-- M1 (Data Quality Rules Engine)
-- E3 (Confidence Scoring and Uncertainty Communication)
-- E2 (Fact Verification Gate)
-- P1 (Deterministic Workflow State Machine)
-- P2 (Human-in-the-Loop Checkpoints)
-- P6 (Escalation and Exception Handling)
 
 ---
 
-## Composition 3: Knowledge-Grounded AI Response
+## 3. Grounded Enterprise Research & Analyst Copilot
 
-**Layers involved:** Ontology + Epistemology + Axiology
-
-**What it achieves:** AI responses that are grounded in owned organizational knowledge, cite specific sources, and are checked against policy constraints before reaching the user.
-
-**How the layers interact:**
+- **Business problem:** Analysts, examiners, or caseworkers need an AI assistant to synthesize complex policies and case files without hallucinating rules or surfacing records the user is not cleared to see.
+- **Capabilities composed:** `DS3` (Knowledge Graph) + `DS4` (Owned Vector Index) + `AG3` (Verification & Citation Agent) + `AG5` (Policy & PII Filter).
 
 ```
-User Query
-    ↓
-ONTOLOGY      → Knowledge graph retrieval: find relevant entities and relationships
-    ↓
-EPISTEMOLOGY  → RAG retrieval: find relevant owned documents and verified facts
-                → Confidence scoring: how well-supported is the response?
-    ↓
-AXIOLOGY      → Policy filter: does the proposed response comply with all constraints?
-                  PASS → response delivered with citations and confidence score
-                  FAIL → response blocked; violation logged; alternative response generated
-    ↓
-Response with: citations | confidence score | policy compliance status
+Analyst Query
+  ↓
+AG2 + DS3 (Ontology)      → Resolve entities and traverse graph relationships
+  ↓
+AG3 + DS4 (Epistemology)  → Retrieve clearance-filtered passages (`Proto-SPO`s);
+                            verify every claim cites an owned record; score confidence
+  ↓
+AG5 (Axiology)            → Enforce disclosure, privacy, and prompt-injection rules
+  ↓
+Delivered Response        → Cited substrate IDs + decomposed confidence + policy pass stamp
 ```
-
-**Government relevance:** AI-assisted research tools for examiners, analysts, or caseworkers — grounded in agency knowledge, not generic training data, and guaranteed to comply with disclosure and use constraints.
-
-**Key capabilities required:**
-- O2 (Knowledge Graph)
-- O3 (Embedding and Vector Index)
-- E1 (Source-Grounded Retrieval)
-- E5 (Hallucination Detection)
-- A1 (Policy-as-Code Enforcement)
-- A2 (Constitutional Guardrails)
 
 ---
 
-## Composition 4: Sovereign AI Intake and Scoring
+## 4. Sovereign AI Project Intake and Portfolio Scoring
 
-**Layers involved:** All five layers + Data Substrate
+- **Business problem:** Evaluating dozens or hundreds of AI proposals consistently, preventing duplicate builds, and blocking vendor lock-in before contracts are signed.
+- **Capabilities composed:** `DS6` (Demand Management & Deduplication) + `AG4` (Intake Workflow) + `AG5` (ROI & Chargeback Gate) + `DS5` (Governance Ledger).
 
-**What it achieves:** A fully owned, governed AI project intake and evaluation process — no vendor dependency at any layer.
-
-**How the layers interact:**
-
-| Layer | Role in Intake Process |
-|---|---|
-| Metrology | Validates the quality and completeness of proposal submission data |
-| Ontology | Resolves entities in the proposal (what systems, what data, what processes) to the agency's canonical model |
-| Epistemology | Verifies factual claims in the proposal against owned reference data (budget figures, policy citations) |
-| Praxeology | Executes the scoring workflow with defined review stages and human approval gates |
-| Axiology | Evaluates proposal alignment with mission priorities and compliance requirements |
-| Data Substrate | Records all scores, evidence, approvals, and decisions as a durable governance record |
-
-**Government relevance:** Consistent, auditable AI project evaluation across an agency — enabling leadership to compare proposals, track historical decisions, and demonstrate governance rigor to oversight bodies.
-
-**Key capabilities required:**
-- Full 5-Layer scoring per the [Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md)
-- Data Substrate for persistent governance records
-- P1 (Deterministic Workflow State Machine)
-- A4 (Mission Alignment Configuration)
+| Step | Capability | Action |
+| :--- | :--- | :--- |
+| **1. Deduplicate** | `DS6` + `DS3` | Search the canonical entity registry and capability catalog to prove the dataset or agent does not already exist |
+| **2. Qualify Data** | `DS1` + `AG1` | Verify whether required source data is already governed on the enterprise platform |
+| **3. Score 5 Layers** | [Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md) | Score Metrology through Axiology (1–5); any layer `< 3` triggers an automatic `NO-GO` |
+| **4. Validate ROI** | `AG5` | Verify quantified business ROI and chargeback/showback attribution |
+| **5. Record Decision** | `DS5` | Write scores, compensating controls, and executive sign-off to the governance ledger |
 
 ---
 
-## Composition 5: Continuous Compliance Monitoring
+## 5. Continuous Post-Launch Compliance and Drift Monitoring
 
-**Layers involved:** Metrology + Praxeology + Axiology
-
-**What it achieves:** Ongoing assurance that the AI system is operating within approved parameters — detecting drift, policy violations, and anomalies before they become incidents.
-
-**How the layers interact:**
+- **Business problem:** An AI system passes initial intake, but six months later its input data drifts, its escalation rate spikes, or its outcomes skew across demographic groups.
+- **Capabilities composed:** `AG1` (Drift & KPI Monitor) + `AG4` (Workflow Telemetry) + `AG5` (Bias, Equity & Policy Monitor).
 
 ```
-METROLOGY     → Continuous data quality monitoring: detect input drift
-    ↓             Alert if input distribution changes significantly
-PRAXEOLOGY    → Workflow monitoring: detect deviation from approved process
-    ↓             Alert if unusual state transitions or escalation rate changes
-AXIOLOGY      → Policy compliance monitoring: detect guardrail activation patterns
-                  Alert if policy violations increase; trigger investigation
+AG1 (Metrology)   → Monitors input distributions & post-launch KPIs vs. pre-launch baseline
+AG4 (Praxeology)  → Monitors state transitions, loop rates, and human override frequency
+AG5 (Axiology)    → Monitors policy-gate refusals and demographic equity thresholds
+  ↓
+Automated Governance Alert → Triggers workflow throttle, rollback, or mandatory re-review
 ```
-
-**Government relevance:** AI systems cannot be approved once and forgotten. Continuous compliance monitoring provides ongoing assurance to leadership and oversight bodies that the system remains within approved boundaries — without requiring manual audits on a fixed schedule.
-
-**Key capabilities required:**
-- M3 (Statistical Profiling and Drift Detection)
-- P4 (Immutable Workflow Audit Log)
-- A5 (Bias and Equity Monitoring)
-- A6 (Value Alignment Testing)
 
 ---
 
-## Composition 6: MCP-Governed Capability Access
+## 6. Portable Multi-Model Orchestration via MCP
 
-**Layers involved:** All five layers + Data Substrate
-
-**What it achieves:** Every data, retrieval, workflow, and policy capability is discoverable and invocable through MCP — keeping orchestration portable across Bedrock, self-hosted runtimes, and future hosts without vendor glue-code lock-in.
-
-**How the layers interact:**
+- **Business problem:** Swapping an underlying LLM (for example, moving from a cloud frontier model to a local open-weight model) without rewriting data integrations, RAG pipelines, or policy checks.
+- **Capabilities composed:** `AG6` (MCP Capability Bus) wrapping `DS1`–`DS6` and `AG1`–`AG5`.
 
 ```
-AI Orchestrator (Bedrock, LangGraph router, policy-governed agent runtime)
-    ↓  discovers tools only via MCP
-MCP Integration Layer
-    ├── Metrology MCP server    → semantic ingestion, quality gates
-    ├── Ontology MCP server     → entity resolution, graph queries
-    ├── Epistemology MCP server → RAG retrieval, verification, citations
-    ├── Praxeology MCP server   → workflow steps, approvals
-    └── Axiology MCP server     → policy checks, guardrails
-    ↓
-Data Substrate + layer services (never called directly by orchestrator)
+Model / Orchestrator Host (Cloud LLM, Local Open-Weight Model, State Machine)
+  ↓  invokes capabilities exclusively via MCP contracts
+AG6 — MCP Capability Bus
+  ├── Metrology MCP Server     → DS1/DS2 ingestion, quality & provenance checks (AG1)
+  ├── Ontology MCP Server      → DS3/DS6 entity resolution & graph queries (AG2)
+  ├── Epistemology MCP Server  → DS4 grounded retrieval & citation verification (AG3)
+  ├── Praxeology MCP Server    → workflow state transitions & human approval queues (AG4)
+  └── Axiology MCP Server      → OPA policy evaluation & guardrail checks (AG5)
 ```
-
-**Government relevance:** Procurement and architecture review can inventory exactly which governed capabilities an AI system can invoke — with audit trails on every tool call, not hidden framework callbacks.
-
-**Key capabilities required:**
-- M8 (Semantic Document Ingestion / Proto-SPO)
-- E1 (Source-Grounded Retrieval)
-- P1 (Deterministic Workflow State Machine)
-- A1 (Policy-as-Code Enforcement)
-- MCP servers or facades for every cross-layer tool in the reference stack below
-
----
-
-## Tool Stack Reference: Cross-Layer Integration
-
-A reference stack for a well-integrated, self-hosted MOEPA implementation. All layer
-tools are exposed through **MCP servers or facades** — orchestrators never call
-underlying APIs directly.
-
-| Layer | Primary Tool | Integration Point |
-|---|---|---|
-| **MCP (cross-cutting)** | Model Context Protocol servers and facades | Sole interface for orchestrator tool discovery and invocation |
-| Data Substrate | Apache Iceberg + Neo4j | All layers read/write via MCP-governed substrate APIs |
-| Metrology | Docling/Unstructured + Great Expectations + OpenLineage | Semantic ingestion → Proto-SPOs; quality validation before layer 2+ |
-| Ontology | Neo4j + Chroma | Graph traversal + vector retrieval via MCP tools |
-| Epistemology | LlamaIndex + Guardrails AI | RAG grounded in Ontology via MCP; output validated by Axiology |
-| Praxeology | LangGraph/Temporal + Open Policy Agent | State machine execution via MCP; OPA enforces Axiology constraints |
-| Axiology | OPA + LLM Guard | Policy code enforced across Praxeology via MCP tools |
-| Observability | OpenTelemetry | Spans across all layers and MCP tool calls; fed to compliance monitoring |
 
 ---
 
 ## Related Documents
 
-- [Metrology](metrology/README.md) — capabilities, scoring, tools, and patterns
-- [Ontology](ontology/README.md) — capabilities, scoring, tools, and patterns
-- [Epistemology](epistemology/README.md) — capabilities, scoring, tools, and patterns
-- [Praxeology](praxeology/README.md) — capabilities, scoring, tools, and patterns
-- [Axiology](axiology/README.md) — capabilities, scoring, tools, and patterns
-- [Catalog Overview](README.md) — the single holistic MOEPA Catalog (governance + reference)
-- [Examples](../examples/) — end-to-end scenario walkthroughs using these compositions
+- **[Enterprise Capability Catalog Overview](README.md)**
+- **[Data Substrate Capabilities](data-substrate.md)** (`DS1`–`DS6`)
+- **[Enterprise Agent Capabilities](agents.md)** (`AG1`–`AG6`)
+- **[Enterprise Capability Matrix](capability-matrix.md)**
+- **[Worked Scenarios](../examples/)** — income verification, benefits eligibility, and project intake scoring

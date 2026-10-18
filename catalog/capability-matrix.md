@@ -1,105 +1,49 @@
-# MOEPA Capability Matrix
+# Enterprise Capability Matrix
 
-The MOEPA Capability Matrix provides a single governance view of the **minimum capability baseline** across the MOEPA Cognitive Architecture. It is intended to help leaders set priorities, identify gaps before funding, and roadmap delivery without changing the existing five-layer scoring model.
+This matrix is the single governance view of the **Enterprise Capability Catalog**. Rather than organizing capabilities as abstract philosophical checklists, it groups them into the two capability pillars the enterprise actually builds, funds, and owns:
 
-This matrix explicitly binds the **minimum set of capabilities** for each scored layer to **Score 3 — Defined & Contained — Minimum Acceptable Standard** in the existing **1–5 plus GO / CONDITIONAL GO / NO-GO** rubric described in [ARCHITECTURE.md](ARCHITECTURE.md) (§4.2) and each layer's scoring guide. Capabilities that contribute to Scores 4 and 5 are the ones that lift a layer beyond the minimum baseline.
+1. **[Data Substrate Capabilities](data-substrate.md) (`DS1`–`DS6`)** — the organization-owned storage and semantic foundation.
+2. **[Enterprise Agent Capabilities](agents.md) (`AG1`–`AG6`)** — the execution engine and deterministic control gates that run on top of the Data Substrate.
 
-This file stores the **durable capability taxonomy**: what must exist, who owns it, and how it contributes to maturity. Live delivery progress belongs in JIRA under the Praxeology workflow, not in committed markdown. The JIRA references below are therefore **illustrative bindings only**, aligned to [Praxeology tools](praxeology/tools.md), not embedded status fields.
+Every capability is mapped to the **MOEPA Cognitive Architecture** layer it serves and bound to the existing **1–5 intake rubric (`GO` / `CONDITIONAL GO` / `NO-GO`)** defined in [ARCHITECTURE.md](ARCHITECTURE.md) (§4.2) and the [5-Layer Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md):
 
-The matrix is part of the single [MOEPA Catalog](README.md), which also contains detailed capabilities, recommended tools, patterns, scoring guides, and [cross-layer compositions](cross-layer-compositions.md).
+- **Minimum set (Score 3 — Defined & Contained):** Required to avoid an automatic `NO-GO`. Missing any minimum-set capability means the proposal scores below 3 on that layer.
+- **Score 4 (Managed & Measured) and Score 5 (Optimized & Sovereign):** Capabilities that lift a proposal from `CONDITIONAL GO` to an unconditional `GO` and compound value across the enterprise.
 
-## Related References
+---
 
-- [Catalog overview](README.md) (single holistic source for capabilities, tools, patterns, scoring, and cross-layer)
-- [Metrology capabilities](metrology/capabilities.md) and [Metrology scoring](metrology/scoring.md)
-- [Ontology capabilities](ontology/capabilities.md) and [Ontology scoring](ontology/scoring.md)
-- [Epistemology capabilities](epistemology/capabilities.md) and [Epistemology scoring](epistemology/scoring.md)
-- [Praxeology capabilities](praxeology/capabilities.md) and [Praxeology scoring](praxeology/scoring.md)
-- [Axiology capabilities](axiology/capabilities.md) and [Axiology scoring](axiology/scoring.md)
-- [ARCHITECTURE.md](ARCHITECTURE.md) for the scoring rubric (§4.2) and the Data Substrate (§5.1)
-- [Praxeology tools](praxeology/tools.md) for the JIRA and delivery-workflow binding
+## Part 1: Data Substrate Capabilities (The Storage)
 
-## How to Use This Matrix
+See full specifications in [Data Substrate Capabilities](data-substrate.md).
 
-1. Assess current capabilities layer by layer against the tables below.
-2. Identify any missing **minimum set** rows; those gaps indicate a score below 3 and therefore a governance problem that must be remediated.
-3. Prioritize the capabilities that close Score 3 gaps first, then sequence the Score 4 and Score 5 capabilities that strengthen reuse, measurability, and resilience.
-4. Track live delivery work through JIRA epics and stories under the Praxeology workflow so execution status remains current without turning this catalog into a stale project tracker.
+| ID | Enterprise Capability | MOEPA Layer | Minimum Set (Score 3 Baseline) | Maturity Progression (Score 4 → Score 5) | Accountable Owner |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **DS1** | **Open-Format Lakehouse & Table Catalog** | 1. Metrology / Substrate | Core data stored in exportable open formats (Parquet/CSV/JSON) with RBAC, egress logs, and platform availability check prior to building new pipelines | **4:** Native Apache Iceberg + Parquet tables in an open catalog (Polaris) with replay<br>**5:** Self-hosted, air-gappable lakehouse with zero-trust egress alerting | Data Platform Owner |
+| **DS2** | **Semantic Ingestion & Provenance Ledger** | 1. Metrology | Source origin, collection timestamp, and basic quality validation recorded per batch; governed documents parsed along structural boundaries (no fixed-token chainsaw chunking) | **4:** Automated semantic parsing into `Proto-SPO` objects with versioned configs<br>**5:** Cryptographic (SHA-256) source fingerprinting and end-to-end PROV-O / OpenLineage graphs | Data Quality & Governance Owner |
+| **DS3** | **Canonical Entity Registry & Knowledge Graph** | 2. Ontology | Core domain entities (customer, case, asset, policy), relationships, and controlled vocabularies documented with schema effective dates | **4:** Internally managed knowledge graph and governed vocabulary service<br>**5:** SPO/quad backbone storing each base fact once with point-in-time historical queryability | Domain Ontology Owner |
+| **DS4** | **Owned Vector & Grounded Retrieval Index** | 2. Ontology / 3. Epistemology | Vector and retrieval index hosted inside organization-controlled infrastructure, returning source citations for every passage | **4:** Embeddings bound to canonical entity IDs (`DS3`) and provenance (`DS2`); auto-updated on source change<br>**5:** Pre-retrieval clearance filtering and cryptographic index verification | Knowledge Assurance Owner |
+| **DS5** | **Cross-Layer Audit & Decision Ledger** | 3. Epistemology / 4. Praxeology / 5. Axiology | Tamper-evident logs of inputs, cited sources, confidence scores, workflow approvals, and policy checks, plus a versioned policy baseline | **4:** Cross-referenced audit chain linking Metrology through Axiology on every decision<br>**5:** Append-only signed ledger with cross-layer metadata envelopes and OS-locked Golden Master policy | Compliance & Operations Owner |
+| **DS6** | **AI Demand Management & Asset Deduplication** | 2. Ontology / Portfolio | Proposers search an inventory of existing datasets, schemas, and agents by domain before intake scoring proceeds | **4:** Mandatory semantic search over the knowledge graph and catalog at intake<br>**5:** Formal non-duplication proof required before any new capability is funded | Enterprise Architecture & Catalog Steward |
 
-## Metrology
+---
 
-See [layer details](metrology/capabilities.md) and [scoring guide](metrology/scoring.md).
+## Part 2: Enterprise Agent Capabilities (The Engine)
 
-| Capability | Minimum set? (Score 3) | Maturity contribution (3 / 4 / 5) | Owner | Delivery tracking (illustrative: JIRA epic) |
-| --- | --- | --- | --- | --- |
-| Raw data ingestion and scalable compute for batch and streaming workloads | Yes | 3 — establishes a controlled internal data foundation for operational use | Data platform owner | Illustrative: JIRA epic for governed ingestion and compute onboarding |
-| Structured storage with versioning and replay support (for example, Delta Lake patterns) | Yes | 3 — enables repeatable storage, replay, and controlled operational use | Data platform owner | Illustrative: JIRA epic for versioned storage and replay |
-| Data catalog operations for centralized metadata and discovery | No | 4 — strengthens discoverability, reuse, and governance at scale | Data governance owner | Illustrative: JIRA epic for catalog and metadata operations |
-| Schema enforcement, data quality checks, and validation gates | Yes | 3 — provides the defined quality controls expected at the minimum acceptable standard | Data quality owner | Illustrative: JIRA epic for schema and quality controls |
-| Access control, lineage, provenance, and time-travel inspection | Yes | 3 / 4 / 5 — baseline lineage and access control support Score 3, while deeper provenance and inspection lift audit readiness | Data governance owner | Illustrative: JIRA epic for access, lineage, and provenance controls |
-| Semantic document ingestion producing Proto-SPOs (no chainsaw chunking) | No | 4 — preserves document structure and semantic intent for governed corpora | Data platform owner | Illustrative: JIRA epic for semantic ingestion and MCP ingestion server |
+See full specifications in [Enterprise Agent Capabilities](agents.md).
 
-## Ontology
+| ID | Enterprise Capability | MOEPA Layer | Minimum Set (Score 3 Baseline) | Maturity Progression (Score 4 → Score 5) | Accountable Owner |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **AG1** | **Telemetry & Quality Gate Agents** | 1. Metrology | Automated ingress validation rules on core fields; failed records quarantined and escalated; post-launch outcome KPIs defined | **4:** Continuous statistical profiling, drift alerting, and pre-launch KPI baselining<br>**5:** Automatic pipeline quarantine on drift and scheduled post-launch ROI/KPI verification loops | Data Platform + Business Owner |
+| **AG2** | **Entity Resolution & Semantic Mapping Agents** | 2. Ontology | Deterministic/hybrid mapping of raw inputs to canonical entity definitions (`DS3`) and official code sets; ambiguous matches flagged for review | **4:** Graph-backed entity resolution across heterogeneous datasets<br>**5:** Dynamic relationship updates with point-in-time policy awareness and steward approval gates | Domain Integration Owner |
+| **AG3** | **Verification, Grounding & Citation Agents** | 3. Epistemology | Grounded RAG over `DS4` with source citations; primary-source verification gate on consequential claims; documented confidence scoring; hallucination checks | **4:** Automated verification and hallucination gates block ungrounded claims; decomposed confidence scores<br>**5:** Multi-source corroboration, consistency checks, and SHA-256 pipeline integrity verification | Decision Assurance Owner |
+| **AG4** | **Workflow & Execution Agents** | 4. Praxeology | Explicit workflow sequence; allow-listed agent tool scopes; mandatory human-in-the-loop checkpoints before consequential actions; defined escalation paths | **4:** Formal state-machine execution (LangGraph/Temporal) routing routine tasks to code/small models<br>**5:** Infrastructure-enforced checkpoints and tool scopes that cannot be bypassed by prompts | Workflow & Operations Owner |
+| **AG5** | **Policy & Compliance Gate Agents** | 5. Axiology | Key legal, privacy, and compliance rules encoded as machine checks outside the model; prompt-injection sanitization; periodic bias audits; qualitative ROI and cost attribution | **4:** Infrastructure Policy-as-Code (OPA), continuous equity monitoring, quantified ROI & chargeback models<br>**5:** Inviolable constitutional guardrails verified by scheduled adversarial red-teaming | Policy, Responsible AI & Finance Owners |
+| **AG6** | **MCP Capability Bus** | Cross-Cutting | Explicit, versioned tool contracts between orchestrators and enterprise data/services with centralized invocation logging | **4:** All new substrate and agent capabilities exposed as Model Context Protocol (MCP) servers or facades<br>**5:** Full host portability — models and orchestrators can be swapped with zero integration rewrites | Platform Architecture Owner |
 
-See [layer details](ontology/capabilities.md) and [scoring guide](ontology/scoring.md).
+---
 
-| Capability | Minimum set? (Score 3) | Maturity contribution (3 / 4 / 5) | Owner | Delivery tracking (illustrative: JIRA epic) |
-| --- | --- | --- | --- | --- |
-| Entity modeling for customers, businesses, accounts, and related actors | Yes | 3 — establishes governable core entities for the mission domain | Domain ontology owner | Illustrative: JIRA epic for core entity modeling |
-| Relationship mapping across legal, financial, and operational domains | Yes | 3 — defines governable institutional relationships across key domains | Domain ontology owner | Illustrative: JIRA epic for relationship mapping |
-| Knowledge graph construction with hierarchy and taxonomy support | No | 4 — expands reuse and institutional consistency through richer semantic governance | Knowledge graph owner | Illustrative: JIRA epic for knowledge graph and taxonomy build-out |
-| Semantic linking to connect meaning across heterogeneous datasets | Yes | 3 / 4 — provides shared meaning across governed sources and improves reuse across programs | Domain integration owner | Illustrative: JIRA epic for semantic linking across datasets |
-| Advanced graph querying with dynamic relationship updates | No | 5 — supports enterprise-scale reasoning and continuously evolving semantic operations | Knowledge graph owner | Illustrative: JIRA epic for advanced graph query services |
-| Controlled integration with Metrology outputs | Yes | 3 — keeps semantic assets grounded in governed source data | Data and ontology steward | Illustrative: JIRA epic for ontology-to-metrology integration |
+## How to Use This Matrix in Project Intake
 
-## Epistemology
-
-See [layer details](epistemology/capabilities.md) and [scoring guide](epistemology/scoring.md).
-
-| Capability | Minimum set? (Score 3) | Maturity contribution (3 / 4 / 5) | Owner | Delivery tracking (illustrative: JIRA epic) |
-| --- | --- | --- | --- | --- |
-| Grounded retrieval (RAG) over trusted enterprise sources | Yes | 3 — anchors conclusions in trusted enterprise evidence | Knowledge assurance owner | Illustrative: JIRA epic for grounded retrieval controls |
-| Inference engines tuned for auditable decision support | Yes | 3 — makes decision support reviewable instead of purely prompt-driven | Decision assurance owner | Illustrative: JIRA epic for auditable inference services |
-| Model validation for reliability, drift, and failure detection | No | 4 — adds continuous reliability measurement and control | Model assurance owner | Illustrative: JIRA epic for validation, drift, and failure monitoring |
-| Provenance tracking for conclusions and generated outputs | Yes | 3 — preserves evidence chains needed for review, audit, and appeal | Knowledge assurance owner | Illustrative: JIRA epic for provenance and evidence chains |
-| Uncertainty handling with knowledge quality scoring | Yes | 3 / 4 — exposes uncertainty at the baseline and strengthens governance when standardized | Decision assurance owner | Illustrative: JIRA epic for uncertainty and quality scoring |
-| Explanation generation and consistency checks across outputs | No | 5 — supports audit-grade defensibility and enterprise trust | Explainability owner | Illustrative: JIRA epic for explanation and consistency controls |
-
-## Praxeology
-
-See [layer details](praxeology/capabilities.md), [scoring guide](praxeology/scoring.md), and [tools](praxeology/tools.md).
-
-| Capability | Minimum set? (Score 3) | Maturity contribution (3 / 4 / 5) | Owner | Delivery tracking (illustrative: JIRA epic) |
-| --- | --- | --- | --- | --- |
-| Agent frameworks for goal-oriented execution | No | 4 — provides a reusable control plane for multi-step automation | Automation platform owner | Illustrative: JIRA epic for agent orchestration platform |
-| Workflow automation for repeatable business operations | Yes | 3 — establishes defined and reviewable operational flows | Workflow owner | Illustrative: JIRA epic for repeatable workflow automation |
-| Decision engines combining rule-based and AI recommendations | Yes | 3 — keeps actions bounded by explicit decision logic | Decision workflow owner | Illustrative: JIRA epic for hybrid decision services |
-| Action orchestration and goal decomposition across multi-step plans | Yes | 3 / 4 — supports governable multi-step execution and lifts maturity when standardized | Workflow owner | Illustrative: JIRA epic for orchestration and goal decomposition |
-| Real-time execution controls with human-in-the-loop checkpoints | Yes | 3 / 4 / 5 — mandatory checkpoints satisfy the minimum, while stronger runtime controls and approvals lift higher | Operations control owner | Illustrative: JIRA epic for approvals, checkpoints, and stop conditions |
-| Process optimization using telemetry and feedback loops | No | 4 / 5 — improves resilience and scaled operational performance | Process improvement owner | Illustrative: JIRA epic for workflow telemetry and optimization |
-
-## Axiology
-
-See [layer details](axiology/capabilities.md) and [scoring guide](axiology/scoring.md).
-
-| Capability | Minimum set? (Score 3) | Maturity contribution (3 / 4 / 5) | Owner | Delivery tracking (illustrative: JIRA epic) |
-| --- | --- | --- | --- | --- |
-| Bias and fairness monitoring for model and workflow outcomes | No | 4 — makes governance measurable and reviewable over time | Responsible AI owner | Illustrative: JIRA epic for fairness monitoring |
-| Policy and rule enforcement aligned to regulatory and compliance requirements | Yes | 3 — defines enforceable control boundaries at the minimum acceptable standard | Policy owner | Illustrative: JIRA epic for policy and rule enforcement |
-| Ethical alignment scoring and strategic objective alignment | Yes | 3 — ties initiatives to explicit mission and value criteria | Governance board owner | Illustrative: JIRA epic for ethical and strategic alignment |
-| Privacy controls for customer and sensitive enterprise data | Yes | 3 — provides mandatory data protection and compliance boundaries | Privacy owner | Illustrative: JIRA epic for privacy controls |
-| Transparency and explainability requirements for accountable decisions | Yes | 3 / 4 — supports accountable decisions at the baseline and stronger oversight at higher maturity | Accountability owner | Illustrative: JIRA epic for transparency and explainability |
-| Compliance frameworks and value-based prioritization criteria | No | 5 — institutionalizes durable review and portfolio governance | Compliance portfolio owner | Illustrative: JIRA epic for compliance framework and prioritization |
-
-## Data Substrate (Unscored Owned Foundation)
-
-The Data Substrate is the shared owned foundation beneath the five scored layers. It is **not** a sixth scored layer and does not change the 1–5 MOEPA rubric. Its role is to provide the shared representation, lineage, and portability backbone described in [ARCHITECTURE.md](ARCHITECTURE.md) (§5.1). The same column shape is retained here for governance consistency; in this section, the **Minimum set? (Score 3)** column should be read as **foundational applicability**, not as a scored threshold.
-
-| Capability | Minimum set? (Score 3) | Maturity contribution (3 / 4 / 5) | Owner | Delivery tracking (illustrative: JIRA epic) |
-| --- | --- | --- | --- | --- |
-| Shared SPO/quad backbone with base-triple-once storage | Unscored foundation | Provides the common representation layer beneath all scored capabilities | Data substrate owner | Illustrative: JIRA epic for shared triple backbone |
-| Open-format lakehouse and graph storage for owned facts and relationships | Unscored foundation | Preserves portability, replay, and sovereign control of the owned foundation | Data substrate owner | Illustrative: JIRA epic for lakehouse and graph foundation |
-| Structural lineage, versioning, and replay across substrate assets | Unscored foundation | Enables auditable change history for cross-layer assets | Data platform owner | Illustrative: JIRA epic for structural lineage and versioning |
-| Cross-layer metadata envelopes for metrology, epistemology, praxeology, and axiology | Unscored foundation | Lets each scored layer attach its own controls without duplicating the base fact | Data substrate owner | Illustrative: JIRA epic for cross-layer metadata envelopes |
-| PROV-O-compatible provenance and metadata exchange | Unscored foundation | Supports interoperable lineage and review across tools and teams | Governance metadata owner | Illustrative: JIRA epic for provenance exchange |
-| Federation and edge-to-cloud scaling across graph and lakehouse deployments | Unscored foundation | Supports cross-layer queries and scale from lightweight edge deployments to enterprise operations | Platform architecture owner | Illustrative: JIRA epic for federation and edge-to-cloud scale |
+1. **Check the Data Substrate first (`DS1`–`DS6`):** Does the proposal reuse existing governed tables, entity definitions, and indexes (`DS6`), or is it standing up a shadow silo?
+2. **Check the Agent Engine (`AG1`–`AG6`):** Which agents are probabilistic proposers (`AG4` planning), and which are deterministic gates (`AG1` quality, `AG3` verification, `AG5` policy refusal)?
+3. **Score the five layers:** Use the [5-Layer Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md). Any layer missing its **Minimum Set (Score 3)** capabilities receives a score `< 3`, resulting in an automatic **NO-GO** until remediated.
