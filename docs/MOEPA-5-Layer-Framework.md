@@ -1,6 +1,6 @@
-# The MOEPA 5-Layer Framework for Leaders
+# The MOEPA Cognitive Architecture for Leaders
 
-> For leaders who must approve, pause, or reject an AI proposal, and for the engineers who implement that decision. Each layer is one question to answer with evidence before funding. This document defines the **MOEPA 5-Layer Framework**. See the [Glossary](glossary.md) and [Pitch Strategy](pitch-strategy.md).
+> For leaders who must approve, pause, or reject an AI proposal, and for the engineers who implement that decision. Each layer is one question to answer with evidence before funding. This document defines the five layers of the **MOEPA Cognitive Architecture** (the thesis), how they read and write the **Data Substrate** (the storage), and how they bound **Agents** (the engine). See the [Glossary](glossary.md) and [Pitch Strategy](pitch-strategy.md).
 
 ---
 

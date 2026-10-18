@@ -1,6 +1,6 @@
 # Business Value
 
-This note is for executives weighing whether an AI investment builds an asset the organization can keep. The Philosophical AI Architecture gives that decision a scorecard. Instead of a collection of vendor tools, the organization owns the data, the definitions, the verification rules, the workflows, and the policy constraints, and rents compute and models around them.
+This note is for executives weighing whether an AI investment builds an asset the organization can keep. The **MOEPA Cognitive Architecture** gives that decision a scorecard. Instead of a collection of vendor tools, the organization owns the **Data Substrate** — the data, the definitions, the verification rules, the workflows, and the policy constraints — and rents compute and models for the **Agents** that consume it.
 
 MOEPA translates five disciplines into five outcomes a leader can defend. On first use: **Metrology** is measurement and telemetry; **Ontology** is shared definitions; **Epistemology** is how a claim is verified; **Praxeology** is how action is taken; **Axiology** is value and priority constraints.
 
@@ -34,11 +34,11 @@ The MOEPA scoring model can be used as an intake filter for new ideas. A use cas
 - Needs deterministic workflow boundaries
 - Aligns with policy, compliance, and governance requirements
 
-Use cases that score poorly in the MOEPA 5-Layer Framework are usually better treated as experiments, not core investments.
+Use cases that score poorly in the MOEPA Cognitive Architecture are usually better treated as experiments, not core investments.
 
 ## How It Helps Evaluate Investment
 
-The Philosophical AI Architecture can act as an investment lens by separating short-term tool adoption from long-term capability building.
+The MOEPA Cognitive Architecture can act as an investment lens by separating short-term tool adoption from long-term capability building.
 
 It helps answer questions such as:
 

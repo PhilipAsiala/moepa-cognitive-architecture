@@ -16,7 +16,7 @@ AI-assisted verification could process millions of cases automatically — but o
 3. Guarantee that errors are caught before they affect citizens
 4. Produce a complete audit trail for any challenged case
 
-Without the Philosophical AI Architecture, agencies often end up with a vendor-provided "match score" that nobody can explain.
+Without the MOEPA Cognitive Architecture, agencies often end up with a vendor-provided "match score" that nobody can explain.
 
 ---
 
@@ -163,5 +163,5 @@ Result: When a constituent challenges the decision, or oversight demands documen
 
 ## Related Documents
 
-- [MOEPA 5-Layer Framework](../docs/MOEPA-5-Layer-Framework.md) — verification and workflow questions for this scenario
+- [MOEPA Cognitive Architecture for Leaders](../docs/MOEPA-5-Layer-Framework.md) — verification and workflow questions for this scenario
 - [5-Layer Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md) — how this scenario would score

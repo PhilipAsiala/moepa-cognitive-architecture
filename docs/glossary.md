@@ -4,21 +4,17 @@
 
 The repository's primary communication rule: MOEPA philosophical disciplines describe **business outcomes** leaders must own (trusted data, shared meaning, verifiable truth, governed action, enforced values). Technical implementation detail belongs in builder-tier documents (`catalog/ARCHITECTURE.md` and the governance guidelines). See [pitch strategy §0](pitch-strategy.md), including the readability standard that applies to every page.
 
-## Philosophical AI Architecture
+## Core Terms: Thesis, Storage, Engine
 
-The overarching enterprise ecosystem for governing machine intelligence: the **Data Substrate**, security guardrails, own-vs-rent strategy, and cognitive control plane. It decodes Intelligence — not just Artificial infrastructure — by mapping human cognitive functions (Cognition, Affect, Conation) into strict, governable software. **Philosophical AI Architecture** is the canonical name for the whole system. This repository is its reference specification.
+The repository uses three core terms rather than separate labels for the executive frame, the intake rubric, and the technical specification:
 
-## MOEPA 5-Layer Framework
-
-The operational engineering blueprint and governance engine *inside* the Philosophical AI Architecture. It classifies institutional knowledge across five layers and provides the intake scoring rubric (1–5 per layer, GO / CONDITIONAL GO / NO-GO). Use this term for project evaluation, engineering translation, and layer-by-layer accountability — never as a synonym for the full ecosystem.
-
-## MOEPA Cognitive Architecture
-
-The technical stack design within the Philosophical AI Architecture, as specified in [ARCHITECTURE.md](../catalog/ARCHITECTURE.md): layer implementations, Data Substrate storage mapping, recommended technology stack, and implementation playbook.
+- **MOEPA Cognitive Architecture (the thesis)** — the five-layer separation of concerns (Metrology, Ontology, Epistemology, Praxeology, Axiology) and the intake scorecard (1–5 per layer, **GO**, **CONDITIONAL GO**, **NO-GO**). Leader guides use it to decide ownership; [ARCHITECTURE.md](../catalog/ARCHITECTURE.md) specifies how to build it.
+- **Data Substrate (the storage)** — the organization-owned knowledge library where truth, definitions, values, rules, and lineage are stored in open, portable formats. All five layers read from and write to it; it is not a sixth scored layer.
+- **Agents (the engine)** — the models and workflows that consume the Data Substrate to propose and execute work across the layers, bounded by deterministic verification (Epistemology) and policy gates (Axiology).
 
 ## Cognition, Affect, Conation
 
-The three human cognitive functions the Philosophical AI Architecture maps into software:
+The three human cognitive functions the MOEPA Cognitive Architecture maps into software:
 
 - **Cognition** (knowing) — how the system defines and verifies reality → Metrology, Ontology, Epistemology
 - **Affect** (valuing) — how the system encodes what matters and what is forbidden → Axiology
@@ -47,13 +43,17 @@ At end state, the universal structural unit of the Data Substrate: a Subject-Pre
 
 ## MOEPA
 
-The acronym for the five layers at the heart of the MOEPA 5-Layer Framework:
+The acronym for the five layers of the MOEPA Cognitive Architecture:
 
 - Metrology: measurement, telemetry, and data foundation
 - Ontology: structured reality and knowledge representation
 - Epistemology: truth, verification, and justification
 - Praxeology: purposeful action and workflow governance
 - Axiology: value, ethics, and policy alignment
+
+## Agents
+
+The execution engine of the architecture: the workflows and models that read the Data Substrate, propose plans in Praxeology, and remain subject to deterministic verification (Epistemology) and policy refusal (Axiology).
 
 ## Owned Brain
 
@@ -69,7 +69,7 @@ A locked configuration baseline used in the axiological layer to preserve policy
 
 ## Cognitive Control Plane
 
-The combined governance surface — MOEPA 5-Layer Framework intake scoring and Data Substrate ownership — that lets leadership govern an AI mind without relying on standard IT infrastructure metrics alone.
+The combined governance surface — MOEPA Cognitive Architecture intake scoring and Data Substrate ownership — that lets leadership govern AI agents without relying on standard IT infrastructure metrics alone.
 
 ## Model Context Protocol (MCP)
 

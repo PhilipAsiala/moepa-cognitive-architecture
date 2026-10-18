@@ -1,6 +1,6 @@
 # Documentation
 
-This repository is the canonical reference for the **Philosophical AI Architecture** — a draft frame for deciding what an organization owns in an AI system. It is not a finished product or a deployed system. Every page follows the [readability standard](pitch-strategy.md#readability-standard-every-document) in the pitch strategy.
+This repository is the canonical reference for the **MOEPA Cognitive Architecture** — a draft frame for deciding what an organization owns in an AI system. It is not a finished product or a deployed system. Every page follows the [readability standard](pitch-strategy.md#readability-standard-every-document) in the pitch strategy.
 
 ## Start Here
 
@@ -9,7 +9,7 @@ Leaders: read the [repository primer](../README.md), then the two-page briefs in
 - [Pitch Strategy](pitch-strategy.md) — canonical narrative; **§0 Business First** defines audience and tone rules
 - [Business Leader Guide](moepa-business-leaders-guide.md) — executive decision support for any organization *(start here for enterprise)*
 - [Public Sector Leader Guide](moepa-public-sector-leaders-guide.md) — cognitive control plane for federal, state, local, and public institutions
-- [MOEPA 5-Layer Framework for Leaders](MOEPA-5-Layer-Framework.md) — engineering blueprint
+- [MOEPA Cognitive Architecture for Leaders](MOEPA-5-Layer-Framework.md) — one business question per layer
 - [Architectural Governance and Evolution Guidelines](MOEPA-Architectural-Governance-and-Evolution-Guidelines.md) — implementation rules for architects and contributors
 - [Quick Start](quick-start.md) for a short reading path
 - [Glossary](glossary.md) for term definitions
@@ -21,10 +21,10 @@ Leaders: read the [repository primer](../README.md), then the two-page briefs in
 
 ## What This Docs Set Covers
 
-- The Philosophical AI Architecture and its term hierarchy
+- The three core terms: **MOEPA Cognitive Architecture** (thesis), **Data Substrate** (storage), and **Agents** (engine)
 - **Business-first framing** — MOEPA philosophical disciplines as business outcomes leaders must own
 - Cognition, Affect, Conation mapped to MOEPA layers
-- The MOEPA 5-Layer Framework (intake scoring and per-layer leadership questions)
+- Intake scoring and per-layer leadership questions across the five layers
 - Architectural evolution rules for builders — ([guidelines](MOEPA-Architectural-Governance-and-Evolution-Guidelines.md); not leader-facing)
 - The organization-owned Data Substrate — [end state vs. evolution path](Data-Substrate-Concept.md#end-state-vs-evolution-path)
 - The MOEPA Cognitive Architecture implementation approach
