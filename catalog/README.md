@@ -31,6 +31,6 @@ The five MOEPA layers are the governance questions. The Data Substrate and the A
 | **[Enterprise Agent Capabilities](agents.md)** | The six agent and control-plane capabilities (`AG1`–`AG6`) needed to run business workflows safely on top of the Data Substrate | AI/ML architects, platform engineers, security leads |
 | **[Enterprise Capability Matrix](capability-matrix.md)** | Single governance table tying `DS1`–`DS7` and `AG1`–`AG6` to the **Score 3 minimum baseline** (`GO` / `CONDITIONAL GO` / `NO-GO`), maturity levels (3–5), and accountable owners | Portfolio boards, program managers, intake reviewers |
 | **[End-to-End Business Compositions](cross-layer-compositions.md)** | Six repeatable blueprints showing how Agents and the Data Substrate combine for auditability, high-volume triage, grounded research, intake scoring, and continuous compliance | Solution architects, delivery teams |
-| **[Technical Specification](ARCHITECTURE.md)** | Full builder specification for the MOEPA Cognitive Architecture (v3.0): SPO/quad representation, scoring rubric, and reference stack | Principal architects, engineering leads |
+| **[Technical Specification](ARCHITECTURE.md)** | Full builder specification for the MOEPA Cognitive Architecture (v3.1): MOEPA record shape, system of record and projections, policy-enforcing gateway, scoring rubric, and reference stack | Principal architects, engineering leads |
 
 For the executive business case, start at the [repository primer](../README.md) and the two-page briefs in [primer/](../primer/).
