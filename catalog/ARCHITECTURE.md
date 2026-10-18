@@ -228,7 +228,7 @@ To support enterprise-scale intake (1,000+ requests) while maintaining sovereign
 This chain ensures that non-duplication, technical feasibility, data reality, platform economics, business ownership, and executive accountability are all explicitly addressed. Prior decisions recorded on the Data Substrate ([DS5](data-substrate.md#ds5--cross-layer-audit-and-decision-ledger)) support the deduplication check at step 1.
 
 ## 5. The Data Substrate
-The Data Substrate is the storage tier, not a sixth scored layer. The five disciplines remain the five scored layers (Metrology, Ontology, Epistemology, Praxeology, Axiology), and the 1–5 per-layer scoring model is unchanged. The enterprise capabilities that make up the substrate are specified in [Data Substrate Capabilities](data-substrate.md) (`DS1`–`DS7`); this section defines the representation they converge on.
+The Data Substrate is the storage tier, not a sixth scored layer. The five disciplines remain the five scored layers (Metrology, Ontology, Epistemology, Praxeology, Axiology), and the 1–5 per-layer scoring model is unchanged. The enterprise capabilities that make up the substrate are specified in [Data Substrate Capabilities](data-substrate.md) (`DS1`–`DS8`); this section defines the representation they converge on.
 
 The substrate provides a single SPO/quad backbone (Subject-Predicate-Object, quads with context) plus lakehouse storage where the base triple lives once. Each MOEPA layer attaches layer-specific metadata envelopes (epistemic, praxeological, axiological, etc.) without duplicating the base fact.
 
@@ -297,7 +297,7 @@ Each MOEPA layer has a natural representation for its knowledge artifacts. The s
 
 **Unification principle.** All five layers write to and read from the same SPO-centric hypergraph + lakehouse. A federation layer (workflow router or Trino) enables cross-layer queries such as: *"find all high-confidence (epistemic) income facts that satisfy axiological fairness and support praxeological auto-approval."* Each layer's knowledge keeps its own envelope while belief, action, and value revision can run across the stack.
 
-**Where "who may see it" lives.** The Epistemology layer asks the question at retrieval time, but it does not own the answer. The classification marking is an Axiology attribute of the record, the clearance rule is Policy-as-Code in `DS7`, and the Policy Gate (`AG5`) evaluates caller clearance against the marking. Verification and retrieval agents (`AG3`, `DS4`) apply that decision as pre-retrieval filtering; they consume the marking, they do not define it. This keeps disclosure rules outside both the model and the retrieval code.
+**Where "who may see it" lives.** The Epistemology layer asks the question at retrieval time, but it does not own the answer. The classification marking is an Axiology attribute of the record, the clearance rule is Policy-as-Code in `DS7`, the caller's clearance is a stored fact in the identity registry (`DS8`), and the Policy Gate (`AG5`) evaluates that clearance against the marking. Verification and retrieval agents (`AG3`, `DS4`) apply that decision as pre-retrieval filtering; they consume the marking, they do not define it. This keeps disclosure rules outside both the model and the retrieval code.
 
 **Scale range.** From edge devices (lightweight JSON triples + SQLite) to enterprise deployments (full graph + Iceberg).
 
@@ -327,17 +327,34 @@ governable for AI orchestrators.
 
 **One gateway, no side doors.** MCP is the discovery and invocation contract;
 it is not by itself a veto. Every model endpoint, MCP server, and tool facade
-sits behind a single policy-enforcing gateway that holds each request until
-the Policy Gate (`AG5`) and the action-scope gate (`AG4`) return allow. The
-gateway pattern is external authorization (for example Envoy `ext_authz`): the
-proxy stays a proxy, the authorizer loads the governing record, asks the policy
-engine, writes the decision — allow or deny — to the ledger (`DS5`), and only
-then lets the proxy route upstream. A denied request never reaches the model
-or the tool. A model or tool endpoint reachable by any path that skips this
-gateway is a side door. A side door scores below 3 on Axiology and Praxeology
-— an automatic NO-GO — regardless of what the gated path does, unless it is
-covered by a time-boxed, recorded exception under §9 with a named date by
-which it closes.
+sits behind a single Policy-Enforcing Gateway (`AG7`) that holds each request
+until the Policy Gate (`AG5`) and the action-scope gate (`AG4`) return allow.
+The gateway pattern is external authorization (for example Envoy `ext_authz`):
+the proxy stays a proxy, the authorizer resolves the caller against the
+identity registry (`DS8`), loads the governing record, asks the policy engine,
+writes the decision — allow or deny — to the ledger (`DS5`), and only then
+lets the proxy route upstream. Allowed inference calls go on to the Model
+Translation Proxy (`AG8`). A denied request never reaches the model or the
+tool. A model or tool endpoint reachable by any path that skips this gateway
+is a side door. A side door scores below 3 on Axiology and Praxeology — an
+automatic NO-GO — regardless of what the gated path does, unless it is covered
+by a time-boxed, recorded exception under §9 with a named date by which it
+closes.
+
+**Capabilities deploy as units.** Every catalog capability (`DS1`–`DS8`,
+`AG1`–`AG8`) is packaged as a unit that can be deployed, upgraded, and
+replaced on its own. A unit declares its contract — the service names,
+endpoints, table and collection names, schemas, and headers that other units
+rely on — and ships with a check that proves the contract holds. Units do not
+depend on each other's startup order; a unit that needs another retries until
+it answers, and a gate fails closed while it waits. Only a unit's own
+configuration lives inside it (the policy baseline, `DS7`, is the one thing
+other units read). Replacing the engine behind a unit (one graph store for
+another, one proxy for another, one model host for another) must not change
+the contract, and the proof of a replacement is that the unit's own check and
+the substrate rebuild check (`AG6`) both pass without restarting any other
+unit. This rule exists because a stack that is one deployable blob cannot
+honour "rent the muscles": nothing can be rented if nothing can be swapped.
 
 ## 6. Implementation Playbook
 ### 6.1 Recommended Technology Stack by Layer (Ownership-Focused)
@@ -347,15 +364,21 @@ MCP server or MCP facade. Orchestrators (Bedrock Agents, LangGraph routers,
 policy-governed agent runtimes) discover and invoke tools only through MCP — never
 through direct RAG or data-layer API calls.
 
-**Cross-cutting — policy-enforcing gateway and model translation:** One
-gateway (Envoy or equivalent with external authorization) is the only entry
-point for callers; it delegates allow/deny to the policy engine and routes
-only allowed requests upstream. Behind it, a model translation proxy (LiteLLM
-or equivalent) turns an allowed inference call into a call to whichever model
+**Cross-cutting — Policy-Enforcing Gateway (`AG7`) and Model Translation
+Proxy (`AG8`):** One gateway (Envoy or equivalent with external authorization)
+is the only entry point for callers; it resolves identity and clearance from
+`DS8`, delegates allow/deny to the policy engine, and routes only allowed
+requests upstream. Behind it, a model translation proxy (LiteLLM or
+equivalent) turns an allowed inference call into a call to whichever model
 host is in use — local open-weight models on owned GPUs, or a cloud model
 later — so the model is swappable "muscle" and never sees a request the
 gateway denied. Pin gateway, catalog, graph, and proxy images to digests so
 the running control plane is the reviewed control plane.
+
+**Packaging:** one deployable unit per catalog capability (§5.2), each with
+its own compose or manifest, contract, and check; the whole stack is the
+inclusion of those units into one project, and the service names in the
+units are the later Kubernetes workload names.
 
 - Metrology (Data Foundation): Self-hosted open lakehouse (MinIO or any
   S3-compatible object store + Iceberg under an Apache Polaris table catalog),
@@ -392,7 +415,9 @@ the running control plane is the reviewed control plane.
 - Stand up the lakehouse and catalog as the only system of record; prove every projection (graph, vector, policy bundle) can be emptied and rebuilt from it (§5.0.1).
 - Implement semantic ingestion producing Proto-SPOs with provenance, structure, and semantic metadata (no chainsaw chunking).
 - Expose ingestion, retrieval, workflow, and policy capabilities as MCP servers or facades.
-- Put one policy-enforcing gateway in front of every model and tool endpoint; prove a denied request returns a refusal at the gateway and never reaches the model (§5.2).
+- Put one Policy-Enforcing Gateway (`AG7`) in front of every model and tool endpoint, with the Model Translation Proxy (`AG8`) reachable only through it; prove a denied request returns a refusal at the gateway and never reaches the model (§5.2).
+- Stand up the identity, tenant, and clearance registry (`DS8`) so the gateway resolves clearance from a stored fact, not a caller-supplied header.
+- Package every capability as its own deployable unit with a declared contract and a check; prove one unit can be stopped, upgraded, or replaced without restarting any other (§5.2).
 - Create or extend domain ontology / knowledge graph schema (internal ownership).
 - Implement RAG with citation + grounding verification pipeline against owned data (via MCP, not direct API calls).
 - Design deterministic workflow (state machine or auditable step sequence) with MCP-governed tool invocation.

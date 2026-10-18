@@ -8,7 +8,7 @@
 ## How the Three Tiers Solve It
 
 1. **MOEPA Cognitive Architecture (The Thesis):** Replaces ad-hoc demo approvals with a single five-layer intake scorecard (**GO** / **CONDITIONAL GO** / **NO-GO**). Any proposal that scores below **3** on any layer is an automatic **NO-GO**.
-2. **Data Substrate (The Storage):** Turns every project into a compounding investment. Datasets, `Proto-SPO` document segments, entity definitions, retrieval indexes, and policy rules (`DS1`–`DS7`) are built once on the Data Substrate and reused by every future initiative.
+2. **Data Substrate (The Storage):** Turns every project into a compounding investment. Datasets, `Proto-SPO` document segments, entity definitions, retrieval indexes, and policy rules (`DS1`–`DS8`) are built once on the Data Substrate and reused by every future initiative.
 3. **Agents (The Engine):** Controls operating cost through intelligent routing (`AG4`) and portable **MCP** tool contracts (`AG6`). Routine steps run on deterministic code or small local models; expensive frontier models are reserved only for complex synthesis.
 
 ---
@@ -30,7 +30,7 @@
 Use the [Enterprise Capability Matrix](../catalog/capability-matrix.md) to evaluate every AI proposal across all five layers on a **1–5 scale**:
 
 - **NO-GO (Any layer `< 3`):** Missing a baseline Data Substrate or Agent control (for example, no owned provenance, no source citations, or policy enforced only by prompt). Stop or redesign before funding.
-- **CONDITIONAL GO (All layers `≥ 3`, one or more at `3`):** Meets the minimum acceptable baseline (`DS1`–`DS7` and `AG1`–`AG6` Score 3 controls in place) with documented remediation to reach maturity.
+- **CONDITIONAL GO (All layers `≥ 3`, one or more at `3`):** Meets the minimum acceptable baseline (`DS1`–`DS8` and `AG1`–`AG8` Score 3 controls in place) with documented remediation to reach maturity.
 - **GO (All layers `≥ 4`):** Full Data Substrate reuse, MCP-governed agent execution, automated verification, Policy-as-Code enforcement, and an auditable ROI/chargeback model (`AG5`).
 
 ## Decision Checklist for Leaders

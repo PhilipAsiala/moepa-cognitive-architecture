@@ -10,8 +10,8 @@ This repository defines a three-part architecture for enterprise AI that separat
 | Tier | What It Is | Business Role |
 | :--- | :--- | :--- |
 | **1. MOEPA Cognitive Architecture** *(The Thesis)* | Five non-negotiable governance layers (**M**etrology, **O**ntology, **E**pistemology, **P**raxeology, **A**xiology) and a project intake scorecard (**GO** / **CONDITIONAL GO** / **NO-GO**). | Separates AI concerns so every failure mode has a named owner and a deterministic control. |
-| **2. Data Substrate** *(The Storage)* | The organization-owned knowledge library (`DS1`–`DS7`) where raw measurements, entity definitions, verified claims, audit logs, and policy rules live in open, portable formats. | Prevents vendor lock-in. You can swap models or clouds without losing institutional memory. |
-| **3. Agents** *(The Engine)* | The specialized workflows and control gates (`AG1`–`AG6`) that consume the Data Substrate — using probabilistic models to plan, bounded by deterministic code to verify and govern. | Runs the business safely without letting a black-box model police itself. |
+| **2. Data Substrate** *(The Storage)* | The organization-owned knowledge library (`DS1`–`DS8`) where raw measurements, entity definitions, verified claims, audit logs, and policy rules live in open, portable formats. | Prevents vendor lock-in. You can swap models or clouds without losing institutional memory. |
+| **3. Agents** *(The Engine)* | The specialized workflows and control gates (`AG1`–`AG8`) that consume the Data Substrate — using probabilistic models to plan, bounded by deterministic code to verify and govern. | Runs the business safely without letting a black-box model police itself. |
 
 > **Own the brain. Rent the muscles.** Own the Data Substrate and the governance rules across the five MOEPA layers. Rent GPU capacity and commercial models for the Agents that consume them.
 
@@ -29,7 +29,7 @@ When vendors bundle ingestion, search, model guessing, and API execution into a 
 | **4. Praxeology** | *"What purposeful action are we taking?"* | **[DS5](catalog/data-substrate.md#ds5--cross-layer-audit-and-decision-ledger)** Cross-Layer Audit Ledger | **[AG4](catalog/agents.md#ag4--workflow-and-execution-agents-praxeology)** Workflow & Execution Agents | **Rogue Automation:** Agents loop, call unauthorized APIs, or skip human review on consequential actions. |
 | **5. Axiology** | *"Should we do this under our rules?"* | **[DS7](catalog/data-substrate.md#ds7--policy-as-code-and-constitutional-baseline)** Policy-as-Code Baseline | **[AG5](catalog/agents.md#ag5--policy-and-compliance-gate-agents-axiology)** Policy & Compliance Gate Agents | **Compliance Failure:** Relying on an LLM's system prompt to enforce law, policy, or spending limits. |
 
-*Cross-cutting:* the **[AG6](catalog/agents.md#ag6--mcp-capability-bus-cross-cutting) MCP Capability Bus** is the single contract through which every agent reaches every substrate capability, so models and orchestrators can be swapped without rewiring the layers.
+*Cross-cutting:* the **[AG7](catalog/agents.md#ag7--policy-enforcing-gateway-cross-cutting) Policy-Enforcing Gateway** is the one door every request passes through, and it refuses before any model or tool is reached; the **[AG6](catalog/agents.md#ag6--mcp-capability-bus-cross-cutting) MCP Capability Bus** behind it is the single contract through which every agent reaches every substrate capability; the **[AG8](catalog/agents.md#ag8--model-translation-proxy-cross-cutting) Model Translation Proxy** is the seam that lets rented models be swapped without rewiring the layers. Who is calling, and with what clearance, is a stored fact in the **[DS8](catalog/data-substrate.md#ds8--identity-tenant-and-clearance-registry)** identity registry, not a claim the caller makes.
 
 ---
 
@@ -69,8 +69,8 @@ This repository is organized into three parts, plus supporting diagrams:
    - [Zero-Trust Governance](primer/zero-trust-governance.md) — Using Verification and Policy Gate Agents to stop hallucinations and compliance violations.
    - [Investment & ROI](primer/roi.md) — Funding reusable substrate and agent capabilities instead of disposable SaaS subscriptions.
 3. **[`catalog/` (Enterprise Capability Catalog)](catalog/)** — Concrete specifications for builders and intake reviewers:
-   - [Data Substrate Capabilities (`DS1`–`DS7`)](catalog/data-substrate.md)
-   - [Enterprise Agent Capabilities (`AG1`–`AG6`)](catalog/agents.md)
+   - [Data Substrate Capabilities (`DS1`–`DS8`)](catalog/data-substrate.md)
+   - [Enterprise Agent Capabilities (`AG1`–`AG8`)](catalog/agents.md)
    - [Enterprise Capability Matrix (`GO` / `CONDITIONAL GO` / `NO-GO`)](catalog/capability-matrix.md)
    - [End-to-End Business Compositions](catalog/cross-layer-compositions.md)
    - [Technical Specification (`ARCHITECTURE.md`)](catalog/ARCHITECTURE.md)

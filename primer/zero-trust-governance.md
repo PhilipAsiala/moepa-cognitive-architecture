@@ -35,4 +35,4 @@ In a zero-trust AI architecture, a model never polices itself:
 2. **Bounded Action (`AG4`):** Are agent tool permissions explicitly allow-listed, and is there an infrastructure-enforced human checkpoint before any consequential action?
 3. **Policy Outside the Prompt (`AG5`):** Are legal, privacy, and spending constraints enforced by deterministic Policy-as-Code rather than prompt instructions?
 
-*Next: [Investment & ROI](roi.md) · Builder specs: [Enterprise Agent Capabilities (`AG1`–`AG6`)](../catalog/agents.md)*
+*Next: [Investment & ROI](roi.md) · Builder specs: [Enterprise Agent Capabilities (`AG1`–`AG8`)](../catalog/agents.md)*
