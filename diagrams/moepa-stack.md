@@ -64,6 +64,6 @@ The stack is **cumulative**: each layer builds on the reliability of the layer b
 - If **Praxeology** is weak, Axiology constraints are applied to an uncontrolled execution environment
 - If **Axiology** is weak, the system may optimize for the wrong objectives even while all other layers function
 
-This is why the [5-Layer Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md) uses the **lowest layer score** as the overall recommendation — not an average.
+This is why the [Enterprise Capability Matrix](../catalog/capability-matrix.md) and [ARCHITECTURE.md §4.2](../catalog/ARCHITECTURE.md) use the **lowest layer score** as the overall recommendation — not an average.
 
-**Cross-cutting integration:** AI orchestrators access layer capabilities only through the **Model Context Protocol (MCP)** — not vendor glue code or direct data/RAG API calls. Semantic ingestion produces **Proto-SPOs** before records enter the substrate. See [Architectural Governance Guidelines](../docs/MOEPA-Architectural-Governance-and-Evolution-Guidelines.md).
+**Cross-cutting integration:** AI orchestrators access layer capabilities only through the **Model Context Protocol (MCP)** — not vendor glue code or direct data/RAG API calls. Semantic ingestion produces **Proto-SPOs** before records enter the substrate. See [ARCHITECTURE.md §5.2](../catalog/ARCHITECTURE.md).

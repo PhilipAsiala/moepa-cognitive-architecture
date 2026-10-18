@@ -78,4 +78,4 @@
 - **[Enterprise Agent Capabilities](agents.md)** — the agents that read from and write to this Data Substrate (`AG1`–`AG6`)
 - **[Enterprise Capability Matrix](capability-matrix.md)** — Score 3 baseline requirements and ownership for `DS1`–`DS6`
 - **[End-to-End Business Compositions](cross-layer-compositions.md)** — how substrate and agent capabilities combine in production
-- **[Data Substrate Concept](../docs/Data-Substrate-Concept.md)** — executive overview of the end state vs. incremental evolution path
+- **[Technical Specification](ARCHITECTURE.md)** — §5 SPO/quad representation and incremental evolution path

@@ -153,4 +153,4 @@ AI orchestrators (Bedrock Agents, LangGraph routers, policy-governed agent runti
 discover and invoke layer capabilities **only through MCP** — never by calling
 data, RAG, or workflow APIs directly. Semantic ingestion, retrieval,
 verification, workflow steps, and policy checks are each exposed as MCP servers
-or facades. See [Architectural Governance Guidelines](../docs/MOEPA-Architectural-Governance-and-Evolution-Guidelines.md).
+or facades. See [Enterprise Agent Capabilities (`AG6`)](../catalog/agents.md#ag6--mcp-capability-bus-cross-cutting) and [ARCHITECTURE.md §5.2](../catalog/ARCHITECTURE.md).

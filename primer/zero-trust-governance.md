@@ -1,36 +1,38 @@
-# Zero-trust governance
+# Brief 2: Zero-Trust Governance
+### Bounding Probabilistic Agents with Deterministic Law
 
-**The worry:** a fluent system treats a rumor as a fact, shows a restricted record to the wrong person, or lets a prompt stand in for a legal rule.
+**The Executive Risk:** Large language models are fluency engines, not truth or compliance engines. Plugging an LLM directly into enterprise data and APIs — and relying on a system prompt like *"do not hallucinate or break regulations"* — leads to fabricated citations, unauthorized data disclosure, and rogue automated actions.
 
-Two layers carry that worry, and they are not the same job.
+---
 
-**Epistemology (truth and permission)** asks whether a claim is justified and whether this user may see the material it rests on. A language model can draft the sentence. It does not get to decide that the sentence is true.
+## How the Three Tiers Solve It
 
-**Axiology (rules that do not negotiate)** sits outside the model and can refuse the action. Policy-as-code means the rule is written so a system can enforce it. A system prompt is not that mechanism.
+1. **MOEPA Cognitive Architecture (The Thesis):** Separates **Epistemology** (*is this claim verified and is the user cleared to see it?*), **Praxeology** (*what workflow steps and human checkpoints govern the action?*), and **Axiology** (*does this action pass our hard rules?*).
+2. **Data Substrate (The Storage):** Holds the authoritative ground truth (`DS3`, `DS4`), the versioned Policy-as-Code baseline, and the immutable cross-layer audit ledger (`DS5`).
+3. **Agents (The Engine):** Splits execution into **probabilistic planning** and **deterministic gates**. A model may draft a plan, but deterministic gate agents verify the facts (`AG3`), enforce the state machine (`AG4`), and hold veto power over every action (`AG5`).
 
-## Probabilistic proposal, deterministic refusal
+---
 
-| Step | Kind of system | What "pass" means |
-| :--- | :--- | :--- |
-| A model drafts an answer or a plan | Probabilistic | A proposal exists. It is not yet a decision. |
-| Epistemology checks source, corroboration, and access | Deterministic gate | The claim cites an owned source, and the reader is allowed to have it. Otherwise it does not enter the record. |
-| Axiology checks the proposed action against encoded rules | Deterministic gate | The action is allowed, or it is blocked. There is no "usually." |
+## Probabilistic Proposal vs. Deterministic Refusal
 
-The limit is the rule that was written. A missing rule is not enforced. A gate does not fix a measurement that Metrology never qualified. High confidence from a model is not, by itself, permission to act. Consequential actions still keep a human checkpoint in **Praxeology (how action is taken)**, as the [leader framework](../docs/MOEPA-5-Layer-Framework.md) describes.
+In a zero-trust AI architecture, a model never polices itself:
 
-## What zero trust changes in intake
+| Stage | Tier & Capability | Mode | What Happens |
+| :--- | :--- | :--- | :--- |
+| **1. Quality & Entity Check** | `AG1` (Metrology) + `AG2` (Ontology) | Deterministic / Hybrid | Bad inputs are quarantined; valid inputs are mapped to canonical entities on the Data Substrate (`DS2`, `DS3`). |
+| **2. Grounding & Verification** | `AG3` (Epistemology) over `DS4` | **Deterministic Gate** | Checks user clearance before retrieval. Every claim in a proposed answer must cite an owned substrate record, or it is blocked. |
+| **3. Workflow Routing** | `AG4` (Praxeology) | Probabilistic Plan + **Deterministic State Machine** | Models propose; the state machine enforces step sequence, tool allow-lists, and mandatory human-in-the-loop checkpoints. |
+| **4. Policy Enforcement** | `AG5` (Axiology) | **Deterministic Refusal** | Policy-as-Code (Open Policy Agent) evaluates the proposed action *outside* the model. Any rule violation is blocked. |
+| **5. Immutable Audit** | `DS5` (Data Substrate) | Append-Only Ledger | Records input provenance, cited sources, confidence breakdown, human approver, and policy version for every decision. |
 
-- No claim the organization will rely on without a source it can open.
-- No access decision hidden inside the model's context window. Clearance and need-to-know are checks, not prompt text.
-- No compliance story that begins and ends with "we told the model the policy."
-- Every consequential action has an owner who can stop it, and a record of why it was allowed.
+*Note on scope:* A deterministic gate blocks 100% of actions that violate an **encoded** rule on the gate path. It cannot enforce a policy that was never written, and high model confidence never overrides a missing source citation or a required human checkpoint.
 
-Public-sector accountability language for this same split is in the [public sector leader guide](../docs/moepa-public-sector-leaders-guide.md). Worked cases — a confidence score that has to be explained, a denial that has to be audited — are in [examples](../examples/).
+---
 
-## What to decide
+## Decision Checklist for Leaders
 
-1. List the claims this system will be allowed to treat as fact, and the source for each.
-2. List the actions it may take, and the encoded rule that can refuse each one.
-3. Score Epistemology, Praxeology, and Axiology on the [evaluation checklist](../docs/5-Layer-Evaluation-Checklist.md).
+1. **No Unverified Claims (`AG3`):** Can every factual assertion or risk score be traced back to a specific record on the Data Substrate (`DS4`, `DS5`)?
+2. **Bounded Action (`AG4`):** Are agent tool permissions explicitly allow-listed, and is there an infrastructure-enforced human checkpoint before any consequential action?
+3. **Policy Outside the Prompt (`AG5`):** Are legal, privacy, and spending constraints enforced by deterministic Policy-as-Code rather than prompt instructions?
 
-Builder detail: [Enterprise Agent Capabilities](../catalog/agents.md) (`AG3` Verification Agents and `AG5` Policy Gate Agents).
+*Next: [Investment & ROI](roi.md) · Builder specs: [Enterprise Agent Capabilities (`AG1`–`AG6`)](../catalog/agents.md)*

@@ -5,7 +5,7 @@ This matrix is the single governance view of the **Enterprise Capability Catalog
 1. **[Data Substrate Capabilities](data-substrate.md) (`DS1`–`DS6`)** — the organization-owned storage and semantic foundation.
 2. **[Enterprise Agent Capabilities](agents.md) (`AG1`–`AG6`)** — the execution engine and deterministic control gates that run on top of the Data Substrate.
 
-Every capability is mapped to the **MOEPA Cognitive Architecture** layer it serves and bound to the existing **1–5 intake rubric (`GO` / `CONDITIONAL GO` / `NO-GO`)** defined in [ARCHITECTURE.md](ARCHITECTURE.md) (§4.2) and the [5-Layer Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md):
+Every capability is mapped to the **MOEPA Cognitive Architecture** layer it serves and bound to the existing **1–5 intake rubric (`GO` / `CONDITIONAL GO` / `NO-GO`)** defined in [ARCHITECTURE.md](ARCHITECTURE.md) (§4.2):
 
 - **Minimum set (Score 3 — Defined & Contained):** Required to avoid an automatic `NO-GO`. Missing any minimum-set capability means the proposal scores below 3 on that layer.
 - **Score 4 (Managed & Measured) and Score 5 (Optimized & Sovereign):** Capabilities that lift a proposal from `CONDITIONAL GO` to an unconditional `GO` and compound value across the enterprise.
@@ -46,4 +46,4 @@ See full specifications in [Enterprise Agent Capabilities](agents.md).
 
 1. **Check the Data Substrate first (`DS1`–`DS6`):** Does the proposal reuse existing governed tables, entity definitions, and indexes (`DS6`), or is it standing up a shadow silo?
 2. **Check the Agent Engine (`AG1`–`AG6`):** Which agents are probabilistic proposers (`AG4` planning), and which are deterministic gates (`AG1` quality, `AG3` verification, `AG5` policy refusal)?
-3. **Score the five layers:** Use the [5-Layer Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md). Any layer missing its **Minimum Set (Score 3)** capabilities receives a score `< 3`, resulting in an automatic **NO-GO** until remediated.
+3. **Score the five layers:** Use the rubric in [ARCHITECTURE.md §4.2](ARCHITECTURE.md). Any layer missing its **Minimum Set (Score 3)** capabilities receives a score `< 3`, resulting in an automatic **NO-GO** until remediated.

@@ -1,34 +1,42 @@
-# Data sovereignty
+# Brief 1: Data Sovereignty
+### Owning the Data Substrate While Renting Commodity Models
 
-**The worry:** the model is rented, and so is the meaning. When the contract ends, the organization cannot take its definitions, its lineage, or its audit record with it.
+**The Executive Risk:** Most organizations rent both the AI model and the meaning underneath it. When documents, entity definitions, vector embeddings, and audit logs live inside a vendor's proprietary platform, switching models or ending a contract strands the organization's institutional memory.
 
-**Ontology (shared meaning)** is how the organization stops that. It is the vocabulary of customers, assets, threats, cases, and policies, and the relationships among them, stored so a different model can read the same record. **Metrology (measurement)** is the layer under it: if the organization does not own the quality rules and the provenance, the vocabulary is a label on someone else's data.
+---
 
-## What "own" means here
+## How the Three Tiers Solve It
 
-Ownership is the ability to export, audit, and keep using the asset without the vendor's permission. A copy hosted inside a vendor product, with no export terms, does not meet that test.
+1. **MOEPA Cognitive Architecture (The Thesis):** Treats **Metrology** (*what we measured and where it came from*) and **Ontology** (*what our business entities mean and how they relate*) as non-negotiable ownership layers.
+2. **Data Substrate (The Storage):** Stores all measurements, entity definitions, embeddings, and audit trails in open, vendor-neutral formats (`DS1`–`DS5`) inside organization-controlled infrastructure.
+3. **Agents (The Engine):** Connects models and workflows to the Data Substrate through standardized **Model Context Protocol (MCP)** interfaces (`AG6`). Because Agents do not own the data or the schema, the underlying LLM can be swapped without rebuilding the business logic.
 
-| Keep | Rent, when the owned layers stay in house |
+---
+
+## Own the Brain, Rent the Muscles
+
+Ownership means the ability to export, audit, and keep using the asset without a vendor's permission:
+
+| Own Permanently (The Data Substrate) | Rent as a Commodity (Compute & Models) |
 | :--- | :--- |
-| The Data Substrate: truth, values, rules, and lineage | GPU capacity and cloud compute |
-| Entity definitions and relationships (Ontology) | Commercial model access |
-| Quality rules and provenance (Metrology) | Storage, if formats are open and egress is yours |
-| Verification standards, workflows, and policy | Pre-trained weights |
+| **Open Lakehouse & Provenance (`DS1`, `DS2`):** Raw tables, `Proto-SPO` document segments, and lineage in Apache Iceberg / Parquet. | Cloud GPU capacity and inference clusters. |
+| **Canonical Entity Registry & Graph (`DS3`):** The enterprise definition of a customer, case, account, asset, or policy. | Commercial frontier LLM APIs or interchangeable open-weight models. |
+| **Owned Retrieval & Audit Ledger (`DS4`, `DS5`):** In-house vector indexes and the immutable record of every decision and policy check. | Commodity object storage where formats and egress stay under your control. |
 
-The Data Substrate is the library underneath the five scored layers. It is not itself a scored layer. Intake uses it to show what the institution already owns and what a new project must add. The business design is the [Data Substrate concept](../docs/Data-Substrate-Concept.md). Storage mechanics are in the [technical specification](../catalog/ARCHITECTURE.md).
+---
 
-## How a proposal fails this brief
+## Red Flags at Project Intake
 
-- "Customer," "asset," or "threat" is defined inside the vendor schema, and the organization cannot export the model.
-- Lineage of a training or decision record exists only in the vendor's console.
-- A new project adds a second definition of the same entity instead of extending the owned one.
+A proposal fails the Data Sovereignty check (automatic **NO-GO** on Metrology or Ontology) if:
 
-Those are Ontology and Metrology gaps. They are also the usual path to lock-in. Switching cost is low only when the formats are open and the contract actually requires export. Skip either condition and the lock-in returns.
+- Core entities ("customer," "beneficiary," "asset," "threat") are defined only inside a vendor's proprietary schema.
+- Document chunks and embeddings are uploaded into an external SaaS RAG box the organization cannot audit or export.
+- The team proposes building a duplicate data pipeline or schema without checking the enterprise catalog first (`DS6`).
 
-## What to decide
+## Decision Checklist for Leaders
 
-1. Name the entities this proposal will define or reuse.
-2. State where those definitions will live, and how they leave if the vendor changes.
-3. Score Metrology and Ontology on the [evaluation checklist](../docs/5-Layer-Evaluation-Checklist.md) before the model is chosen.
+1. **Verify Substrate Reuse (`DS1`, `DS6`):** Does this proposal use existing governed data and entity definitions on the Data Substrate?
+2. **Verify Portability (`DS1`–`DS4`, `AG6`):** If we turn off the model vendor tomorrow, do our tables, knowledge graph, vector index, and MCP tool contracts remain intact?
+3. **Score the Proposal:** Require a **Score ≥ 3** on Metrology and Ontology in the [Enterprise Capability Matrix](../catalog/capability-matrix.md) before funding.
 
-The full own-versus-rent map is the [Owned vs. Rented AI Strategy](../docs/Owned-vs-Rented-AI-Strategy.md). The concrete storage and semantic capabilities are in [Data Substrate Capabilities](../catalog/data-substrate.md).
+*Next: [Zero-Trust Governance](zero-trust-governance.md) · Builder specs: [Data Substrate Capabilities (`DS1`–`DS6`)](../catalog/data-substrate.md) · Diagram: [Owned vs. Rented](../diagrams/owned-vs-rented.md)*

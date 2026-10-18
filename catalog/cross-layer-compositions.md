@@ -75,7 +75,7 @@ Delivered Response        → Cited substrate IDs + decomposed confidence + poli
 | :--- | :--- | :--- |
 | **1. Deduplicate** | `DS6` + `DS3` | Search the canonical entity registry and capability catalog to prove the dataset or agent does not already exist |
 | **2. Qualify Data** | `DS1` + `AG1` | Verify whether required source data is already governed on the enterprise platform |
-| **3. Score 5 Layers** | [Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md) | Score Metrology through Axiology (1–5); any layer `< 3` triggers an automatic `NO-GO` |
+| **3. Score 5 Layers** | [Enterprise Capability Matrix](capability-matrix.md) | Score Metrology through Axiology (1–5); any layer `< 3` triggers an automatic `NO-GO` |
 | **4. Validate ROI** | `AG5` | Verify quantified business ROI and chargeback/showback attribution |
 | **5. Record Decision** | `DS5` | Write scores, compensating controls, and executive sign-off to the governance ledger |
 
@@ -120,4 +120,4 @@ AG6 — MCP Capability Bus
 - **[Data Substrate Capabilities](data-substrate.md)** (`DS1`–`DS6`)
 - **[Enterprise Agent Capabilities](agents.md)** (`AG1`–`AG6`)
 - **[Enterprise Capability Matrix](capability-matrix.md)**
-- **[Worked Scenarios](../examples/)** — income verification, benefits eligibility, and project intake scoring
+- **[Technical Specification](ARCHITECTURE.md)**

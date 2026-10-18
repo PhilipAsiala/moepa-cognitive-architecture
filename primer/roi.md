@@ -1,35 +1,40 @@
-# What the investment can defend
+# Brief 3: Investment & ROI
+### Funding Compounding Capabilities Instead of Disposable Subscriptions
 
-**The worry:** the organization pays for a frontier model on every step, owns nothing it can reuse, and cannot explain the decision after the contract changes.
+**The Executive Risk:** Organizations are approving dozens of disconnected AI pilots that each stand up their own document pipelines, hard-code prompts to a single vendor's frontier model, and leave zero reusable assets behind. Costs scale linearly with usage, and when a contract changes, the organization cannot defend past decisions or reuse the work.
 
-This repository does not report measured savings or a deployment result. The return it can specify is a record and a set of owned layers. Intake costs more than approving a demo. The first owned layer costs more than a subscription. What that buys is an explanation the organization can still produce when the vendor changes.
+---
 
-## Where the money goes
+## How the Three Tiers Solve It
 
-**Praxeology (purposeful action)** is the routing decision. A routine step — a form check, a status lookup, a policy comparison — belongs in ordinary workflow code or a small local model. Synthesis that actually needs a large model is a separate, named step. Sending every prompt to the most expensive model is an architecture failure, not a sign of seriousness.
+1. **MOEPA Cognitive Architecture (The Thesis):** Replaces ad-hoc demo approvals with a single five-layer intake scorecard (**GO** / **CONDITIONAL GO** / **NO-GO**). Any proposal that scores below **3** on any layer is an automatic **NO-GO**.
+2. **Data Substrate (The Storage):** Turns every project into a compounding investment. Datasets, `Proto-SPO` document segments, entity definitions, and retrieval indexes (`DS1`–`DS6`) are built once on the Data Substrate and reused by every future initiative.
+3. **Agents (The Engine):** Controls operating cost through intelligent routing (`AG4`) and portable **MCP** tool contracts (`AG6`). Routine steps run on deterministic code or small local models; expensive frontier models are reserved only for complex synthesis.
 
-The other four layers decide whether that spend leaves an asset:
+---
 
-| Layer | Asset left behind if the organization owns it | What a subscription alone leaves |
+## Subscription Spend vs. Compounding Enterprise Assets
+
+| MOEPA Layer | Disposable Vendor Subscription | Compounding MOEPA Asset (`DS` + `AG`) |
 | :--- | :--- | :--- |
-| **Metrology** | Quality rules and provenance the next project can reuse | A feed the vendor quality-checks |
-| **Ontology** | Definitions shared across teams | A schema that does not transfer |
-| **Epistemology** | A standard for what counts as justified | An answer with no source |
-| **Praxeology** | A workflow with a human checkpoint on consequential actions | An agent the organization cannot stop cleanly |
-| **Axiology** | Rules a machine enforces the same way next quarter | A prompt that can be edited without a record |
+| **1. Metrology** | Vendor ingests your files into a black box (`Score 1–2`) | Reusable open tables (`DS1`), semantic `Proto-SPO` corpus (`DS2`), and automated quality gates (`AG1`) |
+| **2. Ontology** | Vendor-specific schema that cannot be exported (`Score 1–2`) | Enterprise entity registry & knowledge graph (`DS3`), deduplication index (`DS6`), and mapping agents (`AG2`) |
+| **3. Epistemology** | Unverifiable answers with opaque confidence numbers (`Score 1–2`) | Owned retrieval index (`DS4`) and citation/verification gate agents (`AG3`) |
+| **4. Praxeology** | Hard-coded vendor agent calling frontier LLMs on every step (`Score 1–2`) | State-machine workflow agents (`AG4`) and MCP capability bus (`AG6`) that work with any model |
+| **5. Axiology** | System prompt instructions with no cost attribution (`Score 1–2`) | Versioned Policy-as-Code, equity monitors, and quantified ROI / chargeback models (`DS5`, `AG5`) |
 
-Predictive outputs (scores, forecasts, match confidence) and generative outputs (summaries, explanations, recommendations) are both in scope. A score without a source, or a narrative without a checkpoint, does not meet the verification or action layer. Both still have to cite owned evidence.
+---
 
-## How to compare two bids
+## How to Score a Proposal at Intake
 
-Use the same five questions on each proposal. Competing bids become comparable when each one states what the organization will own and what it will rent. A use case that cannot map to all five layers is an experiment, not a core investment. The scoring bands are **GO**, **CONDITIONAL GO**, and **NO-GO**.
+Use the [Enterprise Capability Matrix](../catalog/capability-matrix.md) to evaluate every AI proposal across all five layers on a **1–5 scale**:
 
-A proposal that only improves productivity through a vendor-hosted screen can still be worth renting. It is not, on this frame, a strategic asset. A proposal that leaves reusable definitions, verification gates, governed workflows, and versioned policy is the one that compounds.
+- **NO-GO (Any layer `< 3`):** Missing a baseline Data Substrate or Agent control (for example, no owned provenance, no source citations, or policy enforced only by prompt). Stop or redesign before funding.
+- **CONDITIONAL GO (All layers `≥ 3`, one or more at `3`):** Meets the minimum acceptable baseline (`DS1`–`DS6` and `AG1`–`AG6` Score 3 controls in place) with documented remediation to reach maturity.
+- **GO (All layers `≥ 4`):** Full Data Substrate reuse, MCP-governed agent execution, automated verification, Policy-as-Code enforcement, and an auditable ROI/chargeback model (`AG5`).
 
-## What to decide
+## Decision Checklist for Leaders
 
-1. Separate the steps that need a large model from the steps that do not.
-2. Write down the owned artifact each layer will produce.
-3. Score the proposal with the [evaluation checklist](../docs/5-Layer-Evaluation-Checklist.md).
-
-The longer investment note is [Business value](../docs/business-value.md). A full intake walkthrough is [project intake scoring](../examples/project-intake-scoring.md).
+1. **Deduplicate First (`DS6`):** Has the team proven via the catalog that this dataset, schema, or agent workflow does not already exist in the enterprise?
+2. **Right-Size the Engine (`AG4`, `AG6`):** Which workflow steps use deterministic code or small models, and which actually require a frontier LLM?
+3. **Require the Scorecard:** Score all five layers against the [Enterprise Capability Matrix](../catalog/capability-matrix.md) and review the operational blueprints in [End-to-End Business Compositions](../catalog/cross-layer-compositions.md).

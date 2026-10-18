@@ -125,6 +125,6 @@ For government agencies with statutory audit obligations, long-term data custody
 
 ## Related Documents
 
-- [Owned vs. Rented AI Strategy](../docs/Owned-vs-Rented-AI-Strategy.md) — detailed strategic comparison with government examples
-- [5-Layer Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md) — score any proposal on the own/rent spectrum
+- [Data Sovereignty Brief](../primer/data-sovereignty.md) — what the organization must be able to export when a contract ends
+- [Enterprise Capability Matrix](../catalog/capability-matrix.md) — score any proposal on the 1–5 rubric
 - [MOEPA Stack Diagram](moepa-stack.md) — full architecture diagram

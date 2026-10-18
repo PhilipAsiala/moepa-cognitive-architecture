@@ -19,6 +19,6 @@ body:
     id: location
     attributes:
       label: Relevant document or section
-      description: Optional. e.g. catalog/ARCHITECTURE.md §4.2, or docs/5-Layer-Evaluation-Checklist.md
+      description: Optional. e.g. catalog/ARCHITECTURE.md §4.2, or catalog/capability-matrix.md
     validations:
       required: false
