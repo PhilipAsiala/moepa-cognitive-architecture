@@ -20,7 +20,7 @@ flowchart TD
     MCP["MCP Integration Layer\n(orchestrators discover\ntools here only)"]
 
     subgraph SUB["DATA SUBSTRATE (Shared)"]
-        DS["Open-Format Lakehouse\n+ Knowledge Graph\n+ Audit Log\n(Iceberg / Parquet / Neo4j)"]
+        DS["Open-Format Lakehouse (system of record)\n+ Knowledge Graph & Vector projections\n+ Audit Log\n(Iceberg / Parquet; Jena / Qdrant rebuilt from it)"]
     end
 
     subgraph O["LAYER 2 — ONTOLOGY"]
@@ -158,3 +158,15 @@ discover and invoke layer capabilities **only through MCP** — never by calling
 data, RAG, or workflow APIs directly. Semantic ingestion, retrieval,
 verification, workflow steps, and policy checks are each exposed as MCP servers
 or facades. See [Enterprise Agent Capabilities (`AG6`)](../catalog/agents.md#ag6--mcp-capability-bus-cross-cutting) and [ARCHITECTURE.md §5.2](../catalog/ARCHITECTURE.md).
+
+## Gateway Enforcement Boundary
+
+MCP governs what an *agent* may reach. A second boundary governs what any
+*caller* may reach: a policy-enforcing gateway (Envoy `ext_authz` or
+equivalent) in front of every model and data endpoint. The gateway holds the
+request, an authorizer loads the named substrate record and asks the policy
+engine for the Axiology and Praxeology decision, the outcome (allow or deny)
+is appended to the ledger (`DS5`) with the policy hash, and only an allow is
+routed onward — to a model-translation proxy for inference, or to the record
+for a read. A deny is an HTTP refusal the model process never sees. See
+[`AG5`](../catalog/agents.md#ag5--policy-and-compliance-gate-agents-axiology).
