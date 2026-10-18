@@ -1,7 +1,7 @@
-# Philosophical AI Architecture — Technical Specification
-## The MOEPA Cognitive Architecture
+# The MOEPA Cognitive Architecture — Technical Specification
 
 Leaders start at the [repository primer](../README.md). This file is the builder specification.
+
 Version: 2.3 — Full Ownership Focus
 
 Author: Philip Asiala
@@ -10,15 +10,15 @@ Last Updated: June 15, 2026
 
 Status: Draft for Review — Feedback Welcome
 
-Repository: [philosophical-ai-architecture](https://github.com/PhilipAsiala/philosophical-ai-architecture) (GitHub) — canonical home of the Philosophical AI Architecture
+Repository: [philosophical-ai-architecture](https://github.com/PhilipAsiala/philosophical-ai-architecture) (GitHub) — canonical home of the MOEPA Cognitive Architecture
 
-> **Naming.** This document specifies the **MOEPA Cognitive Architecture** — the technical stack design within the **Philosophical AI Architecture**. For the engineering blueprint and intake scoring, see the **MOEPA 5-Layer Framework** in [docs/](../docs/). For pitching and narrative alignment, see [pitch strategy](../docs/pitch-strategy.md). Term definitions: [glossary](../docs/glossary.md).
+> **Core terms.** The **MOEPA Cognitive Architecture** is the thesis (the five layers and the intake scorecard). The **Data Substrate** is how owned knowledge is stored. **Agents** are the engine that consumes the Data Substrate across the layers. For the leader-facing layer questions, see [docs/](../docs/). For pitching and narrative alignment, see [pitch strategy](../docs/pitch-strategy.md). Term definitions: [glossary](../docs/glossary.md).
 
 ## Executive Summary: The Owned-Brain Strategy
 
 This specification is for architects and engineers implementing a decision leaders have already framed: what the organization owns, and what it rents. Leader-facing language and the readability standard are in [pitch strategy](../docs/pitch-strategy.md) §0.
 
-The MOEPA Cognitive Architecture (**Metrology**, measurement; **Ontology**, shared definitions; **Epistemology**, verification; **Praxeology**, action; **Axiology**, value constraints) is the technical layer of the Philosophical AI Architecture. It maps three jobs into software: **Cognition** (knowing), **Affect** (valuing), and **Conation** (acting).
+The MOEPA Cognitive Architecture (**Metrology**, measurement; **Ontology**, shared definitions; **Epistemology**, verification; **Praxeology**, action; **Axiology**, value constraints) maps three jobs into software: **Cognition** (knowing), **Affect** (valuing), and **Conation** (acting).
 
 - **Rent the muscles (compute).** Hardware execution (VPC, clusters, GPUs) is treated as interchangeable, variable-cost capacity, with exit terms.
 - **Own the brain (intellectual property).** Knowledge graphs, validation models, ethical guardrails, and mission rules stay portable and access-controlled. They are core intellectual property when the organization can export and audit them. A vendor-hosted copy of the same assets does not meet that test.
@@ -361,8 +361,8 @@ MOEPA is designed to be complementary to major AI governance frameworks:
 - OWASP LLM Top 10
 - Executive Order 14110 (Safe AI)
 
-## 9. Governance of the Philosophical AI Architecture
-The practices below describe how an organization adopting the Philosophical AI Architecture and MOEPA 5-Layer Framework should govern its own instance. Architectural evolution rules (MCP-first integration, semantic ingestion, Proto-SPOs, five-layer PR gate) are defined in [Architectural Governance and Evolution Guidelines](../docs/MOEPA-Architectural-Governance-and-Evolution-Guidelines.md). To propose changes to this repository itself, see [CONTRIBUTING.md](../CONTRIBUTING.md).
+## 9. Governance of the MOEPA Cognitive Architecture
+The practices below describe how an organization adopting the MOEPA Cognitive Architecture should govern its own instance. Architectural evolution rules (MCP-first integration, semantic ingestion, Proto-SPOs, five-layer PR gate) are defined in [Architectural Governance and Evolution Guidelines](../docs/MOEPA-Architectural-Governance-and-Evolution-Guidelines.md). To propose changes to this repository itself, see [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 - Semantic versioning (MAJOR.MINOR.PATCH).
 - Quarterly review by Architecture Review Board.

@@ -1,6 +1,6 @@
 # MOEPA Capability Matrix
 
-The MOEPA Capability Matrix provides a single governance view of the **minimum capability baseline** across the Philosophical AI Architecture. It is intended to help leaders set priorities, identify gaps before funding, and roadmap delivery without changing the existing five-layer scoring model.
+The MOEPA Capability Matrix provides a single governance view of the **minimum capability baseline** across the MOEPA Cognitive Architecture. It is intended to help leaders set priorities, identify gaps before funding, and roadmap delivery without changing the existing five-layer scoring model.
 
 This matrix explicitly binds the **minimum set of capabilities** for each scored layer to **Score 3 — Defined & Contained — Minimum Acceptable Standard** in the existing **1–5 plus GO / CONDITIONAL GO / NO-GO** rubric described in [ARCHITECTURE.md](ARCHITECTURE.md) (§4.2) and each layer's scoring guide. Capabilities that contribute to Scores 4 and 5 are the ones that lift a layer beyond the minimum baseline.
 

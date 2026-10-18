@@ -123,13 +123,14 @@ Iceberg and Polaris are how an owned table stays portable. They are not the defi
 
 ## Names in this repository
 
-| Term | What it is |
-| :--- | :--- |
-| **Philosophical AI Architecture** | The whole frame: Data Substrate, own-versus-rent, and the five questions |
-| **MOEPA 5-Layer Framework** | The intake rubric inside that frame: five layers, scored GO / CONDITIONAL GO / NO-GO |
-| **MOEPA Cognitive Architecture** | This primer's subject, specified for builders in [catalog/ARCHITECTURE.md](catalog/ARCHITECTURE.md) |
-| **Data Substrate** | The organization-owned library of truth, values, rules, and lineage. It is not a sixth scored layer |
+The repository rests on three terms: the thesis, the storage, and the engine.
+
+| Term | Role | What it is |
+| :--- | :--- | :--- |
+| **MOEPA Cognitive Architecture** | The thesis | The five-layer separation of concerns (Metrology, Ontology, Epistemology, Praxeology, Axiology) and the intake scorecard (**GO**, **CONDITIONAL GO**, **NO-GO**). |
+| **Data Substrate** | The storage | The organization-owned library where truth, definitions, rules, and lineage are stored in open, portable formats. It sits beneath the five layers and is not a sixth scored layer. |
+| **Agents** | The engine | The models and workflows that consume the Data Substrate, propose plans in Praxeology, and are bounded by deterministic verification (Epistemology) and policy gates (Axiology). |
 
 Feedback is by [issue](https://github.com/PhilipAsiala/philosophical-ai-architecture/issues/new?template=feedback.yml). The maintainer implements accepted changes on `main`. See [CONTRIBUTING.md](CONTRIBUTING.md). MIT licensed. Theory and documentation only.
 
-*Philosophical AI Architecture · business primer · technical specification v2.3 in the catalog · MIT License*
+*MOEPA Cognitive Architecture · business primer · technical specification v2.3 in the catalog · MIT License*

@@ -1,6 +1,6 @@
 # Layered Architecture Diagram
 
-This diagram is for readers who need the stack on one page before they score a proposal. It shows the Philosophical AI Architecture as a flow from measurement up through shared meaning, verification, action, and value constraints. The practical effect of reading it this way is to see which question a weak layer fails.
+This diagram is for readers who need the stack on one page before they score a proposal. It shows the MOEPA Cognitive Architecture as a flow from measurement up through shared meaning, verification, action, and value constraints. The practical effect of reading it this way is to see which question a weak layer fails.
 
 The **Data Substrate** is the organization-owned knowledge library (in the technical design, an SPO/quad store plus a lakehouse — each fact kept once, in open formats). All five layers write to it and read from it. It is not a scored layer.
 

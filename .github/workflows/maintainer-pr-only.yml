@@ -19,7 +19,7 @@ jobs:
           script: |
             const pr = context.payload.pull_request;
             const body = [
-              'Thanks for your interest in the Philosophical AI Architecture.',
+              'Thanks for your interest in the MOEPA Cognitive Architecture.',
               '',
               'This repository uses an **issue-first** contribution model. Please **do not open pull requests** — open an issue instead so the change can be discussed before anything is merged to `main`.',
               '',

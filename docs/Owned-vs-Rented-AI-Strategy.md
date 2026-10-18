@@ -175,8 +175,8 @@ An organization that follows this rule can audit, explain, and migrate the layer
 ## Related Documents
 
 - [Architectural Governance Guidelines](MOEPA-Architectural-Governance-and-Evolution-Guidelines.md) — implementation rules for architects
-- [5-Layer Evaluation Checklist](5-Layer-Evaluation-Checklist.md) — score any AI proposal against the MOEPA 5-Layer Framework
+- [5-Layer Evaluation Checklist](5-Layer-Evaluation-Checklist.md) — score any AI proposal against the MOEPA Cognitive Architecture
 - [Pitch Strategy](pitch-strategy.md) — canonical narrative and ownership pitch
-- [MOEPA 5-Layer Framework](MOEPA-5-Layer-Framework.md) — detailed per-layer leadership guide
+- [MOEPA Cognitive Architecture for Leaders](MOEPA-5-Layer-Framework.md) — detailed per-layer leadership guide
 - [Business Leader Guide](moepa-business-leaders-guide.md) — full executive handout
 - [Public Sector Leader Guide](moepa-public-sector-leaders-guide.md) — government-specific guidance

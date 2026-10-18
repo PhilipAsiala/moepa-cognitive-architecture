@@ -2,7 +2,7 @@
 
 These are short reads for people who approve AI spend, own the operational risk, or have to explain a system to an auditor. Each brief states a failure executives already recognize, then names the MOEPA layer that is supposed to carry that failure.
 
-The five names, on first use: **Metrology** is measurement and telemetry; **Ontology** is shared definitions; **Epistemology** is how a claim is verified and who may see it; **Praxeology** is how action is taken; **Axiology** is the value and policy constraint a prompt cannot switch off. The **Data Substrate** is the organization-owned library those layers read and write.
+The five names, on first use: **Metrology** is measurement and telemetry; **Ontology** is shared definitions; **Epistemology** is how a claim is verified and who may see it; **Praxeology** is how action is taken; **Axiology** is the value and policy constraint a prompt cannot switch off. Together they form the **MOEPA Cognitive Architecture** (the thesis). The **Data Substrate** is the organization-owned storage those layers read and write, and **Agents** are the engine that consumes it.
 
 | Brief | Decision it changes |
 | :--- | :--- |

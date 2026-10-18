@@ -1,6 +1,6 @@
 # MOEPA: A Public Sector Leader's Guide to Owning AI Strategy
 
-## The Philosophical AI Architecture — A Cognitive Control Plane for Public Sector AI
+## The MOEPA Cognitive Architecture — A Cognitive Control Plane for Public Sector AI
 
 *A strategic handout for senior executives, CIOs, and mission leaders in federal, state, local, and other public institutions*
 
@@ -14,7 +14,7 @@ This handout is for senior executives, CIOs, and mission leaders in public insti
 
 Oversight bodies (inspectors general, audit offices, legislatures) ask for accuracy, equity, and a record of how a determination was reached. Many platforms keep that record in a vendor cloud, in model logic the agency cannot inspect, or in an audit trail written for a sales review.
 
-The **Philosophical AI Architecture** is the control frame: an agency-owned knowledge library (the **Data Substrate**) and the **MOEPA 5-Layer Framework** — Metrology (measurement), Ontology (shared definitions), Epistemology (verification), Praxeology (action), and Axiology (value constraints) — as the go/no-go intake rubric. Using it changes procurement and operations:
+The **MOEPA Cognitive Architecture** is the thesis and the go/no-go intake rubric: five layers — Metrology (measurement), Ontology (shared definitions), Epistemology (verification), Praxeology (action), and Axiology (value constraints) — backed by an agency-owned **Data Substrate** (how knowledge is stored) and executed by **Agents** (the engine that consumes the substrate). Using it changes procurement and operations:
 
 - A proposal is scored before investment, while exit is still practical.
 - Predictive outputs (match confidence, risk flags, forecasts) are stored separately from generative outputs (explanations, summaries, recommendations). Both cite agency evidence.
@@ -29,7 +29,7 @@ Adoption stays on the agency's terms: clear ownership, explainable decisions, an
 
 ### What MOEPA Is
 
-The MOEPA 5-Layer Framework is built on five classical disciplines of human reasoning, translated into five leadership responsibilities for AI governance. The acronym stands for **Metrology, Ontology, Epistemology, Praxeology, and Axiology**—in that order, from the data foundation up through value governance. Area leaders map the project to all five layers. A proposal that cannot be mapped does not pass intake.
+The MOEPA Cognitive Architecture is built on five classical disciplines of human reasoning, translated into five leadership responsibilities for AI governance. The acronym stands for **Metrology, Ontology, Epistemology, Praxeology, and Axiology**—in that order, from the data foundation up through value governance. Area leaders map the project to all five layers. A proposal that cannot be mapped does not pass intake.
 
 Each layer answers a distinct question public sector leadership must be able to answer about any AI system the organization operates or procures.
 

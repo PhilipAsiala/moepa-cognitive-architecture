@@ -1,4 +1,4 @@
-# Pitch Strategy: The Philosophical AI Architecture
+# Pitch Strategy: The MOEPA Cognitive Architecture
 
 > **Repository directive.** Every document, diagram, and architectural decision in this repository must serve this narrative. Use this guide when writing, reviewing, or presenting any material derived from the repo.
 
@@ -65,16 +65,15 @@ Tone stays confident and neutral. Promotional language is out of scope for both 
 
 ---
 
-## 2. Strict Terminology
+## 2. Core Terms: Thesis, Storage, Engine
 
-Never conflate the overarching system with the operational tool.
+Keep the vocabulary to three core terms rather than splitting the architecture into multiple names:
 
-| Term | What it is | When to use it |
+| Term | Role | What it is |
 |---|---|---|
-| **Philosophical AI Architecture** | The overarching enterprise ecosystem: Data Substrate, security guardrails, own-vs-rent strategy, and cognitive control plane | Pitching the whole system; README; strategic docs |
-| **MOEPA 5-Layer Framework** | The operational engineering blueprint and governance engine *inside* the architecture: five layers, intake scoring, GO / CONDITIONAL GO / NO-GO rubric | Engineering translation; project intake; layer-by-layer evaluation |
-| **MOEPA Cognitive Architecture** | The technical stack specification: storage mapping, recommended tools, implementation playbook | [catalog/ARCHITECTURE.md](../catalog/ARCHITECTURE.md); architects and builders |
-| **Data Substrate** | The organization-owned knowledge library — truth, values, rules, and lineage in open formats | Always a physical metaphor; never a "vendor database" |
+| **MOEPA Cognitive Architecture** | The thesis | The five-layer separation of concerns (Metrology, Ontology, Epistemology, Praxeology, Axiology) and the go/no-go intake scorecard (1–5 per layer, **GO / CONDITIONAL GO / NO-GO**) |
+| **Data Substrate** | The storage | The organization-owned library where truth, definitions, values, rules, and lineage live in open formats — never a vendor lock-in store |
+| **Agents** | The engine | The workflows and models that consume the Data Substrate to propose and execute work across the layers, bounded by Epistemology verification and Axiology policy gates |
 
 ---
 
@@ -92,7 +91,7 @@ Never conflate the overarching system with the operational tool.
 | **Praxeology** | Action | Digitized SOPs, workflows, agentic execution playbooks |
 | **Axiology** | Values / rules | Encoded guardrails, access controls, NIST-aligned compliance |
 
-Introduce the **MOEPA 5-Layer Framework** as their engineering blueprint — not a presentation-layer abstraction, but the control plane for how institutional knowledge is classified, stored, verified, acted on, and governed.
+Introduce the **MOEPA Cognitive Architecture** as their engineering blueprint — not a presentation-layer abstraction, but the control plane for how institutional knowledge is stored on the Data Substrate and how Agents are verified, routed, and governed.
 
 ---
 
@@ -100,9 +99,9 @@ Introduce the **MOEPA 5-Layer Framework** as their engineering blueprint — not
 
 **The hook:** Vendors sell compelling demos. Your organization needs a framework that separates what you must own from what you can rent.
 
-**The governance lever:** Position the **MOEPA 5-Layer Framework** as the organization's go/no-go project intake rubric. A proposal that cannot be mapped to all five layers does not pass intake.
+**The governance lever:** Position the **MOEPA Cognitive Architecture** as the organization's go/no-go project intake rubric. A proposal that cannot be mapped to all five layers does not pass intake.
 
-**The own-vs-rent strategy:** The organization owns the **Data Substrate** — the truth, the values, the rules. Rent commercial LLMs and compute. Institutional knowledge stays portable when the substrate is owned and contracts require export. Lock-in returns if those conditions are skipped.
+**The own-vs-rent strategy:** The organization owns the **Data Substrate** — the truth, the values, the rules. Rent commercial LLMs and compute for the **Agents** that consume it. Institutional knowledge stays portable when the substrate is owned and contracts require export. Lock-in returns if those conditions are skipped.
 
 **Primary guide:** [Business Leader Guide](moepa-business-leaders-guide.md)
 
@@ -112,7 +111,7 @@ Introduce the **MOEPA 5-Layer Framework** as their engineering blueprint — not
 
 **The hook:** You cannot govern an AI mind with standard IT infrastructure metrics. You need a **cognitive control plane**.
 
-**The governance lever:** Position the **MOEPA 5-Layer Framework** as the organization's go/no-go project intake rubric. A proposal that cannot be mapped to all five layers does not pass intake.
+**The governance lever:** Position the **MOEPA Cognitive Architecture** as the organization's go/no-go project intake rubric. A proposal that cannot be mapped to all five layers does not pass intake.
 
 **The own-vs-rent strategy:** The institution owns the **Data Substrate** — the truth, the values, the rules. Rent commercial LLMs and compute. A model or vendor change does not, by itself, move the rules, the data, or the audit trail, provided the substrate is owned and export terms are real.
 
@@ -151,7 +150,7 @@ When describing implementation paths, align with the
 
 - [Business Value](business-value.md) — investment case in business-outcome terms
 - [Glossary](glossary.md) — canonical term definitions
-- [MOEPA 5-Layer Framework for Leaders](MOEPA-5-Layer-Framework.md) — per-layer leadership questions
+- [MOEPA Cognitive Architecture for Leaders](MOEPA-5-Layer-Framework.md) — per-layer leadership questions
 - [Architectural Governance and Evolution Guidelines](MOEPA-Architectural-Governance-and-Evolution-Guidelines.md) — MCP-first evolution rules and PR gate
 - [Business Leader Guide](moepa-business-leaders-guide.md) — enterprise intake and ownership pitch
 - [Public Sector Leader Guide](moepa-public-sector-leaders-guide.md) — government intake and accountability pitch

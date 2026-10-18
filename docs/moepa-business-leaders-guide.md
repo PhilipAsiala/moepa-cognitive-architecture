@@ -6,7 +6,7 @@
 
 This guide is for executives and business-unit owners who approve AI investments and own the risk. It is a decision aid for funding, ownership, and risk.
 
-The **Philosophical AI Architecture** is the frame. The **MOEPA 5-Layer Framework** is the intake rubric inside it. MOEPA names five responsibilities: **Metrology** (measurement and telemetry), **Ontology** (shared definitions), **Epistemology** (how a claim is verified), **Praxeology** (how action is taken), and **Axiology** (value and priority constraints). Leadership scores a proposal on those five questions before funding. A vendor feature list does not substitute for that score.
+The **MOEPA Cognitive Architecture** is the thesis and the intake rubric. It names five responsibilities: **Metrology** (measurement and telemetry), **Ontology** (shared definitions), **Epistemology** (how a claim is verified), **Praxeology** (how action is taken), and **Axiology** (value and priority constraints). Owned knowledge is stored on the **Data Substrate**, and **Agents** are the engine that consumes it across the layers. Leadership scores a proposal on those five questions before funding. A vendor feature list does not substitute for that score.
 
 Using the rubric changes the work:
 

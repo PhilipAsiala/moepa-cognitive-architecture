@@ -16,7 +16,7 @@ The pressure to automate is real. But automation without governance creates new 
 - Appeals that cannot be supported because the decision trail is incomplete
 - Legal liability when AI-assisted denials are challenged in court
 
-The Philosophical AI Architecture enables automation *with* accountability.
+The MOEPA Cognitive Architecture enables automation *with* accountability.
 
 ---
 
@@ -219,4 +219,4 @@ An AI system that cannot produce a complete, owned decision record is not just a
 
 - [Income Verification Scenario](income-verification.md) — related pattern for income-based determinations
 - [5-Layer Evaluation Checklist](../docs/5-Layer-Evaluation-Checklist.md) — how this use case would be scored before deployment
-- [MOEPA 5-Layer Framework](../docs/MOEPA-5-Layer-Framework.md) — due process and value constraints for this scenario
+- [MOEPA Cognitive Architecture for Leaders](../docs/MOEPA-5-Layer-Framework.md) — due process and value constraints for this scenario

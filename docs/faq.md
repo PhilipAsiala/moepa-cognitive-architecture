@@ -12,19 +12,19 @@ No. The **Data Substrate** is the organization-owned knowledge library beneath t
 
 ## Is this a finished architecture?
 
-No. This repository describes a draft **Philosophical AI Architecture** for discussion, refinement, and review. The **MOEPA 5-Layer Framework** (engineering blueprint and intake scoring) and **MOEPA Cognitive Architecture** (technical specification in [ARCHITECTURE.md](../catalog/ARCHITECTURE.md)) are components within that ecosystem — all are proposals, not deployed systems.
+No. This repository describes the **MOEPA Cognitive Architecture** as a draft for discussion, refinement, and review — not a deployed system.
 
-## What is the difference between Philosophical AI Architecture, MOEPA 5-Layer Framework, and MOEPA Cognitive Architecture?
+## How do the MOEPA Cognitive Architecture, the Data Substrate, and Agents fit together?
 
-- **Philosophical AI Architecture** — the full ecosystem: Data Substrate, guardrails, own-vs-rent strategy, cognitive control plane.
-- **MOEPA 5-Layer Framework** — the engineering blueprint and governance engine inside the architecture: five layers, intake scoring, GO / CONDITIONAL GO / NO-GO decisions.
-- **MOEPA Cognitive Architecture** — the technical stack design in [ARCHITECTURE.md](../catalog/ARCHITECTURE.md): storage mapping and recommended tools.
+- **MOEPA Cognitive Architecture (the thesis)** — the five-layer separation of concerns (Metrology, Ontology, Epistemology, Praxeology, Axiology) and the intake scorecard (**GO / CONDITIONAL GO / NO-GO**).
+- **Data Substrate (the storage)** — the organization-owned library where truth, definitions, values, rules, and lineage live in open, portable formats.
+- **Agents (the engine)** — the workflows and models that read the Data Substrate, propose plans in Praxeology, and are bounded by deterministic verification (Epistemology) and policy gates (Axiology).
 
-See the [Naming section in the README](../README.md#naming), [Pitch Strategy](pitch-strategy.md), and [Glossary](glossary.md).
+See [Names in this repository](../README.md#names-in-this-repository), [Pitch Strategy](pitch-strategy.md), and [Glossary](glossary.md).
 
 ## What are Cognition, Affect, and Conation?
 
-The three human cognitive functions the Philosophical AI Architecture maps into software:
+The three human cognitive functions the MOEPA Cognitive Architecture maps into software:
 
 - **Cognition** (knowing) → Metrology, Ontology, Epistemology
 - **Affect** (valuing) → Axiology
@@ -52,13 +52,13 @@ Each layer is one question leadership must be able to answer. The technical form
 
 **Public sector leaders:** [Public Sector Leader Guide](moepa-public-sector-leaders-guide.md) → [Evaluation Checklist](5-Layer-Evaluation-Checklist.md) → [Pitch Strategy](pitch-strategy.md)
 
-**Technical architects:** [MOEPA 5-Layer Framework](MOEPA-5-Layer-Framework.md) → [Data Substrate Concept](Data-Substrate-Concept.md) → [ARCHITECTURE.md](../catalog/ARCHITECTURE.md)
+**Technical architects:** [MOEPA Cognitive Architecture for Leaders](MOEPA-5-Layer-Framework.md) → [Data Substrate Concept](Data-Substrate-Concept.md) → [ARCHITECTURE.md](../catalog/ARCHITECTURE.md)
 
-**All readers:** [Glossary](glossary.md) → [5-Layer Framework](MOEPA-5-Layer-Framework.md)
+**All readers:** [Glossary](glossary.md) → [MOEPA Cognitive Architecture for Leaders](MOEPA-5-Layer-Framework.md)
 
 ## Does this include an implementation?
 
-Not yet. The repository focuses on the proposal, the MOEPA 5-Layer Framework governance model, and the intended operating principles for a governed Data Substrate.
+Not yet. The repository focuses on the MOEPA Cognitive Architecture, its intake scorecard, and the operating principles for the Data Substrate and the Agents that consume it.
 
 ## Why MCP-first?
 
