@@ -1,6 +1,6 @@
 # End-to-End Business Compositions
 
-Individual capabilities do not deliver business outcomes in isolation. An enterprise AI workflow is a composition of **[Data Substrate capabilities](data-substrate.md) (`DS1`–`DS6`)** and **[Enterprise Agent capabilities](agents.md) (`AG1`–`AG6`)** operating across the five layers of the **MOEPA Cognitive Architecture**.
+Individual capabilities do not deliver business outcomes in isolation. An enterprise AI workflow is a composition of **[Data Substrate capabilities](data-substrate.md) (`DS1`–`DS7`)** and **[Enterprise Agent capabilities](agents.md) (`AG1`–`AG6`)** operating across the five layers of the **MOEPA Cognitive Architecture**.
 
 This page provides six repeatable blueprints for common high-stakes enterprise and public-sector workflows.
 
@@ -9,10 +9,10 @@ This page provides six repeatable blueprints for common high-stakes enterprise a
 ## 1. End-to-End Decision Auditability
 
 - **Business problem:** A customer, regulator, or inspector general challenges an AI-assisted decision six months later, and the organization must reconstruct the exact data, definitions, sources, human approvals, and policy rules that produced it.
-- **Capabilities composed:** `DS2` (Provenance) + `DS3` (Entity Version) + `AG3` (Verification & Citations) + `AG4` (Workflow & Human Checkpoint) + `AG5` (Policy Gate) → written to `DS5` (Cross-Layer Audit Ledger).
+- **Capabilities composed:** `DS2` (Provenance) + `DS3` (Entity Version) + `AG3` (Verification & Citations) + `AG4` (Workflow & Human Checkpoint) + `AG5` (Policy Gate over `DS7`) → written to `DS5` (Cross-Layer Audit Ledger).
 
 ```
-AG5 — Policy Gate Agent (Axiology)        Records policy bundle version & pass/refusal
+AG5 — Policy Gate Agent (Axiology)        Records DS7 policy bundle version & pass/refusal
   ↑
 AG4 — Workflow Agent (Praxeology)         Records state transitions & human approver ID
   ↑
@@ -37,10 +37,10 @@ DS5 — Cross-Layer Audit Ledger            Single immutable trace linking all f
                            NO  → Quarantine & escalate immediately
                            YES → Proceed to entity resolution (AG2)
 2. AG3 (Epistemology)  → Evidence supports high-confidence verified answer?
-                           HIGH (≥90%, corroborated) → Automated workflow path
+                           HIGH (≥90%, corroborated) → Automated path (pre-approved, non-consequential action classes only)
                            MEDIUM (70–89%)           → Mandatory human review queue
                            LOW (<70% or conflict)    → Specialist escalation queue
-3. AG4 (Praxeology)    → Execute state machine path; pause at human checkpoint if consequential
+3. AG4 (Praxeology)    → Execute state machine path; every consequential action pauses at the human checkpoint regardless of confidence
 4. AG5 (Axiology)      → Enforce Policy-as-Code before any external notice or record update
 ```
 
@@ -69,11 +69,11 @@ Delivered Response        → Cited substrate IDs + decomposed confidence + poli
 ## 4. Sovereign AI Project Intake and Portfolio Scoring
 
 - **Business problem:** Evaluating dozens or hundreds of AI proposals consistently, preventing duplicate builds, and blocking vendor lock-in before contracts are signed.
-- **Capabilities composed:** `DS6` (Demand Management & Deduplication) + `AG4` (Intake Workflow) + `AG5` (ROI & Chargeback Gate) + `DS5` (Governance Ledger).
+- **Capabilities composed:** `AG4` (Intake Workflow) searching `DS6` (Asset Registry) + `AG5` (ROI & Chargeback Gate) + `DS5` (Governance Ledger).
 
 | Step | Capability | Action |
 | :--- | :--- | :--- |
-| **1. Deduplicate** | `DS6` + `DS3` | Search the canonical entity registry and capability catalog to prove the dataset or agent does not already exist |
+| **1. Deduplicate** | `AG4` over `DS6` + `DS3` | Search the asset registry and canonical entity registry to prove the dataset or agent does not already exist |
 | **2. Qualify Data** | `DS1` + `AG1` | Verify whether required source data is already governed on the enterprise platform |
 | **3. Score 5 Layers** | [Enterprise Capability Matrix](capability-matrix.md) | Score Metrology through Axiology (1–5); any layer `< 3` triggers an automatic `NO-GO` |
 | **4. Validate ROI** | `AG5` | Verify quantified business ROI and chargeback/showback attribution |
@@ -99,17 +99,17 @@ Automated Governance Alert → Triggers workflow throttle, rollback, or mandator
 ## 6. Portable Multi-Model Orchestration via MCP
 
 - **Business problem:** Swapping an underlying LLM (for example, moving from a cloud frontier model to a local open-weight model) without rewriting data integrations, RAG pipelines, or policy checks.
-- **Capabilities composed:** `AG6` (MCP Capability Bus) wrapping `DS1`–`DS6` and `AG1`–`AG5`.
+- **Capabilities composed:** `AG6` (MCP Capability Bus) wrapping `DS1`–`DS7` and `AG1`–`AG5`.
 
 ```
 Model / Orchestrator Host (Cloud LLM, Local Open-Weight Model, State Machine)
   ↓  invokes capabilities exclusively via MCP contracts
 AG6 — MCP Capability Bus
   ├── Metrology MCP Server     → DS1/DS2 ingestion, quality & provenance checks (AG1)
-  ├── Ontology MCP Server      → DS3/DS6 entity resolution & graph queries (AG2)
+  ├── Ontology MCP Server      → DS3/DS6 entity resolution, graph & registry queries (AG2)
   ├── Epistemology MCP Server  → DS4 grounded retrieval & citation verification (AG3)
   ├── Praxeology MCP Server    → workflow state transitions & human approval queues (AG4)
-  └── Axiology MCP Server      → OPA policy evaluation & guardrail checks (AG5)
+  └── Axiology MCP Server      → DS7 policy evaluation & guardrail checks (AG5)
 ```
 
 ---
@@ -117,7 +117,7 @@ AG6 — MCP Capability Bus
 ## Related Documents
 
 - **[Enterprise Capability Catalog Overview](README.md)**
-- **[Data Substrate Capabilities](data-substrate.md)** (`DS1`–`DS6`)
+- **[Data Substrate Capabilities](data-substrate.md)** (`DS1`–`DS7`)
 - **[Enterprise Agent Capabilities](agents.md)** (`AG1`–`AG6`)
 - **[Enterprise Capability Matrix](capability-matrix.md)**
 - **[Technical Specification](ARCHITECTURE.md)**

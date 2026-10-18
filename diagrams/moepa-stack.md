@@ -6,6 +6,8 @@ The five layers of the MOEPA Cognitive Architecture, backed by the organization-
 
 ## Full Stack with Data Substrate
 
+Solid arrows run bottom-up: each layer depends on the one below it, and all five rest on the Data Substrate. Dotted arrows show that every layer reads from and writes to the substrate.
+
 ```mermaid
 graph TB
     subgraph STACK["MOEPA Cognitive Architecture"]
@@ -15,16 +17,16 @@ graph TB
 
         A4["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  LAYER 4 — PRAXEOLOGY\n  Decision Workflows · Human Oversight\n  State machines · Audit trails\n  Tool scope enforcement\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"]
 
-        A3["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  LAYER 3 — EPISTEMOLOGY\n  Truth & Verification · Owned RAG\n  Confidence scoring · Fact-checking\n  Hallucination detection\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"]
+        A3["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  LAYER 3 — EPISTEMOLOGY\n  Truth & Verification · Owned Retrieval Index\n  Confidence scoring · Fact-checking\n  Hallucination detection\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"]
 
-        A2["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  LAYER 2 — ONTOLOGY\n  Structured Knowledge · Entity Model\n  Knowledge graph · Embeddings\n  Semantic consistency\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"]
+        A2["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  LAYER 2 — ONTOLOGY\n  Structured Knowledge · Entity Model\n  Knowledge graph · Asset registry\n  Semantic consistency\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"]
 
         A1["━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n  LAYER 1 — METROLOGY\n  Data Quality · Provenance\n  Measurement · Observability\n  Open-format storage\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"]
 
         SUB[["══════════════════════════════════════\n  DATA SUBSTRATE\n  Unified Knowledge Library\n  SPO/Quad + Open Lakehouse (Iceberg/Parquet)\n  Provenance · Versioning · Lineage\n  (shared foundation — all layers read/write here)\n══════════════════════════════════════"]]
     end
 
-    A5 --> A4 --> A3 --> A2 --> A1 --> SUB
+    SUB --> A1 --> A2 --> A3 --> A4 --> A5
     A1 -. reads/writes .-> SUB
     A2 -. reads/writes .-> SUB
     A3 -. reads/writes .-> SUB
@@ -46,11 +48,11 @@ graph TB
 | Layer | Philosophical Discipline | AI Governance Role | Core Tool Examples |
 |---|---|---|---|
 | **5 — Axiology** | Study of value and ethics | What the system must never do; what it must preserve | Open Policy Agent, Guardrails AI, LLM Guard |
-| **4 — Praxeology** | Study of purposeful action | How the system acts; who approves; what is logged | LangGraph, Temporal, Camunda, OPA |
-| **3 — Epistemology** | Study of knowledge and truth | What counts as a verified fact vs. inference | LlamaIndex, Guardrails AI, RAGAS, TruLens |
-| **2 — Ontology** | Study of being and relationships | What entities exist; how they relate; what terms mean | Neo4j, Apache Jena, Chroma, Qdrant |
+| **4 — Praxeology** | Study of purposeful action | How the system acts; who approves; what is logged | LangGraph, Temporal, Camunda |
+| **3 — Epistemology** | Study of knowledge and truth | What counts as a verified fact vs. inference; owned retrieval index | Qdrant / pgvector / Chroma, Guardrails AI, RAGAS, TruLens |
+| **2 — Ontology** | Study of being and relationships | What entities exist; how they relate; what terms mean | Neo4j, Apache Jena, RDF / SHACL |
 | **1 — Metrology** | Study of measurement | What data is trusted; how quality is assured; where it came from | Great Expectations, Apache Iceberg, OpenLineage |
-| **Data Substrate** | *(architectural pattern)* | Shared knowledge library; owned by the organization | Iceberg + Parquet + Neo4j + Atlas |
+| **Data Substrate** | *(storage tier)* | Shared knowledge library; owned by the organization | Iceberg + Parquet (Polaris catalog) + Neo4j + OpenLineage |
 
 ---
 

@@ -8,7 +8,7 @@
 ## How the Three Tiers Solve It
 
 1. **MOEPA Cognitive Architecture (The Thesis):** Treats **Metrology** (*what we measured and where it came from*) and **Ontology** (*what our business entities mean and how they relate*) as non-negotiable ownership layers.
-2. **Data Substrate (The Storage):** Stores all measurements, entity definitions, embeddings, and audit trails in open, vendor-neutral formats (`DS1`–`DS5`) inside organization-controlled infrastructure.
+2. **Data Substrate (The Storage):** Stores all measurements, entity definitions, embeddings, and audit trails in open, vendor-neutral formats (`DS1`–`DS5`, `DS7`) inside organization-controlled infrastructure.
 3. **Agents (The Engine):** Connects models and workflows to the Data Substrate through standardized **Model Context Protocol (MCP)** interfaces (`AG6`). Because Agents do not own the data or the schema, the underlying LLM can be swapped without rebuilding the business logic.
 
 ---
@@ -21,7 +21,7 @@ Ownership means the ability to export, audit, and keep using the asset without a
 | :--- | :--- |
 | **Open Lakehouse & Provenance (`DS1`, `DS2`):** Raw tables, `Proto-SPO` document segments, and lineage in Apache Iceberg / Parquet. | Cloud GPU capacity and inference clusters. |
 | **Canonical Entity Registry & Graph (`DS3`):** The enterprise definition of a customer, case, account, asset, or policy. | Commercial frontier LLM APIs or interchangeable open-weight models. |
-| **Owned Retrieval & Audit Ledger (`DS4`, `DS5`):** In-house vector indexes and the immutable record of every decision and policy check. | Commodity object storage where formats and egress stay under your control. |
+| **Owned Retrieval, Audit Ledger & Policy (`DS4`, `DS5`, `DS7`):** In-house vector indexes, the immutable record of every decision, and the policy rules that governed it. | Commodity object storage where formats and egress stay under your control. |
 
 ---
 
@@ -31,7 +31,7 @@ A proposal fails the Data Sovereignty check (automatic **NO-GO** on Metrology or
 
 - Core entities ("customer," "beneficiary," "asset," "threat") are defined only inside a vendor's proprietary schema.
 - Document chunks and embeddings are uploaded into an external SaaS RAG box the organization cannot audit or export.
-- The team proposes building a duplicate data pipeline or schema without checking the enterprise catalog first (`DS6`).
+- The team proposes building a duplicate data pipeline or schema without checking the enterprise asset registry first (`DS6`).
 
 ## Decision Checklist for Leaders
 
@@ -39,4 +39,4 @@ A proposal fails the Data Sovereignty check (automatic **NO-GO** on Metrology or
 2. **Verify Portability (`DS1`–`DS4`, `AG6`):** If we turn off the model vendor tomorrow, do our tables, knowledge graph, vector index, and MCP tool contracts remain intact?
 3. **Score the Proposal:** Require a **Score ≥ 3** on Metrology and Ontology in the [Enterprise Capability Matrix](../catalog/capability-matrix.md) before funding.
 
-*Next: [Zero-Trust Governance](zero-trust-governance.md) · Builder specs: [Data Substrate Capabilities (`DS1`–`DS6`)](../catalog/data-substrate.md) · Diagram: [Owned vs. Rented](../diagrams/owned-vs-rented.md)*
+*Next: [Zero-Trust Governance](zero-trust-governance.md) · Builder specs: [Data Substrate Capabilities (`DS1`–`DS7`)](../catalog/data-substrate.md) · Diagram: [Owned vs. Rented](../diagrams/owned-vs-rented.md)*

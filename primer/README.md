@@ -3,7 +3,7 @@
 These three briefs translate the repository's three core tiers into executive decisions on vendor risk, compliance, and investment:
 
 1. **MOEPA Cognitive Architecture (The Thesis)** — The five governance layers (**M**etrology, **O**ntology, **E**pistemology, **P**raxeology, **A**xiology) and the **GO / CONDITIONAL GO / NO-GO** intake scorecard.
-2. **Data Substrate (The Storage)** — The organization-owned library (`DS1`–`DS6`) where data, entity definitions, verified claims, and audit logs live in open formats.
+2. **Data Substrate (The Storage)** — The organization-owned library (`DS1`–`DS7`) where data, entity definitions, verified claims, audit logs, and policy rules live in open formats.
 3. **Agents (The Engine)** — The specialized workflows and deterministic gates (`AG1`–`AG6`) that consume the Data Substrate to run the business.
 
 | Brief | Core Question | Primary Focus |

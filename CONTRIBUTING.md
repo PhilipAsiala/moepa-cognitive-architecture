@@ -51,7 +51,6 @@ Issues keep discussion open while preserving editorial control on `main`.
 - **Business-first drift** — technical jargon (tools, protocols, storage formats) appearing in leader-facing docs before business outcomes
 - Drift from MCP-first integration, semantic ingestion, or Proto-SPO requirements in **builder-tier** documents
 - Real-world examples, references, or counterexamples
-- Drift from the pitch strategy terminology or tone
 
 ## Proposal / RFC process
 

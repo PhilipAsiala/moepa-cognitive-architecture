@@ -2,11 +2,11 @@
 
 Leaders start at the [repository primer](../README.md). This file is the builder specification.
 
-Version: 2.3 — Full Ownership Focus
+Version: 3.0 — Three-Tier Model (Thesis / Data Substrate / Agents)
 
 Author: Philip Asiala
 
-Last Updated: June 15, 2026
+Last Updated: October 18, 2026
 
 Status: Draft for Review — Feedback Welcome
 
@@ -18,7 +18,7 @@ Repository: [philosophical-ai-architecture](https://github.com/PhilipAsiala/phil
 
 This specification is for architects and engineers implementing a decision leaders have already framed: what the organization owns, and what it rents.
 
-The MOEPA Cognitive Architecture (**Metrology**, measurement; **Ontology**, shared definitions; **Epistemology**, verification; **Praxeology**, action; **Axiology**, value constraints) maps three jobs into software: **Cognition** (knowing), **Affect** (valuing), and **Conation** (acting).
+The MOEPA Cognitive Architecture (**Metrology**, measurement; **Ontology**, shared definitions; **Epistemology**, verification; **Praxeology**, action; **Axiology**, value constraints) turns that decision into five scored layers.
 
 - **Rent the muscles (compute).** Hardware execution (VPC, clusters, GPUs) is treated as interchangeable, variable-cost capacity, with exit terms.
 - **Own the brain (intellectual property).** Knowledge graphs, validation models, ethical guardrails, and mission rules stay portable and access-controlled. They are core intellectual property when the organization can export and audit them. A vendor-hosted copy of the same assets does not meet that test.
@@ -37,9 +37,9 @@ Agentic AI, multimodal models, and open-weight ecosystems add both capability an
 - Erosion of institutional knowledge as models drift.
 
 ### 1.2 The Decoupling Imperative
-MOEPA enforces a clean separation between the computational substrate (rented, interchangeable) and the cognitive substrate (owned, versioned, auditable). This mirrors successful patterns in cloud-native architecture while extending them to the domain of reasoning itself.
+MOEPA enforces a clean separation between rented, interchangeable compute and the owned, versioned, auditable Data Substrate. This mirrors successful patterns in cloud-native architecture while extending them to the domain of reasoning itself.
 
-Core Principle (v2.3): We rent commodity compute. We own the brain. Ownership means internal control of data (Metrology), semantics (Ontology), validation (Epistemology), workflows (Praxeology), and values (Axiology), held on the Data Substrate so the same record can be found again.
+Core Principle: We rent commodity compute. We own the brain. Ownership means internal control of data (Metrology), semantics (Ontology), validation (Epistemology), workflows (Praxeology), and values (Axiology), held on the Data Substrate so the same record can be found again.
 
 ## 2. MOEPA Layer Definitions — Philosophical Grounding & Practical Translation
 Each layer is named after a classical philosophical discipline and grounded in a specific mathematical formalization. This ensures the framework is both intellectually coherent and technically implementable.
@@ -71,7 +71,7 @@ Enterprise Translation: Modeling domain reality as structured, queryable knowled
 Key Artifacts:
 
 - Internally managed knowledge graphs (Neo4j, Amazon Neptune).
-- Custom entity resolution, embedding pipelines, and schema management.
+- Custom entity resolution and schema management.
 - Version-controlled semantic models.
 
 Explicitly avoid: External platforms that own the core semantic model and entity truth layer.
@@ -85,9 +85,8 @@ Enterprise Translation: Separating probabilistic model output from verified fact
 
 Key Artifacts:
 
-- SHA-256 validation pipelines in CI/CD.
-- RAG with source citation + grounding checks against owned data.
-- Automated vulnerability scanning.
+- Cryptographic (SHA-256) fingerprinting of source artifacts and verification pipeline configurations.
+- Grounded retrieval with source citation + verification against owned data.
 - Deterministic fact-verification gates before any execution.
 
 ### Layer 4 — Praxeology (Study of Purposeful Action)
@@ -113,7 +112,7 @@ Enterprise Translation: Hard-coding organizational values, regulatory constraint
 
 Key Artifacts:
 
-- "Golden Master" config.yaml with OS-level write locks (icacls / Windows ACLs).
+- "Golden Master" policy baseline with OS- or infrastructure-level write locks.
 - Preferred/forbidden verb enforcement (allowed vs. prohibited agent actions).
 - Zero Trust policy blocks.
 - Constitutional guardrails that survive prompt injection.
@@ -123,13 +122,13 @@ The five layers are interdependent. Weakness in any layer undermines the integri
 
 ### Strategic Evaluation Matrix
 
-| Layer | The Econometric & Risk Lens (Program Evaluation / RAS) | The Systems Engineering & Zero Trust Lens (IT Enterprise Services) |
+| Layer | The Econometric & Risk Lens (Program Evaluation / Risk Analysis) | The Systems Engineering & Zero Trust Lens (Enterprise IT) |
 | --- | --- | --- |
 | 5. Axiology | Minimizes compliance costs and legal liabilities by hardcoding mandatory operational boundaries. | Enforces policy-as-code at the OS/Infrastructure level, eliminating client-side manipulation. |
 | 4. Praxeology | Lowers operational risk by replacing erratic manual loops with highly predictable, auditable processes. | Implements deterministic state-machines and strict agentic action boundaries. |
-| 3. Epistemology | Protects the statistical validity of decision models by preventing data pollution and hallucinations. | Deploys cryptographic SHA-256 validation pipelines and automated CI/CD security gates. |
-| 2. Ontology | Models complex mission-domain relational networks (e.g., entity ownership, program eligibility, and dependency tracking) into clean, queryable realities. | Generates abstract syntax trees, semantic knowledge graphs, and local context embedding indices. |
-| 1. Metrology | Establishes baseline data integrity, ensuring that econometric profiling relies on uncorrupted metrics. | Restricts compute to quantized open-weight models inside secure, zero-egress VPCs. |
+| 3. Epistemology | Protects the statistical validity of decision models by preventing data pollution and hallucinations. | Deploys deterministic verification gates with cryptographic (SHA-256) artifact integrity checks. |
+| 2. Ontology | Models complex mission-domain relational networks (e.g., entity ownership, program eligibility, and dependency tracking) into clean, queryable realities. | Maintains the canonical entity registry, semantic knowledge graph, and controlled vocabularies. |
+| 1. Metrology | Establishes baseline data integrity, ensuring that econometric profiling relies on uncorrupted metrics. | Enforces ingress quality gates, provenance stamping, and egress controls on the owned open-format lakehouse. |
 
 ## 4. MOEPA Intake & Scoring Framework
 ### 4.1 Purpose
@@ -172,8 +171,8 @@ Audit Question: How does the system represent and maintain structured knowledge 
 Scoring Guidance:
 
 - Score 1: Raw pre-trained weights only; no domain structuring or custom schema constraints.
-- Score 3: Standardized external schemas or flat vector indexes with isolated metadata.
-- Score 5: Live, internally managed semantic knowledge graph + AST-level understanding that evolves with your codebase and business rules.
+- Score 3: Core domain entities, relationships, and code sets are documented in an organization-owned, governed dictionary with effective dates. Open industry standards (for example schema.org, FIBO, NIEM) may be adopted as the basis; entities defined only inside a vendor's proprietary schema do not qualify.
+- Score 5: Live, internally managed semantic knowledge graph and SPO/quad store that evolves with your business rules, with point-in-time effective dates and steward-approved vocabulary changes.
 
 #### Layer 3 — Epistemology Evaluation (Truth & Verification)
 Risk: Hallucination amplification, unverified code execution, lack of operational traceability, and blind reliance on probabilistic outputs.
@@ -183,8 +182,8 @@ Audit Question: How does the system differentiate between a statistically genera
 Scoring Guidance:
 
 - Score 1: Prompt-dependent validation only; model outputs are served directly to users or APIs with zero deterministic cross-checking.
-- Score 3: Basic automated checks exist (e.g., local code linters or flat retrieval checks). Retrieval-Augmented Generation (RAG) surfaces source citations, but lacks cryptographic pipeline validation.
-- Score 5: Advanced cryptographic verification is standard. Pipeline integration validates model configurations using SHA-256 hashes before code execution. Every fact is verified against your sovereign, owned Metrology asset, and verification metadata is stored with that fact on the Data Substrate.
+- Score 3: Basic automated checks exist (e.g., flat retrieval checks). Retrieval surfaces source citations, but lacks cryptographic pipeline validation.
+- Score 5: Advanced cryptographic verification is standard. Pipeline integration validates model and verification configurations using SHA-256 hashes before execution. Every fact is verified against your sovereign, owned Metrology asset, and verification metadata is stored with that fact on the Data Substrate.
 
 #### Layer 4 — Praxeology Evaluation (Agentic Workflow Boundaries)
 Risk: Uncontrolled agentic loops, destructive autonomous API actions, and untraceable multi-step execution paths.
@@ -195,39 +194,40 @@ Scoring Guidance:
 
 - Score 1: Free-form, autonomous execution loops with zero state-machine tracking; tools are exposed to the LLM via open-ended prompts.
 - Score 3: Agentic logic is bounded by basic sequential code, but lacks a centralized state machine. Human-in-the-loop checkpoints exist but are bypassable.
-- Score 5: The workflow is driven by immutable, deterministic state machines (e.g., LangGraph). Execution follows strict, auditable lifecycles (intake → plan → execute) generating permanent audit trails. State parameters are versioned on the Data Substrate.
+- Score 5: The workflow is driven by immutable, deterministic state machines. Execution follows strict, auditable lifecycles (intake → plan → execute) generating permanent audit trails. State parameters are versioned on the Data Substrate.
 
 #### Layer 5 — Axiology Evaluation (Governance & Value Alignment)
 Risk: Prompt injection vulnerabilities, alignment drift, and client-side manipulation of organizational guardrails by developers or end-users.
 
 Audit Question: How are the ethical boundaries, compliance mandates, and organizational value guardrails permanently locked down against intentional or accidental modification?
 
-**Enterprise-Scale Weighting (for 1,000+ use-case intake environments):** In high-volume federal and enterprise intake processes, Axiology scores are weighted heavily by two factors: (1) documented **Business ROI** (quantified mission impact, risk reduction, cost avoidance, equity improvements, or throughput gains with traceable assumptions and sensitivity analysis) and (2) the presence of a formal, auditable **Chargeback/Showback model** that attributes platform, compute, data, and governance costs back to business owners. Proposals lacking credible ROI quantification or a viable cost attribution model cannot achieve a score of 4 or higher regardless of other governance controls.
+**Enterprise-Scale Weighting (for 1,000+ use-case intake environments):** In high-volume enterprise and public-sector intake processes, Axiology scores are weighted heavily by two factors: (1) documented **Business ROI** (quantified mission impact, risk reduction, cost avoidance, equity improvements, or throughput gains with traceable assumptions and sensitivity analysis) and (2) the presence of a formal, auditable **Chargeback/Showback model** that attributes platform, compute, data, and governance costs back to business owners. Proposals lacking credible ROI quantification or a viable cost attribution model cannot achieve a score of 4 or higher regardless of other governance controls.
 
 Scoring Guidance:
 
 - Score 1: Soft constraints only; guidelines are embedded within the system prompt and easily bypassed by sophisticated prompt injections.
 - Score 3: Compliance rules are centralized, but security configuration settings are modifiable by local client environments or developers at the edge.
-- Score 5: Core organizational values, preferred/forbidden verb lists, and security policies are hardcoded into a "Golden Master" configuration file locked via OS-level write constraints (Windows ACLs/icacls or immutable infrastructure policies). Policy code is cryptographically protected and versioned. In addition, a quantified Business ROI model and approved chargeback/showback mechanism are in place and reviewed at the executive level.
+- Score 5: Core organizational values, preferred/forbidden verb lists, and security policies are hardcoded into a "Golden Master" policy baseline ([DS7](data-substrate.md#ds7--policy-as-code-and-constitutional-baseline)) locked via OS- or infrastructure-level write constraints. Policy code is cryptographically protected and versioned. In addition, a quantified Business ROI model and approved chargeback/showback mechanism are in place and reviewed at the executive level.
 
 ### 4.4 Executive Governance & Architecture Review Chain
 
 To support enterprise-scale intake (1,000+ requests) while maintaining sovereignty and preventing uncontrolled proliferation, MOEPA mandates a formal executive governance gate and a strict Architecture Review Chain for all proposals.
 
-**Executive Approval Gate:** Any use case that receives an overall MOEPA score of 4 or higher (or any proposal requesting production funding or enterprise platform resources) must pass an explicit executive-level approval gate before scaling. This gate is separate from technical scoring and is triggered by the weighted Axiology score (incorporating Business ROI and chargeback justification). The executive gate reviews mission alignment, quantified ROI, cost attribution model, demand management clearance (no duplication), and residual risk.
+**Executive Approval Gate:** Any use case that receives an overall MOEPA score of 4 or higher (or any proposal requesting production funding or enterprise platform resources) must pass an explicit executive-level approval gate before scaling. This gate is separate from technical scoring and is triggered by the weighted Axiology score (incorporating Business ROI and chargeback justification). The executive gate reviews mission alignment, quantified ROI, cost attribution model, and residual risk.
 
-**Mandatory Architecture Review Chain:** Before executive sign-off, every proposal must traverse the following strict, sequential review chain. Each step must provide documented sign-off; no step may be bypassed. Role titles are illustrative — agencies map each step to their own governance bodies (architecture review board, data platform office, mission program office, etc.):
+**Mandatory Architecture Review Chain:** Before executive sign-off, every proposal must traverse the following strict, sequential review chain. Each step must provide documented sign-off; no step may be bypassed. Role titles are illustrative — organizations map each step to their own governance bodies (architecture review board, data platform office, business program office, etc.):
 
-1. **Enterprise Architecture Review** — Initial technical architecture review for alignment with agency standards, security patterns, and MOEPA layer controls.
-2. **Agency Data Platform — ingestion and lineage review** — Data platform engineering validates ingestion approach, lineage, and quality controls (see Metrology data availability requirements).
-3. **Agency Data Platform — capacity and cost review** — Platform owners confirm capacity, cost model integration, and platform-level governance.
-4. **Mission program office** — Owning program confirms operational readiness, ROI assumptions, and acceptance of chargeback/showback obligations.
-5. **Executive Sign-off** — Formal approval by designated executive authority (or governance board) confirming the weighted ROI case, approved cost model, a deduplication check against the owned semantic model, and completion of the preceding chain.
+1. **Deduplication Check** — The proposer searches the enterprise asset registry ([DS6](data-substrate.md#ds6--enterprise-capability-and-asset-registry)) and documents that the dataset, schema, or agent does not already exist. No scoring begins until this is recorded.
+2. **Enterprise Architecture Review** — Technical architecture review for alignment with enterprise standards, security patterns, and MOEPA layer controls.
+3. **Data Platform — ingestion and lineage review** — Data platform engineering validates ingestion approach, lineage, and quality controls (see Metrology data availability requirements).
+4. **Data Platform — capacity and cost review** — Platform owners confirm capacity, cost model integration, and platform-level governance.
+5. **Business program office** — Owning program confirms operational readiness, ROI assumptions, and acceptance of chargeback/showback obligations.
+6. **Executive Sign-off** — Formal approval by designated executive authority (or governance board) confirming the weighted ROI case, approved cost model, and completion of the preceding chain.
 
-This chain ensures that technical feasibility, data reality, platform economics, business ownership, and executive accountability are all explicitly addressed. Prior decisions recorded on the Data Substrate support that deduplication check at step 1 and throughout the chain.
+This chain ensures that non-duplication, technical feasibility, data reality, platform economics, business ownership, and executive accountability are all explicitly addressed. Prior decisions recorded on the Data Substrate ([DS5](data-substrate.md#ds5--cross-layer-audit-and-decision-ledger)) support the deduplication check at step 1.
 
-## 5. The MOEPA Data Substrate (Set-Theoretic Backbone)
-Set Theory in MOEPA is the representation medium, not a sixth scored layer. The five classical disciplines remain the five scored layers (Metrology, Ontology, Epistemology, Praxeology, Axiology), and the 1–5 per-layer scoring model remains unchanged.
+## 5. The Data Substrate
+The Data Substrate is the storage tier, not a sixth scored layer. The five disciplines remain the five scored layers (Metrology, Ontology, Epistemology, Praxeology, Axiology), and the 1–5 per-layer scoring model is unchanged. The enterprise capabilities that make up the substrate are specified in [Data Substrate Capabilities](data-substrate.md) (`DS1`–`DS7`); this section defines the representation they converge on.
 
 The substrate provides a single SPO/quad backbone (Subject-Predicate-Object, quads with context) plus lakehouse storage where the base triple lives once. Each MOEPA layer attaches layer-specific metadata envelopes (epistemic, praxeological, axiological, etc.) without duplicating the base fact.
 
@@ -238,47 +238,32 @@ The substrate provides a single SPO/quad backbone (Subject-Predicate-Object, qua
 }
 ```
 
-A federation layer (for example, LangGraph routing or Trino) supports cross-layer queries such as: "find all high-confidence income facts that satisfy axiological fairness and support praxeological auto-approval."
+A federation layer (for example, a workflow router or Trino) supports cross-layer queries such as: "find all high-confidence income facts that satisfy axiological fairness and support praxeological auto-approval."
 
-**End state vs. evolution.** The SPO/quad hypergraph + lakehouse described here is the **imperative end state** — every agency substrate must converge on owned triples with layer metadata envelopes and federated cross-layer query. Agencies **evolve** toward that target incrementally (e.g. Iceberg/Parquet with SPO-compatible schemas first, pilot triple store, then enterprise graph + federation). Interim storage is valid when ownership, open formats, provenance, and a documented migration path to SPO/quad end state are in place. See [Data Substrate Capabilities](data-substrate.md).
+**End state vs. evolution.** The SPO/quad hypergraph + lakehouse described here is the **imperative end state** — every substrate must converge on owned triples with layer metadata envelopes and federated cross-layer query. Organizations **evolve** toward that target incrementally (e.g. Iceberg/Parquet with SPO-compatible schemas first, pilot triple store, then enterprise graph + federation). Interim storage is valid when ownership, open formats, provenance, and a documented migration path to the SPO/quad end state are in place.
 
 This substrate scales from lightweight edge deployments (JSON triples + SQLite) to enterprise deployments (full graph + Iceberg). It is sovereignty-aligned with the Owned-Brain strategy: self-hosted graph control, open formats, PROV-O lineage compatibility, and one owned base triple that remains queryable as a single auditable whole.
 
-Decisive trust-vs-form test: "Does the property describe how trustworthy/observed a value is (→ Metrology), or what formal shape and storage it has (→ Set Theory)?"
-
-| Dimension | Metrology (Trust of Measurement) | Set Theory / Data Substrate (Form & Storage) |
-| :--- | :--- | :--- |
-| Core question | Can we trust this observation? | What formal shape does this fact take and where is it stored? |
-| Mathematical grounding | Measure theory, statistics, calibration theory, boundary conditions | Set theory, relations/functions/tuples, tensor algebra, graph triple/quad structures |
-| Owns | Units, standards, calibration, error bounds, quality gates, observational lineage, observability/drift controls | Sets/multisets, relations, tensors, SPO/quad backbone, Iceberg/Parquet containers, storage layout |
-| Does **not** own | Container formats, triple/quad structural model, physical lakehouse encoding | Measurement trust policies, calibration rules, quality thresholds, observational reliability controls |
-| Lifecycle stage | Data entering the system (quality and trust qualification) | Data at rest and query form (representation and storage) |
-| One-word summary | Adjectives of trust | Nouns |
-
-Worked example (income = 85000):
-- Metrology owns the trust envelope: unit = USD, source = `ThirdPartyStudy_2025`, n = 125000, quality checks passed, drift status, observational lineage.
-- Set Theory / Data Substrate owns the form envelope: element of set `IncomeObservations`; object of triple `(IncomeVerification:TX12345, hasAmount, 85000)`; `int64` Parquet column; aggregable into a distribution object.
-
-Provenance three-way split (to avoid double-claiming):
-- Set Theory / Data Substrate: structural lineage (for example, this tensor came from that table via this join).
+**Provenance three-way split** (to avoid double-claiming):
+- Data Substrate: structural lineage (for example, this table came from that source via this join).
 - Metrology: observational provenance (who measured it, against what standard, with what error bounds).
 - Epistemology: justificatory provenance (confidence, warrant, and belief revision over claims).
 
 ### 5.1 Per-Layer Storage Mapping
 
-Each MOEPA layer has a natural philosophical and computational representation for its knowledge artifacts. The shared substrate stores the **base triple once**; each layer attaches a **metadata envelope** (or a linked sub-graph) without duplicating the base fact.
+Each MOEPA layer has a natural representation for its knowledge artifacts. The shared substrate stores the **base triple once**; each layer attaches a **metadata envelope** (or a linked sub-graph) without duplicating the base fact.
 
 | Layer | Natural Representation | Storage on Shared Substrate |
 | :--- | :--- | :--- |
-| **Data / Set Theory** *(substrate native)* | Raw mathematical objects: sets, multisets, relations, functions, probability distributions, tuples, arrays, tensors | Tabular datasets (Apache Iceberg / Polaris), Parquet files, matrix/vector stores. This is the substrate's own native representation — not a scored MOEPA layer. |
-| **Ontology / Graph** | Entities, categories, hierarchies, typed relations; graphs, taxonomies, semantic networks | Native graph DBs (Neo4j, property graphs) or RDF-style triples; nodes = entities (from sets), edges = relations |
-| **Epistemology** | Justified beliefs, evidence trails, confidence weights, provenance chains, uncertainty models (Bayesian networks, Dempster-Shafer, argumentation frameworks) | Enriched SPO triples with epistemic metadata (confidence, source reliability, evidence-graph links, revision history); belief/probabilistic graphical models attached to the main graph; versioned facts in the lakehouse with provenance lineage (W3C PROV-O) |
-| **Praxeology** | Policies, plans, decision procedures, action sequences, outcome telemetry, production rules, goal hierarchies, MDPs / PDDL planning domains | Rule structures or procedural attachments to graph nodes (HAS_POLICY edges → decision trees / scripts); historical action logs as time-series / versioned triples; serialized RL/policy artifacts (value functions, transition models) linked into the graph |
-| **Axiology** | Value hierarchies, utility/preference functions, ethical constraints, priority rankings, multi-criteria decision models (weighted sums, lexicographic ordering, deontological rules) | Value nodes + weighted relation graphs (PREFERS / CONSTRAINS edges with weights); utility/scoring models as mathematical objects linked to the set-theoretic form; ethical rule sets / value ontologies attached via metadata |
+| **Metrology** | Observations with units, error bounds, calibration standards, quality-gate results, drift status, observational lineage | Base triples and tabular records in the open lakehouse (`DS1`: Apache Iceberg / Polaris, Parquet) with a measurement-trust envelope and provenance stamp (`DS2`) |
+| **Ontology** | Entities, categories, hierarchies, typed relations; graphs, taxonomies, semantic networks | Native graph DBs (Neo4j, property graphs) or RDF-style triples (`DS3`); nodes = entities, edges = relations; registry entries for governed assets (`DS6`) |
+| **Epistemology** | Justified beliefs, evidence trails, confidence weights, provenance chains, uncertainty models (Bayesian networks, Dempster-Shafer, argumentation frameworks) | Enriched SPO triples with epistemic metadata (confidence, source reliability, evidence-graph links, revision history); owned vector index entries bound to entity and provenance IDs (`DS4`); versioned facts with W3C PROV-O lineage |
+| **Praxeology** | Plans, decision procedures, action sequences, outcome telemetry, production rules, goal hierarchies, MDPs / PDDL planning domains | Workflow state snapshots and action logs as time-series or versioned triples in the decision ledger (`DS5`); procedural attachments to graph nodes (HAS_PROCEDURE edges → state machines / scripts) |
+| **Axiology** | Value hierarchies, utility/preference functions, ethical constraints, priority rankings, multi-criteria decision models (weighted sums, lexicographic ordering, deontological rules) | Versioned Policy-as-Code bundles and the Golden Master baseline (`DS7`); value nodes + weighted relation graphs (PREFERS / CONSTRAINS edges); policy-check outcomes written to the ledger (`DS5`) |
 
-**Unification principle.** All five layers write to and read from the same SPO-centric hypergraph + lakehouse. A federation layer (LangGraph router or Trino) enables cross-layer queries such as: *"find all high-confidence (epistemic) income facts that satisfy axiological fairness and support praxeological auto-approval."* This maintains philosophical purity — each layer's knowledge is respected — while enabling recursive interaction and belief/action/value revision across the stack.
+**Unification principle.** All five layers write to and read from the same SPO-centric hypergraph + lakehouse. A federation layer (workflow router or Trino) enables cross-layer queries such as: *"find all high-confidence (epistemic) income facts that satisfy axiological fairness and support praxeological auto-approval."* Each layer's knowledge keeps its own envelope while belief, action, and value revision can run across the stack.
 
-**Scale range.** From GTSS edge devices (lightweight JSON triples + SQLite) to enterprise deployments (full graph + Iceberg).
+**Scale range.** From edge devices (lightweight JSON triples + SQLite) to enterprise deployments (full graph + Iceberg).
 
 ### 5.2 Architectural Evolution Principles
 
@@ -295,8 +280,9 @@ orchestrators, or equivalent runtimes).
 **From fragments to semantic objects.** No chainsaw chunking. Ingestion uses
 document-aware semantic parsing (Docling, Unstructured, or equivalent). Every
 data object carries provenance, structure, and semantic metadata. Chunks are
-Proto-SPOs (Sovereign Processing Objects) that preserve semantic intent
-end-to-end before converging to owned SPO/quad records on the substrate.
+Proto-SPOs — provenance-stamped semantic segments not yet normalized into
+Subject-Predicate-Object triples — that preserve semantic intent end-to-end
+before converging to owned SPO/quad records on the substrate.
 
 **MCP-first pattern.** Orchestrators do not call data or RAG layers directly.
 Service logic lives inside MCP-compliant services. Legacy APIs required for
@@ -311,9 +297,10 @@ MCP server or MCP facade. Orchestrators (Bedrock Agents, LangGraph routers,
 policy-governed agent runtimes) discover and invoke tools only through MCP — never
 through direct RAG or data-layer API calls.
 
-- Metrology (Data Foundation): Self-hosted data lakes (MinIO + Iceberg), Great
-  Expectations or Monte Carlo for quality, DataHub for metadata and lineage — avoiding
-  a vendor-owned store as the only record of lineage. Semantic document parsing via Docling,
+- Metrology (Data Foundation): Self-hosted open lakehouse (MinIO + Iceberg under an
+  Apache Polaris table catalog), Great Expectations or Monte Carlo for quality,
+  OpenLineage / PROV-O for lineage — avoiding a vendor-owned store as the only
+  record of lineage. Semantic document parsing via Docling,
   Unstructured, or equivalent; ingestion outputs Proto-SPOs with provenance
   envelopes, exposed through an MCP ingestion server.
 - Ontology: Neo4j or Amazon Neptune (self-managed), internal schema governance;
@@ -324,8 +311,9 @@ through direct RAG or data-layer API calls.
 - Praxeology: Deterministic workflow engines (LangGraph, Temporal, Camunda)
   with human-in-the-loop approval queues; workflow steps and state transitions
   exposed as MCP tools.
-- Axiology: OPA/Gatekeeper for policy-as-code, OS-level write locks on Golden
-  Master configs; policy checks exposed as MCP tools for pre-action gating.
+- Axiology: OPA/Gatekeeper for policy-as-code, OS- or infrastructure-level write
+  locks on the Golden Master baseline; policy checks exposed as MCP tools for
+  pre-action gating.
 
 ### 6.2 Quick-Start Checklist for New Projects
 - Define Metrology boundary and data quality baseline (internal control, not vendor-owned).
@@ -334,7 +322,7 @@ through direct RAG or data-layer API calls.
 - Create or extend domain ontology / knowledge graph schema (internal ownership).
 - Implement RAG with citation + grounding verification pipeline against owned data (via MCP, not direct API calls).
 - Design deterministic workflow (state machine or auditable step sequence) with MCP-governed tool invocation.
-- Create Golden Master config.yaml and apply OS-level write locks.
+- Create the Golden Master policy baseline and apply OS- or infrastructure-level write locks.
 - Map all five layers to the MOEPA scorecard and obtain review board sign-off.
 
 ## 7. Success Metrics & Key Performance Indicators
@@ -359,7 +347,6 @@ MOEPA is designed to be complementary to major AI governance frameworks:
 - ISO/IEC 42001:2023
 - MITRE ATLAS
 - OWASP LLM Top 10
-- Executive Order 14110 (Safe AI)
 
 ## 9. Governance of the MOEPA Cognitive Architecture
 The practices below describe how an organization adopting the MOEPA Cognitive Architecture should govern its own instance. Architectural evolution rules (MCP-first integration, semantic ingestion, Proto-SPOs, five-layer PR gate) are defined in §5.2 above. To propose changes to this repository itself, see [CONTRIBUTING.md](../CONTRIBUTING.md).
@@ -368,27 +355,3 @@ The practices below describe how an organization adopting the MOEPA Cognitive Ar
 - Quarterly review by Architecture Review Board.
 - Time-boxed exception process for high-value innovation pilots.
 - Open internal RFC process for proposed changes.
-
-## Appendix A: Sample Scoring for Common AI Tools
-Illustrative only — actual scores depend on specific implementation details.
-
-### ChatGPT Enterprise (Default)
-Metrology: 2 | Ontology: 1 | Epistemology: 2 | Praxeology: 2 | Axiology: 2
-
-High vendor dependency on data and semantic layers.
-
-### Claude (Default, no custom guardrails)
-Metrology: 2 | Ontology: 2 | Epistemology: 3 | Praxeology: 2 | Axiology: 3
-
-### Local Llama 3.1 70B + Guardrails AI + LangGraph + owned substrate
-Metrology: 5 | Ontology: 5 | Epistemology: 5 | Praxeology: 5 | Axiology: 5
-
-Full internal ownership across layers, with records kept on the Data Substrate.
-
-### RAG over internal knowledge graph + deterministic workflow + self-hosted data lake
-Metrology: 5 | Ontology: 5 | Epistemology: 5 | Praxeology: 5 | Axiology: 4
-
-### Typical Vendor Agentic SaaS Platform
-Metrology: 2 | Ontology: 2 | Epistemology: 2 | Praxeology: 3 | Axiology: 2
-
-Significant lock-in on foundational layers.

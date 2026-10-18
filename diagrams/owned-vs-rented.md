@@ -49,6 +49,8 @@ graph LR
 
 ## The Key Differences
 
+*Illustrative positioning, not measured data. The placements express the design intent of each approach, not benchmarked results.*
+
 ```mermaid
 quadrantChart
     title AI Architecture Quadrant: Sovereignty vs. Auditability
@@ -72,11 +74,11 @@ quadrantChart
 | Layer | Rented (Vendor) | Owned (MOEPA) | Migration Risk |
 |---|---|---|---|
 | **Data Substrate** | Vendor platform; export limited by contract | Open-format lakehouse (Iceberg/Parquet); fully portable | HIGH — historical data may not transfer |
-| **Metrology** | Vendor manages quality rules and lineage | Agency-defined quality gates; full provenance records | HIGH — rules and history stay with vendor |
-| **Ontology** | Vendor-defined entity model; schema not exportable | Agency-owned knowledge graph (Neo4j); version-controlled | HIGH — entity relationships may not transfer |
+| **Metrology** | Vendor manages quality rules and lineage | Organization-defined quality gates; full provenance records | HIGH — rules and history stay with vendor |
+| **Ontology** | Vendor-defined entity model; schema not exportable | Organization-owned knowledge graph (Neo4j); version-controlled | HIGH — entity relationships may not transfer |
 | **Epistemology** | Vendor confidence scores; no source access | Owned RAG; source-cited verification; confidence decomposed | MEDIUM — pipeline can be rebuilt with owned data |
 | **Praxeology** | Vendor workflow engine; audit access limited | Owned state machine (LangGraph); immutable audit log | MEDIUM — workflow logic can be re-documented |
-| **Axiology** | Vendor-provided guardrails; not inspectable | Policy-as-code (OPA); agency-defined; tested regularly | LOW — policy code is portable |
+| **Axiology** | Vendor-provided guardrails; not inspectable | Policy-as-code (OPA); organization-defined; tested regularly | HIGH if rented — vendor guardrails cannot be exported; LOW once owned as Policy-as-Code |
 | **Compute / Models** | Rented cloud compute + API-accessed models | Rented cloud compute + open-weight models (Llama, Mistral) | LOW — compute is commodity |
 
 ---
@@ -104,6 +106,8 @@ flowchart TD
 
 ## The Long-Term Cost Curve
 
+*Illustrative trajectory. Actual timing and magnitude depend on contract terms, team capacity, and the scale of adoption; the design has not yet produced measured cost data.*
+
 | Year | Rented Architecture | Owned Architecture |
 |---|---|---|
 | Year 1 | Low cost; fast start; vendor manages complexity | Higher up-front investment; team capability building required |
@@ -119,7 +123,7 @@ flowchart TD
 > **The rented architecture is faster to start and slower to own.**  
 > **The owned architecture is slower to start and faster to govern.**
 
-For government agencies with statutory audit obligations, long-term data custody requirements, and changing vendor landscapes — the owned architecture is not just better strategy. It is the only defensible approach.
+For organizations with statutory audit obligations, long-term data custody requirements, and changing vendor landscapes, the owned architecture is the approach that keeps the ability to answer for a decision after the vendor relationship ends.
 
 ---
 
