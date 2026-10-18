@@ -5,12 +5,12 @@ Architecture** shared for discussion, refinement, and review. Feedback is
 welcome — including disagreement. This is a proposal, not a deployed system:
 contributions are documentation and design feedback, not code to build or run.
 
-All feedback must align with the narrative in
-[docs/pitch-strategy.md](docs/pitch-strategy.md). For term definitions, see
-[docs/glossary.md](docs/glossary.md).
+All feedback must align with the executive primer in [README.md](README.md),
+the business briefs in [primer/](primer/), and the capability catalog in
+[catalog/](catalog/).
 
 Architecture evolution requirements are defined in
-[docs/MOEPA-Architectural-Governance-and-Evolution-Guidelines.md](docs/MOEPA-Architectural-Governance-and-Evolution-Guidelines.md).
+[catalog/ARCHITECTURE.md §5.2](catalog/ARCHITECTURE.md).
 
 ## How to contribute (issues only)
 
@@ -76,14 +76,14 @@ or NO-GO under the MOEPA intake rubric.
 
 ## Style notes (for accepted changes)
 
-- **Business first** — leader-facing docs lead with MOEPA disciplines as business outcomes; technical detail links out to `catalog/ARCHITECTURE.md` or the governance guidelines.
-- **Readability** — follow the [readability standard](docs/pitch-strategy.md#readability-standard-every-document) in the pitch strategy: purpose and audience first, plain definitions on first use, one operational effect per major element, risks paired with a control already in the design, and no absolute claims without a stated limit.
+- **Business first** — leader-facing docs lead with MOEPA disciplines as business outcomes; technical detail links out to `catalog/`.
+- **Readability** — state purpose and audience first, give plain definitions on first use, state one operational effect per major element, pair risks with a control already in the design, and make no absolute claims without a stated limit.
 - Direct and specific — executive-to-executive for leaders; engineer-to-engineer only in builder-tier documents. Confident, and neutral about results the design has not yet demonstrated.
 - Ground abstract concepts in physical metaphors (Data Substrate, Control Plane).
 - Keep the three core terms consistent: **MOEPA Cognitive Architecture** (the thesis and intake rubric), **Data Substrate** (how owned knowledge is stored), and **Agents** (the engine that consumes the substrate across the layers).
-- Treat **SPO/quad on a federated hypergraph + lakehouse** as the imperative **Substrate End State**; allow **Substrate Evolution Path** staging in implementation guidance.
+- Treat **SPO/quad on a federated hypergraph + lakehouse** as the imperative **Substrate End State**; allow incremental staging in implementation guidance.
 - Preserve the five-layer structure (Metrology, Ontology, Epistemology, Praxeology, Axiology).
-- Keep the GO / CONDITIONAL / NO-GO scoring model consistent with `catalog/ARCHITECTURE.md` and the evaluation checklist.
+- Keep the GO / CONDITIONAL / NO-GO scoring model consistent with `catalog/ARCHITECTURE.md` and `catalog/capability-matrix.md`.
 
 ## Maintainer notes (repository owner)
 

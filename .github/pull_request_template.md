@@ -23,6 +23,6 @@ Closes #
 
 ## Verification
 
-- [ ] Aligns with [pitch strategy](docs/pitch-strategy.md)
+- [ ] Aligns with [README.md](README.md) and [primer/](primer/)
 - [ ] Leader-facing docs remain business-first
-- [ ] Cross-links and terminology consistent with [glossary](docs/glossary.md)
+- [ ] Cross-links and terminology consistent with [catalog/](catalog/)

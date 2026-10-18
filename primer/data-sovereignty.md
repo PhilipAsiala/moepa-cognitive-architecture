@@ -15,7 +15,7 @@ Ownership is the ability to export, audit, and keep using the asset without the 
 | Quality rules and provenance (Metrology) | Storage, if formats are open and egress is yours |
 | Verification standards, workflows, and policy | Pre-trained weights |
 
-The Data Substrate is the library underneath the five scored layers. It is not itself a scored layer. Intake uses it to show what the institution already owns and what a new project must add. The business design is the [Data Substrate concept](../docs/Data-Substrate-Concept.md). Storage mechanics are in the [technical specification](../catalog/ARCHITECTURE.md).
+The Data Substrate is the library underneath the five scored layers. It is not itself a scored layer. Intake uses it to show what the institution already owns and what a new project must add. Storage mechanics are in [Data Substrate Capabilities](../catalog/data-substrate.md) and the [technical specification](../catalog/ARCHITECTURE.md).
 
 ## How a proposal fails this brief
 
@@ -29,6 +29,6 @@ Those are Ontology and Metrology gaps. They are also the usual path to lock-in. 
 
 1. Name the entities this proposal will define or reuse.
 2. State where those definitions will live, and how they leave if the vendor changes.
-3. Score Metrology and Ontology on the [evaluation checklist](../docs/5-Layer-Evaluation-Checklist.md) before the model is chosen.
+3. Score Metrology and Ontology against the [Enterprise Capability Matrix](../catalog/capability-matrix.md) before the model is chosen.
 
-The full own-versus-rent map is the [Owned vs. Rented AI Strategy](../docs/Owned-vs-Rented-AI-Strategy.md). The concrete storage and semantic capabilities are in [Data Substrate Capabilities](../catalog/data-substrate.md).
+The concrete storage and semantic capabilities are in [Data Substrate Capabilities](../catalog/data-substrate.md). Visual comparisons are in [Owned vs. Rented](../diagrams/owned-vs-rented.md).

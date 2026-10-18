@@ -16,7 +16,7 @@ Two layers carry that worry, and they are not the same job.
 | Epistemology checks source, corroboration, and access | Deterministic gate | The claim cites an owned source, and the reader is allowed to have it. Otherwise it does not enter the record. |
 | Axiology checks the proposed action against encoded rules | Deterministic gate | The action is allowed, or it is blocked. There is no "usually." |
 
-The limit is the rule that was written. A missing rule is not enforced. A gate does not fix a measurement that Metrology never qualified. High confidence from a model is not, by itself, permission to act. Consequential actions still keep a human checkpoint in **Praxeology (how action is taken)**, as the [leader framework](../docs/MOEPA-5-Layer-Framework.md) describes.
+The limit is the rule that was written. A missing rule is not enforced. A gate does not fix a measurement that Metrology never qualified. High confidence from a model is not, by itself, permission to act. Consequential actions still keep a human checkpoint in **Praxeology (how action is taken)**.
 
 ## What zero trust changes in intake
 
@@ -25,12 +25,10 @@ The limit is the rule that was written. A missing rule is not enforced. A gate d
 - No compliance story that begins and ends with "we told the model the policy."
 - Every consequential action has an owner who can stop it, and a record of why it was allowed.
 
-Public-sector accountability language for this same split is in the [public sector leader guide](../docs/moepa-public-sector-leaders-guide.md). Worked cases — a confidence score that has to be explained, a denial that has to be audited — are in [examples](../examples/).
-
 ## What to decide
 
 1. List the claims this system will be allowed to treat as fact, and the source for each.
 2. List the actions it may take, and the encoded rule that can refuse each one.
-3. Score Epistemology, Praxeology, and Axiology on the [evaluation checklist](../docs/5-Layer-Evaluation-Checklist.md).
+3. Score Epistemology, Praxeology, and Axiology against the [Enterprise Capability Matrix](../catalog/capability-matrix.md).
 
 Builder detail: [Enterprise Agent Capabilities](../catalog/agents.md) (`AG3` Verification Agents and `AG5` Policy Gate Agents).

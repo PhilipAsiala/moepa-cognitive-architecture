@@ -83,4 +83,4 @@
 - **[Data Substrate Capabilities](data-substrate.md)** — the owned storage foundation these agents consume (`DS1`–`DS6`)
 - **[Enterprise Capability Matrix](capability-matrix.md)** — Score 3 baseline requirements and ownership for `AG1`–`AG6`
 - **[End-to-End Business Compositions](cross-layer-compositions.md)** — how `AG1`–`AG6` and `DS1`–`DS6` wire together in production workflows
-- **[Architectural Governance Guidelines](../docs/MOEPA-Architectural-Governance-and-Evolution-Guidelines.md)** — MCP-first and Proto-SPO evolution rules
+- **[Technical Specification](ARCHITECTURE.md)** — §5.2 MCP-first and Proto-SPO evolution rules

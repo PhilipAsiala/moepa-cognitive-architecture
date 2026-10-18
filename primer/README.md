@@ -10,12 +10,4 @@ The five names, on first use: **Metrology** is measurement and telemetry; **Onto
 | [Zero-trust governance](zero-trust-governance.md) | Which claims and which actions are allowed to leave the system |
 | [What the investment can defend](roi.md) | Whether a proposal leaves an asset, or only a subscription |
 
-## Longer guides
-
-- [Business leader guide](../docs/moepa-business-leaders-guide.md) — ownership and intake for any organization
-- [Public sector leader guide](../docs/moepa-public-sector-leaders-guide.md) — accountability for federal, state, and local institutions
-- [Own versus rent](../docs/Owned-vs-Rented-AI-Strategy.md) — which layers are unsafe to outsource
-- [Evaluation checklist](../docs/5-Layer-Evaluation-Checklist.md) — GO / CONDITIONAL GO / NO-GO
-- [Worked scenarios](../examples/) — income verification, benefits eligibility, and project intake
-
-Builders continue in the [technical catalog](../catalog/).
+Builders continue in the [Enterprise Capability Catalog](../catalog/). Visual overviews live in [diagrams/](../diagrams/).

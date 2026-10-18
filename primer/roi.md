@@ -30,6 +30,6 @@ A proposal that only improves productivity through a vendor-hosted screen can st
 
 1. Separate the steps that need a large model from the steps that do not.
 2. Write down the owned artifact each layer will produce.
-3. Score the proposal with the [evaluation checklist](../docs/5-Layer-Evaluation-Checklist.md).
+3. Score the proposal against the [Enterprise Capability Matrix](../catalog/capability-matrix.md).
 
-The longer investment note is [Business value](../docs/business-value.md). A full intake walkthrough is [project intake scoring](../examples/project-intake-scoring.md).
+End-to-end intake and operational blueprints are in [End-to-End Business Compositions](../catalog/cross-layer-compositions.md).
