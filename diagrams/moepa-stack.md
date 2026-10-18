@@ -50,9 +50,9 @@ graph TB
 | **5 — Axiology** | Study of value and ethics | What the system must never do; what it must preserve | Open Policy Agent, Guardrails AI, LLM Guard |
 | **4 — Praxeology** | Study of purposeful action | How the system acts; who approves; what is logged | LangGraph, Temporal, Camunda |
 | **3 — Epistemology** | Study of knowledge and truth | What counts as a verified fact vs. inference; owned retrieval index | Qdrant / pgvector / Chroma, Guardrails AI, RAGAS, TruLens |
-| **2 — Ontology** | Study of being and relationships | What entities exist; how they relate; what terms mean | Neo4j, Apache Jena, RDF / SHACL |
-| **1 — Metrology** | Study of measurement | What data is trusted; how quality is assured; where it came from | Great Expectations, Apache Iceberg, OpenLineage |
-| **Data Substrate** | *(storage tier)* | Shared knowledge library; owned by the organization | Iceberg + Parquet (Polaris catalog) + Neo4j + OpenLineage |
+| **2 — Ontology** | Study of being and relationships | What entities exist; how they relate; what terms mean | Apache Jena Fuseki, Neo4j, RDF / JSON-LD / SHACL |
+| **1 — Metrology** | Study of measurement | What data is trusted; how quality is assured; where it came from | Great Expectations, Apache Iceberg snapshot statistics, OpenLineage |
+| **Data Substrate** | *(storage tier)* | Shared knowledge library; owned by the organization; the lakehouse is the system of record, graph and vector engines are rebuildable projections | Iceberg + Parquet (Polaris catalog) + Jena / Qdrant projections + OpenLineage |
 
 ---
 
@@ -68,4 +68,4 @@ The stack is **cumulative**: each layer builds on the reliability of the layer b
 
 This is why the [Enterprise Capability Matrix](../catalog/capability-matrix.md) and [ARCHITECTURE.md §4.2](../catalog/ARCHITECTURE.md) use the **lowest layer score** as the overall recommendation — not an average.
 
-**Cross-cutting integration:** AI orchestrators access layer capabilities only through the **Model Context Protocol (MCP)** — not vendor glue code or direct data/RAG API calls. Semantic ingestion produces **Proto-SPOs** before records enter the substrate. See [ARCHITECTURE.md §5.2](../catalog/ARCHITECTURE.md).
+**Cross-cutting integration:** AI orchestrators access layer capabilities only through the **Model Context Protocol (MCP)** — not vendor glue code or direct data/RAG API calls. Every model and data endpoint sits behind a **policy-enforcing gateway** whose external-authorization call loads the record and asks the policy engine, so a deny never reaches the model. Semantic ingestion produces **Proto-SPOs** before records enter the substrate. See [ARCHITECTURE.md §5.2](../catalog/ARCHITECTURE.md).

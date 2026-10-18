@@ -24,7 +24,7 @@ graph LR
         O5["Axiology\nPolicy-as-code (OPA)\nOrg-defined constraints\nRegularly tested"]
         O4["Praxeology\nOwned state machine (LangGraph)\nImmutable audit log\nHuman gates enforced"]
         O3["Epistemology\nOwned RAG via MCP server\nFact verification gates\nExact citations to substrate"]
-        O2["Ontology\nOwned knowledge graph (Neo4j)\nCanonical entity model\nVersion-controlled"]
+        O2["Ontology\nOwned knowledge graph (Jena Fuseki / Neo4j)\nCanonical entity model\nVersion-controlled"]
         O1["Metrology\nSemantic ingestion → Proto-SPOs\nOpen-format lakehouse (Iceberg)\nFull provenance · MCP-exposed"]
         ODS[("Data Substrate\nOpen formats (Parquet/RDF)\nFull provenance + lineage\nOwned, portable, auditable")]
         O5 --- O4 --- O3 --- O2 --- O1 --- ODS
@@ -75,7 +75,7 @@ quadrantChart
 |---|---|---|---|
 | **Data Substrate** | Vendor platform; export limited by contract | Open-format lakehouse (Iceberg/Parquet); fully portable | HIGH — historical data may not transfer |
 | **Metrology** | Vendor manages quality rules and lineage | Organization-defined quality gates; full provenance records | HIGH — rules and history stay with vendor |
-| **Ontology** | Vendor-defined entity model; schema not exportable | Organization-owned knowledge graph (Neo4j); version-controlled | HIGH — entity relationships may not transfer |
+| **Ontology** | Vendor-defined entity model; schema not exportable; cloud-managed graph service (Neptune, Cosmos Gremlin) holds the only copy | Organization-owned knowledge graph (Jena Fuseki / Neo4j) rebuilt from the open-format record; version-controlled | HIGH — entity relationships may not transfer |
 | **Epistemology** | Vendor confidence scores; no source access | Owned RAG; source-cited verification; confidence decomposed | MEDIUM — pipeline can be rebuilt with owned data |
 | **Praxeology** | Vendor workflow engine; audit access limited | Owned state machine (LangGraph); immutable audit log | MEDIUM — workflow logic can be re-documented |
 | **Axiology** | Vendor-provided guardrails; not inspectable | Policy-as-code (OPA); organization-defined; tested regularly | HIGH if rented — vendor guardrails cannot be exported; LOW once owned as Policy-as-Code |

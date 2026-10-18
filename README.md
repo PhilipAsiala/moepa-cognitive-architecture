@@ -39,7 +39,8 @@ The **Data Substrate** is the physical manifestation of what the organization ow
 
 - **Open formats first (`DS1`, `DS2`):** Tables and structured document segments (`Proto-SPO`s) live in open lakehouse formats (Apache Iceberg, Parquet, Polaris) with cryptographic provenance.
 - **Shared enterprise meaning (`DS3`, `DS6`):** Entities, relationships, and controlled vocabularies live in an organization-owned knowledge graph, and every governed dataset and agent is listed in an asset registry, so every agent speaks the same language and duplicate projects are visible at intake.
-- **Owned retrieval, audit history, and policy (`DS4`, `DS5`, `DS7`):** Embeddings and citations live in an in-house index; workflow approvals and policy checks are written to an immutable cross-layer ledger; the Policy-as-Code rules themselves are versioned and owned.
+- **Owned retrieval, audit history, and policy (`DS4`, `DS5`, `DS7`):** Embeddings and citations live in an in-house index; workflow approvals and policy checks — refusals as well as approvals — are written to an immutable cross-layer ledger; the Policy-as-Code rules themselves are versioned and owned.
+- **One system of record:** The open lakehouse is the only place institutional memory lives. The graph, search, and policy engines beside it are rebuildable copies, so losing or replacing any one of them never loses what the organization knows.
 
 ---
 
@@ -54,7 +55,7 @@ In this architecture an **Agent** is any governed service that acts on the Data 
 | **Propose & Plan** | Probabilistic | **Workflow Agents (`AG4`)** route routine tasks to deterministic code or small local models, and use frontier LLMs only when synthesis is needed. |
 | **Qualify & Map** | Deterministic / Hybrid | **Telemetry (`AG1`)** and **Entity Agents (`AG2`)** validate raw inputs and bind them to canonical enterprise entities before reasoning begins. |
 | **Verify & Govern** | Deterministic Gate | **Verification (`AG3`)** blocks claims that lack a substrate citation or user clearance. **Policy Gate Agents (`AG5`)** enforce Policy-as-Code (OPA) *outside* the model, refusing any non-compliant action. |
-| **Connect** | Deterministic Contract | **The MCP Capability Bus (`AG6`)** exposes every substrate and agent tool via the Model Context Protocol, so models can be swapped without rewriting integrations. |
+| **Connect** | Deterministic Contract | **The MCP Capability Bus (`AG6`)** exposes every substrate and agent tool via the Model Context Protocol, so models can be swapped without rewriting integrations. Every model and tool sits behind one policy-enforcing gateway; a request the gates refuse never reaches the model. |
 
 ---
 
