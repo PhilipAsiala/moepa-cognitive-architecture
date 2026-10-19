@@ -1,6 +1,6 @@
 # End-to-End Business Compositions
 
-Individual capabilities do not deliver business outcomes in isolation. An enterprise AI workflow is a composition of **[Data Substrate capabilities](data-substrate.md) (`DS1`–`DS7`)** and **[Enterprise Agent capabilities](agents.md) (`AG1`–`AG6`)** operating across the five layers of the **MOEPA Cognitive Architecture**.
+Individual capabilities do not deliver business outcomes in isolation. An enterprise AI workflow is a composition of **[Data Substrate capabilities](data-substrate.md) (`DS1`–`DS8`)** and **[Enterprise Agent capabilities](agents.md) (`AG1`–`AG8`)** operating across the five layers of the **MOEPA Cognitive Architecture**.
 
 This page provides six repeatable blueprints for common high-stakes enterprise and public-sector workflows.
 
@@ -99,9 +99,14 @@ Automated Governance Alert → Triggers workflow throttle, rollback, or mandator
 ## 6. Portable Multi-Model Orchestration via MCP
 
 - **Business problem:** Swapping an underlying LLM (for example, moving from a cloud frontier model to a local open-weight model) without rewriting data integrations, RAG pipelines, or policy checks.
-- **Capabilities composed:** `AG6` (MCP Capability Bus) wrapping `DS1`–`DS7` and `AG1`–`AG5`.
+- **Capabilities composed:** `AG7` (Policy-Enforcing Gateway) in front of `AG6` (MCP Capability Bus) wrapping `DS1`–`DS8` and `AG1`–`AG5`; `AG8` (Model Translation Proxy) behind the gateway for inference.
 
 ```
+Caller (application, orchestrator, person)
+  ↓  one door; identity and clearance resolved from DS8
+AG7 — Policy-Enforcing Gateway  → AG5 allow/deny, decision appended to DS5
+  ├── allowed inference  → AG8 — Model Translation Proxy → whichever model host is in use
+  └── allowed capability call ↓
 Model / Orchestrator Host (Cloud LLM, Local Open-Weight Model, State Machine)
   ↓  invokes capabilities exclusively via MCP contracts
 AG6 — MCP Capability Bus
@@ -117,7 +122,7 @@ AG6 — MCP Capability Bus
 ## Related Documents
 
 - **[Enterprise Capability Catalog Overview](README.md)**
-- **[Data Substrate Capabilities](data-substrate.md)** (`DS1`–`DS7`)
-- **[Enterprise Agent Capabilities](agents.md)** (`AG1`–`AG6`)
+- **[Data Substrate Capabilities](data-substrate.md)** (`DS1`–`DS8`)
+- **[Enterprise Agent Capabilities](agents.md)** (`AG1`–`AG8`)
 - **[Enterprise Capability Matrix](capability-matrix.md)**
 - **[Technical Specification](ARCHITECTURE.md)**

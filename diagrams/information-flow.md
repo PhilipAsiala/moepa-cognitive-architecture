@@ -162,11 +162,14 @@ or facades. See [Enterprise Agent Capabilities (`AG6`)](../catalog/agents.md#ag6
 ## Gateway Enforcement Boundary
 
 MCP governs what an *agent* may reach. A second boundary governs what any
-*caller* may reach: a policy-enforcing gateway (Envoy `ext_authz` or
-equivalent) in front of every model and data endpoint. The gateway holds the
-request, an authorizer loads the named substrate record and asks the policy
+*caller* may reach: the Policy-Enforcing Gateway (`AG7`; Envoy `ext_authz`
+or equivalent) in front of every model and data endpoint. The gateway holds
+the request, an authorizer resolves the caller against the identity registry
+(`DS8`), loads the named substrate record, and asks the policy
 engine for the Axiology and Praxeology decision, the outcome (allow or deny)
 is appended to the ledger (`DS5`) with the policy hash, and only an allow is
-routed onward — to a model-translation proxy for inference, or to the record
-for a read. A deny is an HTTP refusal the model process never sees. See
+routed onward — to the Model Translation Proxy (`AG8`) for inference, or to
+the record for a read. A deny is an HTTP refusal the model process never
+sees. See [`AG7`](../catalog/agents.md#ag7--policy-enforcing-gateway-cross-cutting),
+[`AG8`](../catalog/agents.md#ag8--model-translation-proxy-cross-cutting), and
 [`AG5`](../catalog/agents.md#ag5--policy-and-compliance-gate-agents-axiology).

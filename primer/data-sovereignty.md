@@ -39,4 +39,4 @@ A proposal fails the Data Sovereignty check (automatic **NO-GO** on Metrology or
 2. **Verify Portability (`DS1`–`DS4`, `AG6`):** If we turn off the model vendor tomorrow, do our tables, knowledge graph, vector index, and MCP tool contracts remain intact?
 3. **Score the Proposal:** Require a **Score ≥ 3** on Metrology and Ontology in the [Enterprise Capability Matrix](../catalog/capability-matrix.md) before funding.
 
-*Next: [Zero-Trust Governance](zero-trust-governance.md) · Builder specs: [Data Substrate Capabilities (`DS1`–`DS7`)](../catalog/data-substrate.md) · Diagram: [Owned vs. Rented](../diagrams/owned-vs-rented.md)*
+*Next: [Zero-Trust Governance](zero-trust-governance.md) · Builder specs: [Data Substrate Capabilities (`DS1`–`DS8`)](../catalog/data-substrate.md) · Diagram: [Owned vs. Rented](../diagrams/owned-vs-rented.md)*

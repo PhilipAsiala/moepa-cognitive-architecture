@@ -16,6 +16,8 @@
 | **AG4** | [Workflow and Execution Agents](#ag4--workflow-and-execution-agents-praxeology) | 4. Praxeology | Probabilistic Plan / Deterministic State Machine | Route intent to the right model or tool, enforce step order, and pause at human checkpoints |
 | **AG5** | [Policy and Compliance Gate Agents](#ag5--policy-and-compliance-gate-agents-axiology) | 5. Axiology | Deterministic Refusal | Enforce Policy-as-Code, constitutional guardrails, injection defense, and equity/ROI controls outside the LLM |
 | **AG6** | [MCP Capability Bus](#ag6--mcp-capability-bus-cross-cutting) | Cross-Cutting | Deterministic Contract | Expose every substrate and agent tool through governed Model Context Protocol servers or facades |
+| **AG7** | [Policy-Enforcing Gateway](#ag7--policy-enforcing-gateway-cross-cutting) | Cross-Cutting | Deterministic Veto | The one door every caller uses; holds each request until the gates allow it and refuses the rest before any model or tool is reached |
+| **AG8** | [Model Translation Proxy](#ag8--model-translation-proxy-cross-cutting) | Cross-Cutting | Rented Seam | Turn an allowed inference call into a call to whichever model host is in use, so models are swappable without touching records or gates |
 
 ---
 
@@ -71,16 +73,37 @@
 
 ## AG6 — MCP Capability Bus (Cross-Cutting)
 
-- **What it does:** Wraps every Data Substrate service (`DS1`–`DS7`) and Agent capability (`AG1`–`AG5`) behind standardized **Model Context Protocol (MCP)** servers or lightweight MCP facades for legacy APIs. Orchestrators discover and invoke tools exclusively through MCP.
+- **What it does:** Wraps every Data Substrate service (`DS1`–`DS8`) and Agent capability (`AG1`–`AG5`) behind standardized **Model Context Protocol (MCP)** servers or lightweight MCP facades for legacy APIs. Orchestrators discover and invoke tools exclusively through MCP. The bus sits *behind* the Policy-Enforcing Gateway (`AG7`): MCP is how a tool is found and called, the gateway is what decides whether the call may happen.
 - **Failure mode they prevent:** Framework lock-in — where business logic is buried inside vendor-specific agent callbacks (e.g., proprietary cloud agent bindings or tightly coupled prompt chains) that cannot be audited or moved to a different model host.
 - **Minimum standard (Score 3 baseline):** Tool interfaces between orchestrators and enterprise data/services use explicit, versioned contracts with central call logging. A versioned REST surface over a published JSON-LD record context, fronted by a gateway that logs every decision to `DS5`, meets this baseline; it is the integration point that later becomes an MCP facade.
-- **Target maturity (Score 4–5):** Every ingestion, graph query, retrieval, workflow step, and policy gate is exposed as an MCP server or facade, allowing the enterprise to swap underlying LLMs or orchestrators without rewriting capability integrations. The MCP bus and the policy gateway (`AG5`) are complementary, not alternatives: MCP governs what an *agent* may reach; the gateway governs what any *caller* may reach. A model-translation proxy (one that maps an allowed call onto a local open-weight model today and a cloud model later without changing the record or the API) is how model portability is delivered behind the gateway.
+- **Target maturity (Score 4–5):** Every ingestion, graph query, retrieval, workflow step, and policy gate is exposed as an MCP server or facade, allowing the enterprise to swap underlying LLMs or orchestrators without rewriting capability integrations. The MCP bus and the Policy-Enforcing Gateway (`AG7`) are complementary, not alternatives: MCP governs what an *agent* may reach; the gateway governs what any *caller* may reach. Model portability behind the gateway is delivered by the Model Translation Proxy (`AG8`).
+
+---
+
+## AG7 — Policy-Enforcing Gateway (Cross-Cutting)
+
+- **What it does:** Is the only door a caller can use to reach a model, a tool, or the substrate. The gateway holds every request on an external-authorization call; an authorizer loads the governing substrate record, asks the Policy Gate (`AG5`) and the action-scope gate (`AG4`) for one decision, writes that decision — allow or deny — to the ledger (`DS5`) with the policy bundle hash, and only then lets the proxy route upstream. A deny is an HTTP refusal that the model process never sees. The gateway is also where caller identity and clearance are established, by consulting the identity registry (`DS8`) rather than trusting a header.
+- **Failure mode they prevent:** A side door — any path to a model or tool that skips the record check — and gates that only advise because nothing in front of the model can refuse. This capability came out of deployment: the Policy Gate was correct from the start, but a denied prompt only stopped reaching the model once a gateway existed to hold the request.
+- **Minimum standard (Score 3 baseline):** One gateway fronts every model and tool endpoint; it fails closed when the authorizer is unreachable; the authorizer logs every outcome; no other published route reaches a model. Any temporary side door is recorded as a time-boxed exception with a close date (ARCHITECTURE.md §9).
+- **Target maturity (Score 4–5):** The gateway resolves identity, tenant, and clearance from `DS8` and passes them to the authorizer; the request body is forwarded so the authorizer can check what is being asked, not just who is asking; the gateway is the only ingress in production and all other service ports are unpublished; the decision is written before the upstream call is released (fail-closed ledger, see `DS5`).
+- **Representative tools:** Envoy `ext_authz`, Envoy Gateway, Istio external authorization, Kong request-authorizer plugins — anything that can hold a request, call out, forward the body, and fail closed.
+
+---
+
+## AG8 — Model Translation Proxy (Cross-Cutting)
+
+- **What it does:** Receives an inference call that the gateway (`AG7`) has already allowed and translates it to whichever model host is in use: open-weight models on owned GPUs, a cloud model API, or a managed inference endpoint. The record shape, the policy rules, the ledger, and the gateway contract do not change when the model does. It may also run a narrow post-call screen — the citation allow-list described under `AG3` — using a decision packet the gateway attached to the request.
+- **Failure mode they prevent:** Model lock-in by integration: business logic that calls a specific vendor's API shape, so that changing models means changing every caller; and model calls that bypass the gate because the model endpoint was reachable directly.
+- **Minimum standard (Score 3 baseline):** One OpenAI-compatible (or equivalent stable) interface for all callers; model hosts configured in one place; the proxy is reachable only through `AG7`; model list and routing are versioned configuration the organization owns.
+- **Target maturity (Score 4–5):** Routing by task class (routine to small local models, synthesis to frontier models) driven by `AG4`; a post-call decision-packet screen on every routed call; the proxy's published ports removed in production; a model swap demonstrated with no change to any other unit's check.
+- **Representative tools:** LiteLLM, vLLM routers, cloud model gateways (Bedrock, SageMaker, Vertex) behind the same `/v1` shape.
+- **Ownership note:** This is the "rent the muscles" seam. The models behind it are rented; the proxy configuration — which models, which routes, which screen — is owned, which is why it is in the catalog.
 
 ---
 
 ## Related Catalog Pages
 
-- **[Data Substrate Capabilities](data-substrate.md)** — the owned storage foundation these agents consume (`DS1`–`DS7`)
-- **[Enterprise Capability Matrix](capability-matrix.md)** — Score 3 baseline requirements and ownership for `AG1`–`AG6`
-- **[End-to-End Business Compositions](cross-layer-compositions.md)** — how `AG1`–`AG6` and `DS1`–`DS7` wire together in production workflows
+- **[Data Substrate Capabilities](data-substrate.md)** — the owned storage foundation these agents consume (`DS1`–`DS8`)
+- **[Enterprise Capability Matrix](capability-matrix.md)** — Score 3 baseline requirements and ownership for `AG1`–`AG8`
+- **[End-to-End Business Compositions](cross-layer-compositions.md)** — how `AG1`–`AG8` and `DS1`–`DS8` wire together in production workflows
 - **[Technical Specification](ARCHITECTURE.md)** — §5.2 MCP-first and Proto-SPO evolution rules

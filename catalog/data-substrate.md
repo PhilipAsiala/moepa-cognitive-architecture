@@ -17,6 +17,7 @@
 | **DS5** | [Cross-Layer Audit and Decision Ledger](#ds5--cross-layer-audit-and-decision-ledger) | Epistemology / Praxeology / Axiology | Tamper-evident history of every claim verified, workflow step approved, and policy rule applied | Append-only Iceberg ledger, cryptographic hashes |
 | **DS6** | [Enterprise Capability and Asset Registry](#ds6--enterprise-capability-and-asset-registry) | Ontology / Portfolio | A searchable inventory of every governed dataset, schema, agent, and prior intake decision, so duplicates are visible before they are funded | Catalog with semantic search over registered entities and capabilities |
 | **DS7** | [Policy-as-Code and Constitutional Baseline](#ds7--policy-as-code-and-constitutional-baseline) | Axiology | The organization's rules, limits, and values exist as versioned, owned code that gates can enforce and auditors can read | OPA/Rego bundles, Cedar policies, signed "Golden Master" configuration |
+| **DS8** | [Identity, Tenant, and Clearance Registry](#ds8--identity-tenant-and-clearance-registry) | Axiology / Praxeology | Who is calling, for which tenant, with what clearance is a fact the organization stores and the gateway looks up — not a header a caller asserts | Organization-owned identity provider or directory; tenant and key records; clearance assignments with effective dates |
 
 ---
 
@@ -67,7 +68,7 @@
 
 ## DS6 — Enterprise Capability and Asset Registry
 
-- **What it does:** Maintains the organization-owned inventory of governed datasets (`DS1`), document corpora (`DS2`), entity definitions (`DS3`), retrieval indexes (`DS4`), agent capabilities (`AG1`–`AG6`), and prior intake decisions (`DS5`), indexed by domain and taxonomy. The intake workflow (`AG4`, [ARCHITECTURE.md §4.4](ARCHITECTURE.md)) searches this registry as its first step; the registry is the asset, the deduplication check is the workflow that uses it.
+- **What it does:** Maintains the organization-owned inventory of governed datasets (`DS1`), document corpora (`DS2`), entity definitions (`DS3`), retrieval indexes (`DS4`), agent capabilities (`AG1`–`AG8`), and prior intake decisions (`DS5`), indexed by domain and taxonomy. The intake workflow (`AG4`, [ARCHITECTURE.md §4.4](ARCHITECTURE.md)) searches this registry as its first step; the registry is the asset, the deduplication check is the workflow that uses it.
 - **Enterprise risk it stops:** Portfolio sprawl — funding ten teams to build ten separate document ingestion pipelines and ten overlapping customer schemas because nobody could see what already existed.
 - **Minimum standard (Score 3 baseline):** A shared inventory of existing datasets, schemas, and agents exists, is searchable by domain, and is updated when a capability is funded or retired.
 - **Target maturity (Score 4–5):** Registry entries are linked to canonical entities in the knowledge graph (`DS3`) and support semantic search; every funded capability carries a registry record and a documented non-duplication proof from intake.
@@ -83,9 +84,19 @@
 
 ---
 
+## DS8 — Identity, Tenant, and Clearance Registry
+
+- **What it does:** Holds the organization's record of principals (people, services, customer applications), the tenant or team each belongs to, the credentials that identify them, and the clearance each holds against the classification ladder in `DS7`, with effective dates. The Policy-Enforcing Gateway (`AG7`) resolves every caller against this registry before the Policy Gate (`AG5`) compares clearance to a record's marking. The tenant id recorded here is the same id written to the decision ledger (`DS5`), so decisions stay joinable to who asked.
+- **Enterprise risk it stops:** A clearance that is asserted rather than known — a header, a prompt, or a vendor's user object that the organization cannot audit — and tenant identity that lives only inside a model vendor's key database. This capability was added from deployment: the first running stack had a correct clearance *rule* in `DS7` and no owned *fact* to evaluate it against; the caller supplied its own clearance.
+- **Minimum standard (Score 3 baseline):** Principals, tenants, and credentials are stored in an organization-controlled store; credentials are hashed, issued once, and revocable per tenant and per application; the registry is the only source the gateway consults for identity.
+- **Target maturity (Score 4–5):** Clearance assignments with effective dates and steward approval; identity federated from the organization's directory (OIDC or equivalent) rather than minted per proxy; every `DS5` decision carries the resolved principal and tenant; no credential grants a path to a model that bypasses `AG7`.
+- **Interim form:** A team-and-virtual-key database on a model proxy is an acceptable Score 3 start *only* if the gateway consults it; a proxy that mints keys and also serves models without the record check is a side door and must be recorded as a time-boxed exception (ARCHITECTURE.md §9).
+
+---
+
 ## Related Catalog Pages
 
-- **[Enterprise Agent Capabilities](agents.md)** — the agents that read from and write to this Data Substrate (`AG1`–`AG6`)
-- **[Enterprise Capability Matrix](capability-matrix.md)** — Score 3 baseline requirements and ownership for `DS1`–`DS7`
+- **[Enterprise Agent Capabilities](agents.md)** — the agents that read from and write to this Data Substrate (`AG1`–`AG8`)
+- **[Enterprise Capability Matrix](capability-matrix.md)** — Score 3 baseline requirements and ownership for `DS1`–`DS8`
 - **[End-to-End Business Compositions](cross-layer-compositions.md)** — how substrate and agent capabilities combine in production
 - **[Technical Specification](ARCHITECTURE.md)** — §5 SPO/quad representation and incremental evolution path
