@@ -25,16 +25,16 @@
 
 - **What it does:** Stores enterprise tables, snapshots, and historical states in open table formats under an organization-controlled catalog, with role-based access and egress logging. The lakehouse is the **only system of record** for the substrate: the graph store (`DS3`), vector index (`DS4`), and the policy engine's loaded bundle (`DS7`) are projections that can be emptied and rebuilt from it ([ARCHITECTURE.md §5](ARCHITECTURE.md)).
 - **Enterprise risk it stops:** Hard vendor lock-in where historical data and feature tables cannot be read without paying a proprietary warehouse or SaaS platform; and a second "source of truth" quietly forming inside a graph or vector engine that cannot be audited against the record.
-- **Minimum standard (Score 3 baseline):** Core datasets are stored in exportable open formats (Parquet/CSV/JSON) with role-based access controls and audit logging; every governed dataset is listed in the asset registry (`DS6`).
+- **Minimum standard (Score 3 baseline):** Core datasets are stored in exportable open formats (Parquet/CSV/JSON) with role-based access controls and audit logging; every governed dataset is listed in the asset registry (`DS6`). Every record carries the tenant it belongs to (`DS8`); storage, projection, and retrieval are scoped by that tenant.
 - **Target maturity (Score 4–5):** Native open lakehouse (Apache Iceberg + Parquet) registered in a vendor-neutral catalog (Apache Polaris or equivalent), supporting time-travel replay, zero-trust egress monitoring, and zero copy across engines. Table snapshot and manifest statistics (row counts, null counts, commit age) are exposed as first-class Metrology observations (`AG1`) rather than re-computed by a separate tool.
 
 ---
 
 ## DS2 — Semantic Ingestion and Provenance Ledger
 
-- **What it does:** Parses unstructured documents (PDFs, policies, filings) along structural boundaries — tables, sections, citations — into **Proto-SPOs** (provenance-stamped semantic segments not yet normalized into Subject-Predicate-Object triples) rather than fixed-token "chainsaw chunks," and stamps every ingested record with source provenance, collection timestamp, and quality status.
+- **What it does:** Parses unstructured documents (PDFs, policies, filings) along structural boundaries — tables, sections, citations — into **Proto-SPOs** (provenance-stamped semantic segments not yet normalized into Subject-Predicate-Object triples) rather than fixed-token "chainsaw chunks," and stamps every ingested record with source provenance, collection timestamp, quality status, and the tenant resolved from the ingest identity (`DS8`).
 - **Enterprise risk it stops:** "Garbage-in at scale," where broken table rows or unverified feeds poison downstream RAG and agent decisions without a trace of where the bad data originated.
-- **Minimum standard (Score 3 baseline):** Source system, collection date, and basic quality validation are recorded per batch; governed documents preserve section and citation boundaries.
+- **Minimum standard (Score 3 baseline):** Source system, collection date, and basic quality validation are recorded per batch; governed documents preserve section and citation boundaries. The tenant stamp is taken from the ingest context, never from the submitted record: a tenant value inside a submission is overwritten before the record lands.
 - **Target maturity (Score 4–5):** Automated document-aware parsing pipelines with versioned configurations, cryptographic fingerprinting (SHA-256) of source artifacts, and PROV-O / OpenLineage provenance graphs from raw source to substrate write.
 
 ---
@@ -61,7 +61,7 @@
 
 - **What it does:** Records an immutable, cross-referenced chain for every consequential transaction: the input measurement (`Metrology`), the entity version (`Ontology`), the retrieved evidence and confidence score (`Epistemology`), the workflow state and human approver (`Praxeology`), and the policy bundle version applied (`Axiology`, referencing `DS7`).
 - **Enterprise risk it stops:** Being unable to reconstruct for a regulator, auditor, inspector general, or customer *why* an automated system approved, escalated, or denied a case six months ago.
-- **Minimum standard (Score 3 baseline):** Decision and workflow logs capture inputs, cited sources, outputs, policy checks, and human reviewer identity, retained per records policy. Every gate outcome is written — refusals as well as approvals — with the request ID, the record IDs consulted, the action requested, the caller's clearance, and the hash of the policy bundle in force (`DS7`).
+- **Minimum standard (Score 3 baseline):** Decision and workflow logs capture inputs, cited sources, outputs, policy checks, and human reviewer identity, retained per records policy. Every gate outcome is written — refusals as well as approvals — with the request ID, the record IDs consulted, the action requested, the caller's tenant, the caller's clearance, and the hash of the policy bundle in force (`DS7`).
 - **Target maturity (Score 4–5):** Append-only, cryptographically signed ledger where all five layers attach metadata envelopes to the same base record without duplication. At Score 4 and above the gate **fails closed**: if the ledger write does not succeed, the action is not released. A gate that answers before its decision row has landed is a Score 3 posture and must be documented as such.
 
 ---
