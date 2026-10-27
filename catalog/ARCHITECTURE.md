@@ -172,7 +172,7 @@ Audit Question: How does the system represent and maintain structured knowledge 
 Scoring Guidance:
 
 - Score 1: Raw pre-trained weights only; no domain structuring or custom schema constraints.
-- Score 3: Core domain entities, relationships, and code sets are documented in an organization-owned, governed dictionary with effective dates. Open industry standards (for example schema.org, FIBO, NIEM) may be adopted as the basis; entities defined only inside a vendor's proprietary schema do not qualify.
+- Score 3: Core domain entities, relationships, and code sets are documented in an organization-owned, governed dictionary with effective dates. Open industry standards (for example schema.org, FIBO, NIEM) may be adopted as the basis; entities defined only inside a vendor's proprietary schema do not qualify. Definitions the gates read are gold under the curation ladder in §5.2; candidate definitions are staged, not published.
 - Score 5: Live, internally managed semantic knowledge graph and SPO/quad store that evolves with your business rules, with point-in-time effective dates and steward-approved vocabulary changes.
 
 #### Layer 3 — Epistemology Evaluation (Truth & Verification)
@@ -194,7 +194,7 @@ Audit Question: What deterministic framework governs the sequence of execution w
 Scoring Guidance:
 
 - Score 1: Free-form, autonomous execution loops with zero state-machine tracking; tools are exposed to the LLM via open-ended prompts.
-- Score 3: Agentic logic is bounded by basic sequential code, but lacks a centralized state machine. Human-in-the-loop checkpoints exist but are bypassable.
+- Score 3: Agentic logic is bounded by basic sequential code, but lacks a centralized state machine. Human-in-the-loop checkpoints exist but are bypassable. Workflow encodings the state machine executes are gold under the curation ladder in §5.2; procedure documents guide encoding and are not interpreted at runtime.
 - Score 5: The workflow is driven by immutable, deterministic state machines. Execution follows strict, auditable lifecycles (intake → plan → execute) generating permanent audit trails. State parameters are versioned on the Data Substrate.
 
 #### Layer 5 — Axiology Evaluation (Governance & Value Alignment)
@@ -207,7 +207,7 @@ Audit Question: How are the ethical boundaries, compliance mandates, and organiz
 Scoring Guidance:
 
 - Score 1: Soft constraints only; guidelines are embedded within the system prompt and easily bypassed by sophisticated prompt injections.
-- Score 3: Compliance rules are centralized, but security configuration settings are modifiable by local client environments or developers at the edge.
+- Score 3: Compliance rules are centralized, but security configuration settings are modifiable by local client environments or developers at the edge. Rules the gates enforce are gold under the curation ladder in §5.2; candidate encodings require human promotion before they are enforced.
 - Score 5: Core organizational values, preferred/forbidden verb lists, and security policies are hardcoded into a "Golden Master" policy baseline ([DS7](data-substrate.md#ds7--policy-as-code-and-constitutional-baseline)) locked via OS- or infrastructure-level write constraints. Policy code is cryptographically protected and versioned. In addition, a quantified Business ROI model and approved chargeback/showback mechanism are in place and reviewed at the executive level.
 
 ### 4.4 Executive Governance & Architecture Review Chain
@@ -319,6 +319,26 @@ data object carries provenance, structure, and semantic metadata. Chunks are
 Proto-SPOs — provenance-stamped semantic segments not yet normalized into
 Subject-Predicate-Object triples — that preserve semantic intent end-to-end
 before converging to owned SPO/quad records on the substrate.
+
+**Curated deterministic layers.** Ontology, Praxeology, and Axiology are
+deterministic only after human curation. Definitions the gates read —
+entity definitions, workflow encodings, and policy rules — pass a
+curation ladder before they are published: **bronze** (raw ingest:
+schemas, documents, extracted rules, kept for lineage), **silver**
+(human-enriched, coherent, limited scope; provisional — review and test
+only, never the runtime authority), **gold** (reviewed, tested, versioned,
+authoritative). Only gold definitions enter the snapshot and bundle the
+gates evaluate. A model may propose a definition, a workflow encoding, or
+a test case; a human steward reviews, edits, or rejects it before it is
+written into a layer, and promotion to gold is a recorded human approval.
+This ladder is a curation stage of a definition, not a 1–5 maturity score
+of a layer (§4). Gold policy, once promoted, is published into the Golden
+Master baseline (`DS7`), which is then locked and signed; gold and Golden
+Master are the stage and the locked publication, not synonyms.
+Epistemology stands outside the ladder: its claims remain graded
+proposals. The ladder generalizes the staging Metrology already applies at
+ingress — raw material qualified through quality gates before it is
+trusted (`AG1`, `DS2`) — to the definitions the gates read.
 
 **MCP-first pattern.** Orchestrators do not call data or RAG layers directly.
 Service logic lives inside MCP-compliant services. Legacy APIs required for
