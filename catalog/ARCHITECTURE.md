@@ -332,11 +332,24 @@ gates evaluate. A model may propose a definition, a workflow encoding, or
 a test case; a human steward reviews, edits, or rejects it before it is
 written into a layer, and promotion to gold is a recorded human approval.
 This ladder is a curation stage of a definition, not a 1–5 maturity score
-of a layer (§4). Gold policy, once promoted, is published into the Golden
+of a layer (§4). The stage is a fact kept by the holding system — a staging
+table and a promotion ledger (`DS5`) — never a property of the record
+itself: a stage asserted inside a submission is ignored, as a submitted
+tenant is overwritten (`DS2`), and one version keeps one fingerprint from
+bronze to gold. Gold policy, once promoted, is published into the Golden
 Master baseline (`DS7`), which is then locked and signed; gold and Golden
 Master are the stage and the locked publication, not synonyms.
-Epistemology stands outside the ladder: its claims remain graded
-proposals. The ladder generalizes the staging Metrology already applies at
+Epistemology stands outside the ladder: it has no definitions to promote,
+and its claims remain graded proposals that the gates receive at request
+time and never read from the snapshot. A record's Epistemology envelope
+(generating agent, generation time, fingerprint, producer trust) is the
+warrant for the version; it is carried unchanged through every stage and is
+never itself approved. Promoting a record to gold approves its ontological,
+praxeological, and axiological content, and it neither raises a confidence
+nor turns a claim into a fact. Projections, the retrieval index among them,
+are built from gold records only, because the record is the unit of
+publication, which does not make retrieved material authoritative. The
+ladder generalizes the staging Metrology already applies at
 ingress — raw material qualified through quality gates before it is
 trusted (`AG1`, `DS2`) — to the definitions the gates read.
 
