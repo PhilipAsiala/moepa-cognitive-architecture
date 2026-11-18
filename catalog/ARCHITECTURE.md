@@ -2,44 +2,45 @@
 
 Leaders start at the [repository primer](../README.md). This file is the builder specification.
 
-Version: 3.1 — Three-Tier Model (Thesis / Data Substrate / Agents); record shape, system-of-record, and gateway rules aligned to the first running implementation
+Version: 3.1 — Three-Tier Model (Thesis / Data Substrate / Agents). The record shape, the system-of-record rule, and the gateway rules follow the first running implementation, moepa-lab.
 
 Author: Philip Asiala
 
-Last Updated: October 18, 2026
+Last Updated: November 16, 2026
 
 Status: Draft for Review — Feedback Welcome
 
 Repository: [moepa-cognitive-architecture](https://github.com/PhilipAsiala/moepa-cognitive-architecture) (GitHub) — canonical home of the MOEPA Cognitive Architecture
 
-> **Core terms.** The **MOEPA Cognitive Architecture** is the thesis (the five layers and the intake scorecard). The **Data Substrate** is how owned knowledge is stored. **Agents** are the engine that consumes the Data Substrate across the layers. For the executive business briefs, see [primer/](../primer/). For the enterprise capability catalog, see [catalog/README.md](README.md).
+> **Core terms.** The **MOEPA Cognitive Architecture** is the thesis: the five layers below, plus the intake scorecard — the 1–5 per-layer rubric in §4 that scores a proposed AI use before funding is approved. The **Data Substrate** is how owned knowledge is stored: one versioned ledger of records, defined in §5. **Agents** are the engine that reads that substrate and acts on it, under the gates in §5.2. For the executive business briefs, see [primer/](../primer/). For the enterprise capability catalog, see [catalog/README.md](README.md).
 
 ## Executive Summary: The Owned-Brain Strategy
 
-This specification is for architects and engineers implementing a decision leaders have already framed: what the organization owns, and what it rents.
+This specification is for architects and engineers implementing a decision leaders have already framed: what the organization owns, and what it rents. This summary states the strategy. Section 1 states the principles behind it. Section 2 defines the five layers. Section 4 gives the scoring rubric. Section 5 defines the substrate the layers are stored in.
 
-The MOEPA Cognitive Architecture (**Metrology**, measurement; **Ontology**, shared definitions; **Epistemology**, verification; **Praxeology**, action; **Axiology**, value constraints) turns that decision into five scored layers.
+The MOEPA Cognitive Architecture (**Metrology**, measurement; **Ontology**, shared definitions; **Epistemology**, verification; **Praxeology**, action; **Axiology**, value constraints) turns that decision into five layers. Each layer is scored 1–5 against the intake rubric in §4.
 
-- **Rent the muscles (compute).** Hardware execution (VPC, clusters, GPUs) is treated as interchangeable, variable-cost capacity, with exit terms.
-- **Own the brain (intellectual property).** Knowledge graphs, validation models, ethical guardrails, and mission rules stay portable and access-controlled. They are core intellectual property when the organization can export and audit them. A vendor-hosted copy of the same assets does not meet that test.
+- **Rent the muscles (compute).** Hardware execution — virtual private clouds (VPCs), clusters, GPUs — is treated as interchangeable, variable-cost capacity, with exit terms.
+- **Own the brain (intellectual property).** Knowledge graphs, validation models, ethical guardrails, and mission rules stay portable and access-controlled. This specification treats them as core intellectual property when the organization can export and audit them. A vendor-hosted copy of the same assets does not meet that test.
 
-Predictive components (scores, confidence, quality gates) and generative components (retrieved answers, summaries, recommendations) both write to the owned substrate and pass the same policy checks.
+Predictive components (scores, confidence, quality gates) and generative components (retrieved answers, summaries, recommendations) both write to the owned substrate and pass the same policy checks (§5.2).
 
-Key principle: this document is the implementation layer for environments that need sovereignty, explainability, and governance that can be measured. It is a draft specification, not a deployed system.
+Key principle: this document is the implementation layer for environments that need sovereignty, explainability, and governance that can be measured. Sovereignty, here, means control over the records, the rules, and the history a decision depended on. It is a draft specification, not a deployed system.
 
 ## 1. The Owned-Brain Strategy — Core Principles
 ### 1.1 Why This Matters Now
-Agentic AI, multimodal models, and open-weight ecosystems add both capability and risk. Organizations that do not keep ownership of data, definitions, verification, workflows, and policy face:
+Agentic AI — systems that take actions through tools, rather than only answering — multimodal models, and open-weight ecosystems add both capability and risk. Organizations that do not keep ownership of data, definitions, verification, workflows, and policy face:
 
-- Vendor lock-in that becomes expensive to unwind, and operating cost that rises with use.
+- Vendor lock-in that can become expensive to unwind.
+- Operating cost that rises with use.
 - Uncontrolled data exfiltration and compliance violations.
 - Inability to audit or explain high-stakes decisions.
-- Erosion of institutional knowledge as models drift.
+- Erosion of institutional knowledge as models drift — as retraining or replacement changes what a model does without a recorded change to the rules.
 
 ### 1.2 The Decoupling Imperative
-MOEPA enforces a clean separation between rented, interchangeable compute and the owned, versioned, auditable Data Substrate. This mirrors successful patterns in cloud-native architecture while extending them to the domain of reasoning itself.
+MOEPA enforces a clean separation between rented, interchangeable compute and the owned, versioned, auditable Data Substrate. This mirrors the established cloud-native pattern of separating interchangeable compute from durable state. It extends that pattern from stored data to the reasoning the organization relies on.
 
-Core Principle: We rent commodity compute. We own the brain. Ownership means internal control of data (Metrology), semantics (Ontology), validation (Epistemology), workflows (Praxeology), and values (Axiology), held on the Data Substrate so the same record can be found again.
+Core Principle: We rent commodity compute. We own the brain. Ownership means internal control of data (Metrology), semantics (Ontology), validation (Epistemology), workflows (Praxeology), and values (Axiology). Those assets are held on the Data Substrate, so a record written once can be found, audited, and reused.
 
 ## 2. MOEPA Layer Definitions — Philosophical Grounding & Practical Translation
 Each layer is named after a classical philosophical discipline and grounded in a specific mathematical formalization. This ensures the framework is both intellectually coherent and technically implementable.
